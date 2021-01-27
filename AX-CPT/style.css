@@ -24,7 +24,8 @@
   visibility: hidden;
 }
 .probe {
-  z-index: -1;
+  background-color: maroon;
+  visibility: hidden;
 }
 
 /* Nav menu */
