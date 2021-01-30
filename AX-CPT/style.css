@@ -1,21 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@600&family=Raleway:wght@300&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body {
+  font-family: "Raleway", sans-serif;
+  font-family: "Lora", serif;
+}
+
+h1,
+h2 {
+  font-family: "Lora", serif;
+  text-align: center;
+  margin: 5% 0 4% 0;
+}
+h1 {
+  padding-top: 5%;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+  text-align: justify;
+  margin: 5px 10px;
+  padding: 5px;
+}
 .wrapper {
   background-color: white;
   display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-columns: 2fr 1fr 6fr 1fr;
   grid-template-rows: auto;
   height: 100vh;
+}
+
+aside {
+  grid-template-columns: 1/2;
+  grid-row: 1/4;
+  background-color: rgb(235, 235, 235);
+  border-right: 5px solid black;
+}
+
+.intro {
+  margin: 8% 0 15% 0;
 }
 
 /* Boxes with clue */
 .box {
   grid-row: 2/3;
-  grid-column: 2/3;
+  grid-column: 3/4;
   width: 300px;
   height: 300px;
   border: 3px solid black;
@@ -35,7 +68,7 @@
 /* Nav menu */
 .buttons {
   grid-row: 3/4;
-  grid-column: 2/3;
+  grid-column: 3/4;
   display: flex;
   flex: auto;
   align-items: flex-end;
@@ -47,4 +80,12 @@ button {
   padding: 2%;
   border-radius: 10%;
   border: 1px solid black;
+}
+
+.procedure {
+  display: flex;
+}
+.testOfProcedure {
+  width: 94%;
+  border-radius: 0;
 }
