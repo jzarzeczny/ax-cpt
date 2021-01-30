@@ -5,8 +5,8 @@ const by = document.querySelector('.BY').addEventListener("click", startProcedur
 
 let box = document.getElementsByClassName('box');
 
-
-
+const buttons = document.querySelectorAll('.button').addEventListener('click', ()=>{console.log('click')});
+//Main fu
 function startProcedure(event){
     if (event.target.className === 'AX'){
         initialSetting('A', 'X');
