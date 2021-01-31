@@ -41,6 +41,7 @@ function startProcedure(event){
 
 //Function for display the wariants of AX-CPT
 
+
 function initialSetting(clueText, probeText){
     setTimeout(function displayClue(){
         box[0].innerText = clueText;
@@ -127,3 +128,7 @@ function manageTheStats(userInput, requiredTest){
         console.log('Something went wrong in calsulations of the test');
     }
 }
+
+// managmentOfTheResultDisplay(){
+
+// }
