@@ -11,10 +11,11 @@ const procedureButton = document.querySelector('.testOfProcedure').addEventListe
 //Other elements required
 
 let box = document.getElementsByClassName('box');
-
+let instruction = document.getElementsByClassName('instruction')
 //Global variables
 
 let orderOfTest = [0, 0, 1, 0, 0, 3, 2, 0, 0, 0] // AX - 0, AY - 1, BX - 2, BY - 3
+let decisionWasMade
 //Function for test the wariants of AX-CPT
 
 function startProcedure(event){
@@ -44,17 +45,34 @@ function initialSetting(clueText, probeText){
                 box[0].classList.add('visible');
                 setTimeout(function removeProbe(){
                     box[0].classList.remove('visible');
+
+
+                    //Managing the instruction display.
+                    
+                    instruction[0].classList.add('visible');
                     //Adding some input checker to find out the response for the sequence. 
                     document.addEventListener('keypress', function checkTheResponse(event){
+                    
+                    decisionWasMade = false;
                         if (event.key === 'z' ){
                             console.log('You pressed Z!')
+                            instruction[0].classList.remove('visible');
+                            if (orderOfTest !== []){beginTheTest(); return;};
+
+
+
                         } else if (event.key ==='m'){
                             console.log('You pressed M!')
+                            instruction[0].classList.remove('visible');
+                            if (orderOfTest !== []){beginTheTest(); return;};
+
+
                         } else {
-                            console.log('We fucked up!')
+                            console.log('We fucked')
                         }
+
                     } )
-                    if (orderOfTest !== 0){beginTheTest()};
+
                 }, 1000)
             }, 1500)
         }, 300)
@@ -76,3 +94,5 @@ function beginTheTest(){
         console.log('Something went wrong');
     }
 }
+
+
