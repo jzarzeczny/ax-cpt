@@ -91,6 +91,7 @@ button {
   grid-column: 3/4;
   visibility: hidden;
   text-align: center;
+  font-size: 2em;
 }
 .visible {
   visibility: visible;
