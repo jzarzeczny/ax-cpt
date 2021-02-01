@@ -12,10 +12,13 @@ const procedureButton = document.querySelector('.testOfProcedure').addEventListe
 
 let box = document.getElementsByClassName('box');
 let instruction = document.getElementsByClassName('instruction')
+let scoreAX = document.getElementsByClassName('scoreAX');
+let scoreAY = document.getElementsByClassName('scoreAY');
+let scoreBX = document.getElementsByClassName('scoreBX');
+let scoreBY = document.getElementsByClassName('scoreBY');
 //Global variables
 
-let orderOfTest = [0, 0, 1, 0, 0, 3, 2, 0, 0, 0] // AX - 0, AY - 1, BX - 2, BY - 3
-let decisionWasMade
+let orderOfTest = [0, 0, 1, 0, 0, 3, 2, 0, 0, 0];
 
 //Stats of the user
 let correctAX = 0;
@@ -23,17 +26,19 @@ let correctAY = 0;
 let correctBX = 0;
 let correctBY = 0;
 let numberOfMistakes = 0;
+const listOfInputs = [ax, ay, bx, by, procedureButton];
+
 //Function for test the wariants of AX-CPT
 
 function startProcedure(event){
     if (event.target.className === 'AX'){
-        initialSetting('A', 'X');
+        displayMechanism('A', 'X');
     } else if(event.target.className === 'AY') {
-        initialSetting('A', 'Y');
+        displayMechanism('A', 'Y');
     } else if(event.target.className === 'BX') {
-        initialSetting('B', 'X');
+        displayMechanism('B', 'X');
     } else if (event.target.className === 'BY'){
-        initialSetting('B', 'Y');
+        displayMechanism('B', 'Y');
     } else {
         console.log('Something went wrong')
     }
@@ -42,7 +47,7 @@ function startProcedure(event){
 //Function for display the wariants of AX-CPT
 
 
-function initialSetting(clueText, probeText){
+function displayMechanism(clueText, probeText, ){
     setTimeout(function displayClue(){
         box[0].innerText = clueText;
         box[0].classList.add('visible');
@@ -54,14 +59,15 @@ function initialSetting(clueText, probeText){
                 setTimeout(function removeProbe(){
                     box[0].classList.remove('visible');
                     //Managing the instruction display.
+                     
                     instruction[0].classList.add('visible');
-                    //Adding some input checker to find out the response for the sequence. 
-
                 }, 1000)
             }, 1500)
         }, 300)
     }, 1000);
-    document.addEventListener('keypress', checkTheResponse)
+    //Adding some input checker to find out the response for the sequence. 
+
+    document.addEventListener('keypress', checkTheResponse);
     } 
 
 
@@ -69,19 +75,23 @@ function beginTheTest(){
     requiredTest = orderOfTest.pop();
     console.log(requiredTest)
     if (requiredTest === 0){
-        initialSetting('A', 'X');
+        displayMechanism('A', 'X');
     } else if(requiredTest === 1) {
-        initialSetting('A', 'Y');
+        displayMechanism('A', 'Y');
     } else if(requiredTest === 2) {
-        initialSetting('B', 'X');
+        displayMechanism('B', 'X');
     } else if (requiredTest === 3){
-        initialSetting('B', 'Y');
+        displayMechanism('B', 'Y');
     } else {
         console.log('End of the test');
         console.log(correctAX, correctAY, correctBX, correctBY, numberOfMistakes);
         instruction[0].innerText = `To już koniec!
         Dziękujemy za uczestnictwo w badaniu.`;
         instruction[0].classList.add('visible');
+        managmentOfTheResultDisplay();
+        orderOfTest = [0, 0, 1, 0, 0, 3, 2, 0, 0, 0];
+        setTimeout(()=>{
+            initialSetting()}, 10000)
     }
 }
 
@@ -129,6 +139,28 @@ function manageTheStats(userInput, requiredTest){
     }
 }
 
-// managmentOfTheResultDisplay(){
+function managmentOfTheResultDisplay(){
+    scoreAX[0].innerText = 'Wynik AX = ' + (Math.round(correctAX / 7 * 100)) + '%';
+    scoreAY[0].innerText = 'Wynik AY = ' + (Math.round(correctAY / 1 * 100)) + '%';
+    scoreBX[0].innerText = 'Wynik BX = ' + (Math.round(correctBX / 1 * 100)) + '%';
+    scoreBY[0].innerText = 'Wynik BY = ' + (Math.round(correctBY / 1 * 100)) + '%';
 
-// }
+}
+
+function initialSetting(){
+    //Hide the results
+    scoreAX[0].innerText = '';
+    scoreAY[0].innerText = '';
+    scoreBX[0].innerText = '';
+    scoreBY[0].innerText = '';
+
+    //Reset the score
+    correctAX = 0;
+    correctAY = 0;
+    correctBX = 0;
+    correctBY = 0;
+    numberOfMistakes = 0
+
+}
+
+//function disableTheInput
