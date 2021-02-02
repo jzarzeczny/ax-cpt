@@ -16,6 +16,7 @@ let scoreAX = document.getElementsByClassName('scoreAX');
 let scoreAY = document.getElementsByClassName('scoreAY');
 let scoreBX = document.getElementsByClassName('scoreBX');
 let scoreBY = document.getElementsByClassName('scoreBY');
+let resultBox = document.getElementsByClassName('results');
 //Global variables
 
 let orderOfTest = [0, 0, 1, 0, 0, 3, 2, 0, 0, 0];
@@ -48,9 +49,11 @@ function startProcedure(event){
 
 
 function displayMechanism(clueText, probeText, ){
+
     setTimeout(function displayClue(){
         box[0].innerText = clueText;
         box[0].classList.add('visible');
+
         setTimeout(function removeClue(){
             box[0].classList.remove('visible');
             setTimeout(function deleyClueToProbe(){
@@ -140,6 +143,7 @@ function manageTheStats(userInput, requiredTest){
 }
 
 function managmentOfTheResultDisplay(){
+    resultBox[0].classList.add('visible');
     scoreAX[0].innerText = 'Wynik AX = ' + (Math.round(correctAX / 7 * 100)) + '%';
     scoreAY[0].innerText = 'Wynik AY = ' + (Math.round(correctAY / 1 * 100)) + '%';
     scoreBX[0].innerText = 'Wynik BX = ' + (Math.round(correctBX / 1 * 100)) + '%';
@@ -161,6 +165,8 @@ function initialSetting(){
     correctBY = 0;
     numberOfMistakes = 0
 
+    //Hide the results
+    resultBox[0].classList.remove('visible');
 }
 
 //function disableTheInput

@@ -14,10 +14,11 @@ h1,
 h2 {
   font-family: "Lora", serif;
   text-align: center;
-  margin: 5% 0 4% 0;
+  margin: 3% 0 3% 0;
+  font-size: 1.2em;
 }
 h1 {
-  padding-top: 5%;
+  padding-top: 3%;
 }
 
 p {
@@ -25,6 +26,8 @@ p {
   text-align: justify;
   margin: 5px 10px;
   padding: 5px;
+  line-height: 1.5em;
+  font-size: 0.9em;
 }
 .wrapper {
   background-color: white;
@@ -42,7 +45,7 @@ aside {
 }
 
 .intro {
-  margin: 8% 0 15% 0;
+  margin: 3% 0 3% 0;
 }
 
 /* Boxes with clue */
@@ -93,6 +96,15 @@ button {
   text-align: center;
   font-size: 2em;
 }
+.results {
+  grid-row: 3/4;
+  grid-column: 3/4;
+  visibility: hidden;
+}
 .visible {
   visibility: visible;
+}
+
+ul {
+  list-style: none;
 }
