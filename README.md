@@ -9,6 +9,9 @@ Demo was created to illustrate the mechanisim (it's quite complitated) of the te
 ### 0.4
 
 Its working! Im aware that code is trash + its simply, however it's working.
+
 Currently it allows to check how each pair works (clue - probe) + perform simple test.
+
+In next version -> object, async js, get rid of known bugs
 
 ## Resources
