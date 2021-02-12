@@ -1,9 +1,8 @@
 //Event listners
-
-const ax = document.querySelector('.AX').addEventListener("click", startProcedure);
-const ay = document.querySelector('.AY').addEventListener("click", startProcedure);
-const bx = document.querySelector('.BX').addEventListener("click", startProcedure);
-const by = document.querySelector('.BY').addEventListener("click", startProcedure);
+const testButtons = document.querySelectorAll('.testButton').forEach(element =>{
+    element.addEventListener('click', showWariants);
+    
+});
 
 const procedureButton = document.querySelector('.testOfProcedure').addEventListener('click', beginTheTest);
 
@@ -27,18 +26,18 @@ let correctAY = 0;
 let correctBX = 0;
 let correctBY = 0;
 let numberOfMistakes = 0;
-const listOfInputs = [ax, ay, bx, by, procedureButton];
 
 //Function for test the wariants of AX-CPT
 
-function startProcedure(event){
-    if (event.target.className === 'AX'){
+function showWariants(event){
+    console.log(event);
+    if (event.target.classList.contains('AX')){
         displayMechanism('A', 'X');
-    } else if(event.target.className === 'AY') {
+    } else if(event.target.classList.contains('AY')) {
         displayMechanism('A', 'Y');
-    } else if(event.target.className === 'BX') {
+    } else if(event.target.classList.contains('BX')) {
         displayMechanism('B', 'X');
-    } else if (event.target.className === 'BY'){
+    } else if (event.target.classList.contains('BY')){
         displayMechanism('B', 'Y');
     } else {
         console.log('Something went wrong')
