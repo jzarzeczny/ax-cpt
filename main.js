@@ -1,12 +1,13 @@
 //Event listners
 
-const ax = document.querySelector('.AX').addEventListener("click", startProcedure);
-const ay = document.querySelector('.AY').addEventListener("click", startProcedure);
-const bx = document.querySelector('.BX').addEventListener("click", startProcedure);
-const by = document.querySelector('.BY').addEventListener("click", startProcedure);
+const ax = document.querySelector('.AX')
+const ay = document.querySelector('.AY')
+const bx = document.querySelector('.BX')
+const by = document.querySelector('.BY')
+const procedureButton = document.querySelector('.testOfProcedure')
 
-const procedureButton = document.querySelector('.testOfProcedure').addEventListener('click', beginTheTest);
-
+buttonsList = [ax, ay, bx, by]
+addTheListners();
 
 //Other elements required
 
@@ -27,11 +28,11 @@ let correctAY = 0;
 let correctBX = 0;
 let correctBY = 0;
 let numberOfMistakes = 0;
-const listOfInputs = [ax, ay, bx, by, procedureButton];
+const listOfInputs = [ax, ay, bx, by];
 
 //Function for test the wariants of AX-CPT
 
-function startProcedure(event){
+function showProcedure(event){
     if (event.target.className === 'AX'){
         displayMechanism('A', 'X');
     } else if(event.target.className === 'AY') {
@@ -49,28 +50,33 @@ function startProcedure(event){
 
 
 function displayMechanism(clueText, probeText, ){
+    removeTheListners();
+    document.removeEventListener('keypress', checkTheResponse)           
 
-    setTimeout(function displayClue(){
+    displayClue = setTimeout(() =>{
         box[0].innerText = clueText;
         box[0].classList.add('visible');
 
-        setTimeout(function removeClue(){
+        timeBetweenClueAndProbe = setTimeout(()=>{
             box[0].classList.remove('visible');
-            setTimeout(function deleyClueToProbe(){
+
+            displayProbe = setTimeout(() => {
                 box[0].innerText = probeText;
                 box[0].classList.add('visible');
-                setTimeout(function removeProbe(){
+
+                removeProbeWaitForResponse = setTimeout(() =>{
                     box[0].classList.remove('visible');
                     //Managing the instruction display.
-                     
+                    addTheListners();
                     instruction[0].classList.add('visible');
+                    document.addEventListener('keypress', checkTheResponse);
+
                 }, 1000)
             }, 1500)
         }, 300)
     }, 1000);
     //Adding some input checker to find out the response for the sequence. 
 
-    document.addEventListener('keypress', checkTheResponse);
     } 
 
 
@@ -100,7 +106,6 @@ function beginTheTest(){
 
 //Function that's check the input by the user.
 function checkTheResponse(event){
-                    
     if (event.key === 'z' ){
         console.log('You pressed Z!')
         instruction[0].classList.remove('visible');
@@ -169,4 +174,21 @@ function initialSetting(){
     resultBox[0].classList.remove('visible');
 }
 
-//function disableTheInput
+//Menagment of listners 
+
+function removeTheListners(){
+    for (i = 0; i < buttonsList.length; i++){
+        buttonsList[i].disable = true;
+        buttonsList[i].removeEventListener('click', showProcedure)
+    }
+    procedureButton.removeEventListener('click', beginTheTest)
+}
+
+function addTheListners(){
+    for (i = 0; i < buttonsList.length; i++){
+        buttonsList[i].disable = true;
+        buttonsList[i].addEventListener('click', showProcedure)
+    }
+    procedureButton.addEventListener('click', beginTheTest)
+
+}
