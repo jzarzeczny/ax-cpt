@@ -49,7 +49,7 @@ function showProcedure(event){
 //Function for display the wariants of AX-CPT
 
 
-function displayMechanism(clueText, probeText, ){
+function displayMechanism(clueText, probeText, test){
     removeTheListners();
     document.removeEventListener('keypress', checkTheResponse)           
 
@@ -68,8 +68,10 @@ function displayMechanism(clueText, probeText, ){
                     box[0].classList.remove('visible');
                     //Managing the instruction display.
                     addTheListners();
-                    instruction[0].classList.add('visible');
-                    document.addEventListener('keypress', checkTheResponse);
+                    if (test){
+                        instruction[0].classList.add('visible');
+                        document.addEventListener('keypress', checkTheResponse);
+                    }
 
                 }, 1000)
             }, 1500)
@@ -84,13 +86,13 @@ function beginTheTest(){
     requiredTest = orderOfTest.pop();
     console.log(requiredTest)
     if (requiredTest === 0){
-        displayMechanism('A', 'X');
+        displayMechanism('A', 'X', true);
     } else if(requiredTest === 1) {
-        displayMechanism('A', 'Y');
+        displayMechanism('A', 'Y', true);
     } else if(requiredTest === 2) {
-        displayMechanism('B', 'X');
+        displayMechanism('B', 'X', true);
     } else if (requiredTest === 3){
-        displayMechanism('B', 'Y');
+        displayMechanism('B', 'Y', true);
     } else {
         console.log('End of the test');
         console.log(correctAX, correctAY, correctBX, correctBY, numberOfMistakes);
@@ -112,15 +114,12 @@ function checkTheResponse(event){
         manageTheStats('z', requiredTest)
         if (orderOfTest !== []){beginTheTest(); return;};
 
-
-
     } else if (event.key ==='m'){
         console.log('You pressed M!')
         instruction[0].classList.remove('visible');
         manageTheStats('m', requiredTest)
 
         if (orderOfTest !== []){beginTheTest(); return;};
-
 
     } else {
         console.log('We fucked')
@@ -172,6 +171,8 @@ function initialSetting(){
 
     //Hide the results
     resultBox[0].classList.remove('visible');
+    instruction[0].innerText = '';
+
 }
 
 //Menagment of listners 
