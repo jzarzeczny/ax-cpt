@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Event listners
 const testButtons = document.querySelectorAll('.testButton').forEach(element =>{
     element.addEventListener('click', AXX.oneRun);
@@ -5,7 +6,20 @@ const testButtons = document.querySelectorAll('.testButton').forEach(element =>{
 });
 
 const procedureButton = document.querySelector('.testOfProcedure').addEventListener('click', beginTheTest);
+=======
+//collection of buttons
 
+const ax = document.querySelector('.AX')
+const ay = document.querySelector('.AY')
+const bx = document.querySelector('.BX')
+const by = document.querySelector('.BY')
+const procedureButton = document.querySelector('.testOfProcedure');
+const affect = document.querySelector('.affect')
+const reactiveC = document.querySelector('.reactiveC')
+>>>>>>> new-features
+
+buttonsList = [ax, ay, bx, by, affect, reactiveC]
+addTheListners();
 
 //Other elements required
 
@@ -27,6 +41,7 @@ let correctAY = 0;
 let correctBX = 0;
 let correctBY = 0;
 let numberOfMistakes = 0;
+<<<<<<< HEAD
 
 //Object of the box displayed on the screen
 // class Sequence {
@@ -51,6 +66,15 @@ let numberOfMistakes = 0;
 function showWariants(event){
     console.log(event);
     if (event.target.classList.contains('AX')){
+=======
+const listOfInputs = [ax, ay, bx, by];
+
+//Function for test the wariants of AX-CPT
+
+function showProcedure(event){
+    console.log(event);
+    if (event.target.className === 'AX'){
+>>>>>>> new-features
         displayMechanism('A', 'X');
     } else if(event.target.classList.contains('AY')) {
         displayMechanism('A', 'Y');
@@ -58,6 +82,10 @@ function showWariants(event){
         displayMechanism('B', 'X');
     } else if (event.target.classList.contains('BY')){
         displayMechanism('B', 'Y');
+    } else if (event.target.className === 'affect'){
+        displayMechanism('B', 'Y', 'affect');
+    } else if(event.target.className === 'reactiveC'){
+        displayMechanism('B', 'Y', 'reactive');
     } else {
         console.log('Something went wrong')
     }
@@ -66,29 +94,36 @@ function showWariants(event){
 //Function for display the wariants of AX-CPT
 
 
-function displayMechanism(clueText, probeText, ){
+function displayMechanism(clueText, probeText, test){
+    removeTheListners();
+    document.removeEventListener('keypress', checkTheResponse)           
 
-    setTimeout(function displayClue(){
+    displayClue = setTimeout(() =>{
         box[0].innerText = clueText;
         box[0].classList.add('visible');
 
-        setTimeout(function removeClue(){
+        timeBetweenClueAndProbe = setTimeout(()=>{
             box[0].classList.remove('visible');
-            setTimeout(function deleyClueToProbe(){
+
+            displayProbe = setTimeout(() => {
                 box[0].innerText = probeText;
                 box[0].classList.add('visible');
-                setTimeout(function removeProbe(){
+
+                removeProbeWaitForResponse = setTimeout(() =>{
                     box[0].classList.remove('visible');
                     //Managing the instruction display.
-                     
-                    instruction[0].classList.add('visible');
+                    addTheListners();
+                    if (test === 'test'){
+                        instruction[0].classList.add('visible');
+                        document.addEventListener('keypress', checkTheResponse);
+                    }
+
                 }, 1000)
             }, 1500)
         }, 300)
     }, 1000);
     //Adding some input checker to find out the response for the sequence. 
 
-    document.addEventListener('keypress', checkTheResponse);
     } 
 
 
@@ -96,13 +131,13 @@ function beginTheTest(){
     requiredTest = orderOfTest.pop();
     console.log(requiredTest)
     if (requiredTest === 0){
-        displayMechanism('A', 'X');
+        displayMechanism('A', 'X', 'test');
     } else if(requiredTest === 1) {
-        displayMechanism('A', 'Y');
+        displayMechanism('A', 'Y', 'test');
     } else if(requiredTest === 2) {
-        displayMechanism('B', 'X');
+        displayMechanism('B', 'X', 'test');
     } else if (requiredTest === 3){
-        displayMechanism('B', 'Y');
+        displayMechanism('B', 'Y', 'test');
     } else {
         console.log('End of the test');
         console.log(correctAX, correctAY, correctBX, correctBY, numberOfMistakes);
@@ -118,14 +153,11 @@ function beginTheTest(){
 
 //Function that's check the input by the user.
 function checkTheResponse(event){
-                    
     if (event.key === 'z' ){
         console.log('You pressed Z!')
         instruction[0].classList.remove('visible');
         manageTheStats('z', requiredTest)
         if (orderOfTest !== []){beginTheTest(); return;};
-
-
 
     } else if (event.key ==='m'){
         console.log('You pressed M!')
@@ -133,7 +165,6 @@ function checkTheResponse(event){
         manageTheStats('m', requiredTest)
 
         if (orderOfTest !== []){beginTheTest(); return;};
-
 
     } else {
         console.log('We fucked')
@@ -185,6 +216,25 @@ function initialSetting(){
 
     //Hide the results
     resultBox[0].classList.remove('visible');
+    instruction[0].innerText = '';
+
 }
 
-//function disableTheInput
+//Menagment of listners 
+
+function removeTheListners(){
+    for (i = 0; i < buttonsList.length; i++){
+        buttonsList[i].disable = true;
+        buttonsList[i].removeEventListener('click', showProcedure)
+    }
+    procedureButton.removeEventListener('click', beginTheTest)
+}
+
+function addTheListners(){
+    for (i = 0; i < buttonsList.length; i++){
+        buttonsList[i].disable = true;
+        buttonsList[i].addEventListener('click', showProcedure)
+    }
+    procedureButton.addEventListener('click', beginTheTest)
+
+}
