@@ -1,6 +1,6 @@
 //Event listners
 const testButtons = document.querySelectorAll('.testButton').forEach(element =>{
-    element.addEventListener('click', showWariants);
+    element.addEventListener('click', AXX.oneRun);
     
 });
 
@@ -16,6 +16,7 @@ let scoreAY = document.getElementsByClassName('scoreAY');
 let scoreBX = document.getElementsByClassName('scoreBX');
 let scoreBY = document.getElementsByClassName('scoreBY');
 let resultBox = document.getElementsByClassName('results');
+
 //Global variables
 
 let orderOfTest = [0, 0, 1, 0, 0, 3, 2, 0, 0, 0];
@@ -26,6 +27,24 @@ let correctAY = 0;
 let correctBX = 0;
 let correctBY = 0;
 let numberOfMistakes = 0;
+
+//Object of the box displayed on the screen
+// class Sequence {
+//     constructor(clue, probe){
+//         this.clue = clue;
+//         this.probe = probe; 
+//     }
+//     oneRun(e){
+//         console.log(e);
+//     }
+
+// }
+
+// const AXX = new Sequence('A', 'X');
+
+//Help functions 
+
+//function dipslayClue();
 
 //Function for test the wariants of AX-CPT
 
