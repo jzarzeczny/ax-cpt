@@ -1,12 +1,3 @@
-<<<<<<< HEAD
-//Event listners
-const testButtons = document.querySelectorAll('.testButton').forEach(element =>{
-    element.addEventListener('click', AXX.oneRun);
-    
-});
-
-const procedureButton = document.querySelector('.testOfProcedure').addEventListener('click', beginTheTest);
-=======
 //collection of buttons
 
 const ax = document.querySelector('.AX')
@@ -16,7 +7,6 @@ const by = document.querySelector('.BY')
 const procedureButton = document.querySelector('.testOfProcedure');
 const affect = document.querySelector('.affect')
 const reactiveC = document.querySelector('.reactiveC')
->>>>>>> new-features
 
 buttonsList = [ax, ay, bx, by, affect, reactiveC]
 addTheListners();
@@ -41,32 +31,6 @@ let correctAY = 0;
 let correctBX = 0;
 let correctBY = 0;
 let numberOfMistakes = 0;
-<<<<<<< HEAD
-
-//Object of the box displayed on the screen
-// class Sequence {
-//     constructor(clue, probe){
-//         this.clue = clue;
-//         this.probe = probe; 
-//     }
-//     oneRun(e){
-//         console.log(e);
-//     }
-
-// }
-
-// const AXX = new Sequence('A', 'X');
-
-//Help functions 
-
-//function dipslayClue();
-
-//Function for test the wariants of AX-CPT
-
-function showWariants(event){
-    console.log(event);
-    if (event.target.classList.contains('AX')){
-=======
 const listOfInputs = [ax, ay, bx, by];
 
 //Function for test the wariants of AX-CPT
@@ -74,7 +38,6 @@ const listOfInputs = [ax, ay, bx, by];
 function showProcedure(event){
     console.log(event);
     if (event.target.className === 'AX'){
->>>>>>> new-features
         displayMechanism('A', 'X');
     } else if(event.target.classList.contains('AY')) {
         displayMechanism('A', 'Y');
