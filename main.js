@@ -1,12 +1,14 @@
-//Event listners
+//collection of buttons
 
 const ax = document.querySelector('.AX')
 const ay = document.querySelector('.AY')
 const bx = document.querySelector('.BX')
 const by = document.querySelector('.BY')
-const procedureButton = document.querySelector('.testOfProcedure')
+const procedureButton = document.querySelector('.testOfProcedure');
+const affect = document.querySelector('.affect')
+const reactiveC = document.querySelector('.reactiveC')
 
-buttonsList = [ax, ay, bx, by]
+buttonsList = [ax, ay, bx, by, affect, reactiveC]
 addTheListners();
 
 //Other elements required
@@ -33,6 +35,7 @@ const listOfInputs = [ax, ay, bx, by];
 //Function for test the wariants of AX-CPT
 
 function showProcedure(event){
+    console.log(event);
     if (event.target.className === 'AX'){
         displayMechanism('A', 'X');
     } else if(event.target.className === 'AY') {
@@ -41,6 +44,10 @@ function showProcedure(event){
         displayMechanism('B', 'X');
     } else if (event.target.className === 'BY'){
         displayMechanism('B', 'Y');
+    } else if (event.target.className === 'affect'){
+        displayMechanism('B', 'Y', 'affect');
+    } else if(event.target.className === 'reactiveC'){
+        displayMechanism('B', 'Y', 'reactive');
     } else {
         console.log('Something went wrong')
     }
@@ -68,7 +75,7 @@ function displayMechanism(clueText, probeText, test){
                     box[0].classList.remove('visible');
                     //Managing the instruction display.
                     addTheListners();
-                    if (test){
+                    if (test === 'test'){
                         instruction[0].classList.add('visible');
                         document.addEventListener('keypress', checkTheResponse);
                     }
@@ -86,13 +93,13 @@ function beginTheTest(){
     requiredTest = orderOfTest.pop();
     console.log(requiredTest)
     if (requiredTest === 0){
-        displayMechanism('A', 'X', true);
+        displayMechanism('A', 'X', 'test');
     } else if(requiredTest === 1) {
-        displayMechanism('A', 'Y', true);
+        displayMechanism('A', 'Y', 'test');
     } else if(requiredTest === 2) {
-        displayMechanism('B', 'X', true);
+        displayMechanism('B', 'X', 'test');
     } else if (requiredTest === 3){
-        displayMechanism('B', 'Y', true);
+        displayMechanism('B', 'Y', 'test');
     } else {
         console.log('End of the test');
         console.log(correctAX, correctAY, correctBX, correctBY, numberOfMistakes);
