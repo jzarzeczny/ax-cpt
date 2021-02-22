@@ -74,6 +74,7 @@ function showProcedure(event){
 
 function displayMechanism(clueText, probeText, test){
     removeTheListners();
+    normalBox();
     document.removeEventListener('keypress', checkTheResponse)           
 
     displayClue = setTimeout(() =>{
@@ -84,16 +85,23 @@ function displayMechanism(clueText, probeText, test){
             box[0].classList.remove('visible');
 
             displayProbe = setTimeout(() => {
+                if (test == 'reactive'){
+                    box[0].style.border = '3px solid red';
+                    box[0].style.justifySelf = 'start';
+                    box[0].style.alignSelf = 'end';
+                }
                 box[0].innerText = probeText;
                 box[0].classList.add('visible');
 
                 removeProbeWaitForResponse = setTimeout(() =>{
                     box[0].classList.remove('visible');
                     //Managing the instruction display.
-                    addTheListners();
+
                     if (test === 'test'){
                         instruction[0].classList.add('visible');
                         document.addEventListener('keypress', checkTheResponse);
+                    } else {
+                        addTheListners();
                     }
 
                 }, 1000)
@@ -215,4 +223,10 @@ function addTheListners(){
     }
     procedureButton.addEventListener('click', beginTheTest)
 
+}
+
+function normalBox(){
+    box[0].style.border = '3px solid black';
+    box[0].style.justifySelf = 'center';
+    box[0].style.alignSelf = 'center';
 }

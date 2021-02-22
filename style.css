@@ -92,6 +92,7 @@ button {
   visibility: hidden;
   text-align: center;
   font-size: 2em;
+  align-self: center;
 }
 .results {
   grid-row: 3/4;
