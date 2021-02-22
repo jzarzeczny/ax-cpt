@@ -12,7 +12,7 @@ buttonsList = [ax, ay, bx, by, affect, reactiveC]
 addTheListners();
 
 //Other elements required
-
+const wrapper = document.querySelector('.wrapper')
 let box = document.getElementsByClassName('box');
 let instruction = document.getElementsByClassName('instruction')
 let scoreAX = document.getElementsByClassName('scoreAX');
@@ -46,7 +46,22 @@ function showProcedure(event){
     } else if (event.target.classList.contains('BY')){
         displayMechanism('B', 'Y');
     } else if (event.target.className === 'affect'){
-        displayMechanism('B', 'Y', 'affect');
+        const sweetImage = document.createElement('img');
+        sweetImage.src = 'images/affect.jpg';
+        sweetImage.style.gridArea = '2/3/3/4';
+        sweetImage.style.alignSelf = 'center';
+        sweetImage.style.placeSelf = 'center';
+
+        displayAffect = setTimeout(()=>{
+            wrapper.appendChild(sweetImage)
+
+            removeAffect = setTimeout(()=>{
+                sweetImage.remove();
+                displayMechanism('A', 'X', 'affect');
+            },
+            //time of image display 
+            500)
+        }, 500)
     } else if(event.target.className === 'reactiveC'){
         displayMechanism('B', 'Y', 'reactive');
     } else {
