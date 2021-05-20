@@ -14,4 +14,14 @@ Currently it allows to check how each pair works (clue - probe) + perform simple
 
 In next version -> object, async js, get rid of known bugs
 
+### 0.5 - 19.05
+
+Moved to react. Decided to prepare for online research. 
+
+Currently created: Basic concept, hardcoded tutorial, tutoiral ax-cpt with json file to store important data. 
+
+Planning features: Measure the reaction time, implement proactive and reactive strategy, localstorage of "nickname", link the data with database/airtable.
+
 ## Resources
+
+https://sites.wustl.edu/dualmechanisms/tasks/
