@@ -44,18 +44,18 @@ const Tutorial = () => {
             Jeśli wykryjesz tę parę liter <br />
             (tj. pierwsza litera w próbie jest literą A, a druga litera to X),
             <br />
-            wcisnąć przycisk 2 tak szybko, jak to możliwe.
+            wcisnąć przycisk 2 (L) tak szybko, jak to możliwe.
             <br />
-            <br /> Pamiętaj, że zawsze będziesz naciskać przycisk 1, gdy
+            <br /> Pamiętaj, że zawsze będziesz naciskać przycisk 1 (A), gdy
             zobaczysz pierwszą literę.
             <br />
             <br />
             <br /> Innymi słowy, powinieneś/-aś: <br />
           </p>
           <ul>
-            <li>wcisnąć przycisk 1, gdy pojawi się pierwsza litera</li>
+            <li>wcisnąć przycisk 1 (A), gdy pojawi się pierwsza litera</li>
             <li>
-              nacisnąć przycisk 2, jeśli drugą literą, którą widzisz na ekranie
+              nacisnąć przycisk 2 (L), jeśli drugą literą, którą widzisz na ekranie
               jest X, a poprzednia była A
             </li>
           </ul>
@@ -66,8 +66,8 @@ const Tutorial = () => {
         <>
           <h3>Jeśli NIE widzisz pary A-X, to powinieneś/-aś:</h3>
           <p>
-            - naciśnąć przycisk 1, gdy pojawi się pierwsza litera <br />-
-            naciśnąć przycisk 1, jeśli druga litera nie należy do pary A-X
+            - naciśnąć przycisk 1 (A), gdy pojawi się pierwsza litera <br />-
+            naciśnąć przycisk  (A), jeśli druga litera nie należy do pary A-X
           </p>
         </>
       );
@@ -98,13 +98,13 @@ const Tutorial = () => {
           <p>
             <br />
             Próba pierwsza: widzisz A, następuje długa przerwa, widzisz X.
-            Powinieneś/-aś wcisnąć przycisk 1, gdy pojawi się A, i przycisk 2,
+            Powinieneś/-aś wcisnąć przycisk 1(A), gdy pojawi się A, i przycisk 2 (L),
             gdy pojawi się X. <br />
             Próba druga: widzisz B, następuje długa przerwa, widzisz X.
-            Powinieneś wcisnąć przycisk 1, gdy pojawi się B, i przycisk 1, gdy
+            Powinieneś wcisnąć przycisk 1 (A), gdy pojawi się B, i przycisk 1 (A), gdy
             pojawi się X. <br />
             Próba trzecia: widzisz A, jest duże opóźnienie, widzisz 6.
-            Powinieneś wcisnąć przycisk 1, gdy pojawi się A, i w ogóle nie
+            Powinieneś wcisnąć przycisk 1 (A), gdy pojawi się A, i w ogóle nie
             reagować, gdy zobaczysz 6.
           </p>
         </>
@@ -126,8 +126,8 @@ const Tutorial = () => {
         <>
           <h3>Jeśli nacisniesz niewłaściwy przycisk odpowiedzi</h3>
           <p>
-            (tzn. naciśniesz przycisk 2, ale nie zobaczyłeś/-aś pary liter
-            "A-X", albo przycisk 1, ale zobaczysz parę liter "A-X"), usłyszysz
+            (tzn. naciśniesz przycisk 2 (L), ale nie zobaczyłeś/-aś pary liter
+            "A-X", albo przycisk 1 (A), ale zobaczysz parę liter "A-X"), usłyszysz
             dźwięk "brzęczenia".
           </p>
         </>
