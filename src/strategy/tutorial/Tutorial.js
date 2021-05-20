@@ -1,10 +1,8 @@
-import data from "../data/tutorial";
-import useDisplayLogic from "./useDisplayLogic";
-
-console.log(data[0]);
+import data from "../../data/tutorial";
+import useDisplayLogic from "../useDisplayLogic";
 
 const Trening = () => {
-  const route = '/proactiveinstruction'
+  const route = "/instructionsproactive";
 
   const value = useDisplayLogic(data, route);
 

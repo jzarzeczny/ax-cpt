@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import Trening from "./strategy/Trening";
+import Tutorial from "./Tutorial";
 
 async function sleep(ms) {
   return new Promise((resolve) => {
@@ -23,7 +23,7 @@ const DisplayTutorial = () => {
           <h3>Za 3 sekundy zacznie się zadanie treningowe...</h3>
         </div>
       )}
-      {!alert && <Trening />}
+      {!alert && <Tutorial />}
     </div>
   );
 };

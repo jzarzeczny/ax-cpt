@@ -12,7 +12,7 @@ const validate = (values) => {
   if (!values.age) {
     errors.age = "To pole jest wymagane";
   }
-  if (parseInt(values.age) <= 18 || parseInt(values.age) >= 100) {
+  if (parseInt(values.age) < 18 || parseInt(values.age) >= 100) {
     errors.age = "Musisz mieć między 18, a 100 lat";
   }
 
@@ -50,7 +50,7 @@ const Metrics = () => {
       console.log(errors);
       if (JSON.stringify(errors) === "{}") {
         console.log(JSON.stringify(formData, null, 2));
-        history.push("/instructions");
+        history.push("/agreement");
       }
     } else {
       setErrors(validate(formData));

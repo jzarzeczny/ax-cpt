@@ -1,12 +1,12 @@
-import Instructions from "./Instructions";
+import Agreement from "./Agreement";
 import Header from "./Header";
 import DayToChoose from "./DayToChoose";
 import Metrics from "./Metrics";
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Tutorial from "./Tutorial";
-import DisplayTutorial from "./DisplayTutorial";
-import ProactiveInstruction from "./ProactiveInstruction";
+import InstructionsTutorial from "./strategy/tutorial/InstructionsTutorial";
+import DisplayTutorial from "./strategy/tutorial/DisplayTutorial";
+import ProactiveInstruction from "./strategy/proactive/InstructionsProactive";
 function App() {
   const [name, setName] = useState(null);
 
@@ -21,19 +21,18 @@ function App() {
           <Route path="/metrics">
             <Metrics />
           </Route>
-          <Route path="/instructions">
-            <Instructions />
+          <Route path="/agreement">
+            <Agreement />
           </Route>
           <Route path="/tutorial">
-            <Tutorial />
+            <InstructionsTutorial />
           </Route>
           <Route path="/displaytutorial">
             <DisplayTutorial />
           </Route>
-          <Route path="/proactiveinstruction">
+          <Route path="/instructionsproactive">
             <ProactiveInstruction />
           </Route>
-
         </Switch>
       </Router>
     </div>
