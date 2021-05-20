@@ -1,12 +1,12 @@
 import Instructions from "./Instructions";
 import Header from "./Header";
 import DayToChoose from "./DayToChoose";
-import Metricsv2 from "./Metricsv2";
+import Metrics from "./Metrics";
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Tutorial from "./Tutorial";
 import DisplayTutorial from "./DisplayTutorial";
-
+import ProactiveInstruction from "./ProactiveInstruction";
 function App() {
   const [name, setName] = useState(null);
 
@@ -19,7 +19,7 @@ function App() {
             <DayToChoose />
           </Route>
           <Route path="/metrics">
-            <Metricsv2 />
+            <Metrics />
           </Route>
           <Route path="/instructions">
             <Instructions />
@@ -30,6 +30,10 @@ function App() {
           <Route path="/displaytutorial">
             <DisplayTutorial />
           </Route>
+          <Route path="/proactiveinstruction">
+            <ProactiveInstruction />
+          </Route>
+
         </Switch>
       </Router>
     </div>
