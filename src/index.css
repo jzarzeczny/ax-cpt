@@ -208,9 +208,34 @@ form > button {
   justify-content: center;
   align-items: center;
 }
-.box > p {
-  font-size: 2em;
-}
+
 .letterInBox {
+  font-size: 2em;
   white-space: pre-wrap;
+}
+
+/* Instructions of proactive task */
+.container {
+  max-width: 700px;
+  display: flex;
+  flex-flow: column wrap;
+}
+.instructionBox {
+  display: flex;
+  margin: 20px auto;
+  width: 300px;
+  height: 300px;
+  border: 3px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.space {
+  margin: 40px auto;
+  font-weight: 500;
 }

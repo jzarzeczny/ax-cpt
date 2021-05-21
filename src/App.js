@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import InstructionsTutorial from "./strategy/tutorial/InstructionsTutorial";
 import DisplayTutorial from "./strategy/tutorial/DisplayTutorial";
 import ProactiveInstruction from "./strategy/proactive/InstructionsProactive";
+import DisplayProactive from "./strategy/proactive/DisplayProactive";
 function App() {
   const [name, setName] = useState(null);
 
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/instructionsproactive">
             <ProactiveInstruction />
+          </Route>
+          <Route path="/displayproactive">
+            <DisplayProactive />
           </Route>
         </Switch>
       </Router>
