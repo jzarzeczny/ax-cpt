@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const Tutorial = () => {
-  const [phase, setPhase] = useState(0);
+  const [phase, setPhase] = useState(-1);
 
   let history = useHistory();
 
@@ -13,10 +13,19 @@ const Tutorial = () => {
   }
   let content;
   function displayInstructions(phase) {
+    if (phase === -1) {
+      return (
+        <>
+          <h2>Zaraz zacznie się pierwsze zadanie</h2>
+          <p>Zapoznaj się proszę ponownie z instrukcją.</p>
+        </>
+      );
+    }
+
     if (phase === 0) {
       return (
         <>
-          <h3>Wytyczne zadania!</h3>
+          <h3>Wytyczne do pierwszego zadania</h3>
           <ul>
             <li>
               Pamiętaj aby zawsze nacisnąć przycisk 1 (klawisz A) po pojawieni
@@ -49,7 +58,7 @@ const Tutorial = () => {
       return (
         <>
           <div className="instructionBox">
-            <p className="letterInBox">"+ + +"</p>
+            <p className="letterInBox">+ + +</p>
           </div>
         </>
       );
@@ -97,7 +106,7 @@ const Tutorial = () => {
       return (
         <>
           <div className="instructionBox">
-            <p className="letterInBox">"+ + +"</p>
+            <p className="letterInBox">+ + +</p>
           </div>
         </>
       );
@@ -145,7 +154,7 @@ const Tutorial = () => {
       return (
         <>
           <div className="instructionBox">
-            <p className="letterInBox">"+ + +"</p>
+            <p className="letterInBox">+ + +</p>
           </div>
         </>
       );

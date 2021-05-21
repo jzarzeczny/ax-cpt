@@ -31,11 +31,11 @@ async function waitForResponse() {
 
 const useDisplayLogic = (data, route) => {
   const [value, setValue] = useState();
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
     async function controlOfDisplay(i) {
-      const reaction ={}
+      const reaction = {};
 
       if (i < data.length) {
         //Initial display of clue
@@ -52,15 +52,15 @@ const useDisplayLogic = (data, route) => {
         //3s passed, display of probe
         setValue(data[i].probe);
         // Start the measure of reaction time
-        reaction.start = Date.now()
+        reaction.start = Date.now();
         //Waiting for response of participant
         const response = await waitForResponse();
         //Response happen ether Button1 or Button2
         if (response === "A" || response === "L") {
           // End of the measure of reaction time
-          reaction.end = Date.now()
+          reaction.end = Date.now();
           // Saving the data about reaction time
-          data[i].reactionTime = reaction.end - reaction.start+'ms';
+          data[i].reactionTime = reaction.end - reaction.start + "ms";
           // Saving response data
 
           data[i].response = response;
@@ -73,8 +73,8 @@ const useDisplayLogic = (data, route) => {
         }
         // Iterated over whole set
       } else {
-        alert(JSON.stringify(data, null, 2));
-        history.push(route)
+        console.log(JSON.stringify(data, null, 2));
+        history.push(route);
       }
     }
 

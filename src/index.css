@@ -220,6 +220,14 @@ form > button {
   display: flex;
   flex-flow: column wrap;
 }
+
+.container > h3 {
+  margin-bottom: 30px;
+  align-self: center;
+}
+ul > li {
+  margin-bottom: 15px;
+}
 .instructionBox {
   display: flex;
   margin: 20px auto;
