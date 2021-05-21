@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
+import l1 from "../images/l2.jpg";
 
 async function sleep(ms) {
   return new Promise((resolve) => {
@@ -32,12 +33,17 @@ async function waitForResponse() {
 const useDisplayLogic = (data, route) => {
   const [value, setValue] = useState();
   const history = useHistory();
-
   useEffect(() => {
     async function controlOfDisplay(i) {
       const reaction = {};
+      console.log(data[i]);
 
       if (i < data.length) {
+        if (data.affectId !== null) {
+          console.log("im in loop");
+          setValue(<img src={l1} alt="images of something"></img>);
+          await sleep(3000);
+        }
         //Initial display of clue
         setValue(data[i].clue);
         //Waiting for response of user

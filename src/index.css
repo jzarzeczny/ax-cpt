@@ -214,6 +214,11 @@ form > button {
   white-space: pre-wrap;
 }
 
+img {
+  max-width: 70vw;
+  max-height: 70vh;
+}
+
 /* Instructions of proactive task */
 .container {
   max-width: 700px;
