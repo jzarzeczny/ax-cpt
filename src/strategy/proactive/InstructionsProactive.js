@@ -195,7 +195,7 @@ const Tutorial = () => {
     } else if (phase === 14) {
       return history.push({
         pathname: "/displayproactive",
-        state: { trail: 1 },
+        trail: 1,
       });
     }
   }

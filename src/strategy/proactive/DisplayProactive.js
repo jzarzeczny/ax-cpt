@@ -1,10 +1,15 @@
+import { useLocation } from "react-router";
 import data from "../../data/proactive";
 import useDisplayLogic from "../useDisplayLogic";
 
-const DisplayProactive = (props) => {
-  const route = "/middlep";
+const DisplayProactive = () => {
+  const location = useLocation();
 
-  console.log(props.trail);
+  const route = () => {
+    if (location.trail === 1) return "/middlep";
+    else if (location.trail === 2) return "/endp";
+  };
+
   const value = useDisplayLogic(data, route);
 
   return (

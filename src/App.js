@@ -41,6 +41,9 @@ function App() {
           <Route path="/middlep">
             <MiddleProactive />
           </Route>
+          <Route path="/endp">
+            <MiddleProactive />
+          </Route>
         </Switch>
       </Router>
     </div>
