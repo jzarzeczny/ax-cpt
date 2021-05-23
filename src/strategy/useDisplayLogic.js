@@ -29,7 +29,9 @@ async function waitForResponse() {
     });
   });
 }
+console.log(images);
 
+//Something to impove later on.
 const values = Object.values(images);
 
 const useDisplayLogic = (data, route) => {

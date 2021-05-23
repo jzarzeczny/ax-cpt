@@ -8,6 +8,7 @@ import InstructionsTutorial from "./strategy/tutorial/InstructionsTutorial";
 import DisplayTutorial from "./strategy/tutorial/DisplayTutorial";
 import ProactiveInstruction from "./strategy/proactive/InstructionsProactive";
 import DisplayProactive from "./strategy/proactive/DisplayProactive";
+import MiddleProactive from "./strategy/proactive/MiddleProactive";
 function App() {
   const [name, setName] = useState(null);
 
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/displayproactive">
             <DisplayProactive />
+          </Route>
+          <Route path="/middlep">
+            <MiddleProactive />
           </Route>
         </Switch>
       </Router>

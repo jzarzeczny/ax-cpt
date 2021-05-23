@@ -193,10 +193,12 @@ const Tutorial = () => {
         </>
       );
     } else if (phase === 14) {
-      return history.push("/displayproactive");
+      return history.push({
+        pathname: "/displayproactive",
+        state: { trail: 1 },
+      });
     }
   }
-
   content = displayInstructions(phase);
 
   useEffect(() => {
@@ -206,7 +208,6 @@ const Tutorial = () => {
       document.removeEventListener("keydown", handleKey);
     };
   });
-  console.log(phase);
   return (
     <div className="paper">
       <div className="container">

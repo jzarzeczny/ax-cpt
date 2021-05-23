@@ -9,4 +9,6 @@ import l8 from "./l8.jpg";
 import l9 from "./l9.jpg";
 import l10 from "./l10.jpg";
 
-export default { l1, l2, l3, l4, l5, l6, l7, l8, l9, l10 };
+const images = [l1, l2, l3, l4, l5, l6, l7, l8, l9, l10];
+
+export default images;
