@@ -1,15 +1,26 @@
 import { useLocation } from "react-router";
-import data from "../../data/proactive";
+import lowApproachData from "../../data/lowApproachProactive";
+import highApproachData from "../../data/highApproachhProactive";
+
 import useDisplayLogic from "../useDisplayLogic";
 
 const DisplayProactive = () => {
   const location = useLocation();
 
-  const route = () => {
-    if (location.trail === 1) return "/middlep";
-    else if (location.trail === 2) return "/endp";
-  };
+  let data = null;
+  let route = null;
 
+  function determineRoute(trail) {
+    if (trail === 1) {
+      data = lowApproachData;
+      route = "/middlep";
+    } else if (trail === 2) {
+      data = highApproachData;
+      route = "/endp";
+    }
+  }
+
+  determineRoute(location.trail);
   const value = useDisplayLogic(data, route);
 
   return (

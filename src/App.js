@@ -9,6 +9,7 @@ import DisplayTutorial from "./strategy/tutorial/DisplayTutorial";
 import ProactiveInstruction from "./strategy/proactive/InstructionsProactive";
 import DisplayProactive from "./strategy/proactive/DisplayProactive";
 import MiddleProactive from "./strategy/proactive/MiddleProactive";
+import EndDay1 from "./strategy/proactive/EndDay1";
 function App() {
   const [name, setName] = useState(null);
 
@@ -42,7 +43,7 @@ function App() {
             <MiddleProactive />
           </Route>
           <Route path="/endp">
-            <MiddleProactive />
+            <EndDay1 />
           </Route>
         </Switch>
       </Router>
