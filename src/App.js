@@ -10,6 +10,9 @@ import ProactiveInstruction from "./strategy/proactive/InstructionsProactive";
 import DisplayProactive from "./strategy/proactive/DisplayProactive";
 import MiddleProactive from "./strategy/proactive/MiddleProactive";
 import EndDay1 from "./strategy/proactive/EndDay1";
+import IntroSecondDay from "./IntroDay2";
+import Tutorialsd from "./Tutorialsd";
+
 function App() {
   const [name, setName] = useState(null);
 
@@ -43,6 +46,21 @@ function App() {
             <MiddleProactive />
           </Route>
           <Route path="/endp">
+            <EndDay1 />
+          </Route>
+          <Route path="/introsd">
+            <IntroSecondDay />
+          </Route>
+          <Route path="/instructionsreactive">
+            <ReactiveInstruction />
+          </Route>
+          <Route path="/displayreactive">
+            <DisplayProactive />
+          </Route>
+          <Route path="/middler">
+            <MiddleProactive />
+          </Route>
+          <Route path="/endr">
             <EndDay1 />
           </Route>
         </Switch>
