@@ -194,7 +194,7 @@ const Tutorial = () => {
       );
     } else if (phase === 14) {
       return history.push({
-        pathname: "/displayproactive",
+        pathname: "/displayreactive",
         trail: 1,
       });
     }

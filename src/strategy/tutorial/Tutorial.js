@@ -2,7 +2,7 @@ import data from "../../data/tutorial";
 import useDisplayLogic from "../useDisplayLogic";
 
 const Trening = () => {
-  const route = "/instructionsproactive";
+  const route = "/instructionsreactive";
 
   const value = useDisplayLogic(data, route);
 

@@ -13,23 +13,17 @@ const DisplayReactive = () => {
   function determineRoute(trail) {
     if (trail === 1) {
       data = lowApproachData;
-      route = "/middlep";
+      route = "/middler";
     } else if (trail === 2) {
       data = highApproachData;
-      route = "/endp";
+      route = "/endr";
     }
   }
 
   determineRoute(location.trail);
   const value = useDisplayLogic(data, route);
 
-  return (
-    <div className="paper">
-      <div className="box">
-        <p className="letterInBox">{value}</p>
-      </div>
-    </div>
-  );
+  return <div className="paper">{value}</div>;
 };
 
 export default DisplayReactive;

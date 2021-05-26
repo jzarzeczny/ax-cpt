@@ -91,7 +91,11 @@ const useDisplayLogic = (data, route) => {
     controlOfDisplay(0);
   }, []);
 
-  return value;
+  return (
+    <div className="box">
+      <p className="letterInBox">{value}</p>
+    </div>
+  );
 };
 
 export default useDisplayLogic;
