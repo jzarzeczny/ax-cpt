@@ -36,7 +36,12 @@ const values = Object.values(images);
 
 const useDisplayLogic = (data, route) => {
   const [value, setValue] = useState();
+  const [border, setBorder] = useState(false);
   const history = useHistory();
+  if (data === null) {
+    history.push("/wentwrong");
+  }
+
   useEffect(() => {
     async function controlOfDisplay(i) {
       const reaction = {};
@@ -49,17 +54,20 @@ const useDisplayLogic = (data, route) => {
           await sleep(3000);
         }
         //Initial display of clue
+        setBorder(true);
         setValue(data[i].clue);
         //Waiting for response of user
         const clueSeen = await waitForClue();
         //Response came
         if (clueSeen) {
-          //Display the wait-for-probe template
+          //Display the wait-for-probe template without the border
+          setBorder(false);
           setValue("+ + +");
           //Display for 3s
           await sleep(3000);
         }
         //3s passed, display of probe
+        setBorder(true);
         setValue(data[i].probe);
         // Start the measure of reaction time
         reaction.start = Date.now();
@@ -75,6 +83,7 @@ const useDisplayLogic = (data, route) => {
 
           data[i].response = response;
           // Waiting for new set for 3s
+          setBorder(false);
           setValue("  +\n+  +");
           await sleep(3000);
 
@@ -92,7 +101,7 @@ const useDisplayLogic = (data, route) => {
   }, []);
 
   return (
-    <div className="box">
+    <div className={`box ${border ? "border" : ""}`}>
       <p className="letterInBox">{value}</p>
     </div>
   );

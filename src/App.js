@@ -17,6 +17,7 @@ import EndDay2 from "./EndDay2";
 
 import IntroSecondDay from "./IntroDay2";
 import ReactiveInstruction from "./strategy/reactive/InstructionsReactive";
+import My404 from "./My404";
 
 function App() {
   const [name, setName] = useState(null);
@@ -67,6 +68,9 @@ function App() {
           </Route>
           <Route path="/endr">
             <EndDay1 />
+          </Route>
+          <Route path="*">
+            <My404 />
           </Route>
         </Switch>
       </Router>
