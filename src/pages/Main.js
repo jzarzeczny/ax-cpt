@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 const Main = () => {
   return (
     <div className="mainPage">
+      <Header />
+
       <Link to="/metrics" className="mainPage__card">
         <h2>Pierwszy dzień badania</h2>
         <p>

@@ -1,7 +1,7 @@
 import Agreement from "./Agreement";
 import Header from "./components/Header";
 import Main from "./pages/Main";
-import Metrics from "./Metrics";
+import Metrics from "./pages/Metrics";
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import InstructionsTutorial from "./strategy/tutorial/InstructionsTutorial";
@@ -19,12 +19,9 @@ import IntroSecondDay from "./IntroDay2";
 import ReactiveInstruction from "./strategy/reactive/InstructionsReactive";
 
 function App() {
-  const [name, setName] = useState(null);
-
   return (
     <div className="App">
       <Router>
-        <Header name={name} />
         <Switch>
           <Route exact path="/">
             <Main />
