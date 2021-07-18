@@ -1,6 +1,6 @@
 import Agreement from "./Agreement";
-import Header from "./Header";
-import DayToChoose from "./DayToChoose";
+import Header from "./components/Header";
+import Main from "./pages/Main";
 import Metrics from "./Metrics";
 import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -27,7 +27,7 @@ function App() {
         <Header name={name} />
         <Switch>
           <Route exact path="/">
-            <DayToChoose />
+            <Main />
           </Route>
           <Route path="/metrics">
             <Metrics />

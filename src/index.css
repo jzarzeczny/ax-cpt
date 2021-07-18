@@ -12,12 +12,69 @@
   font-family: "Quicksand";
   color: #333;
   font-size: 20px;
+  box-sizing: border-box;
 }
 
 h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
 }
+
+/* Initial styling */
+.App {
+  height: 100vh;
+}
+/*  */
+/* Pages styling */
+/*  */
+
+/* Styling of main page  */
+
+.mainPage {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.mainPage__card {
+  border: 2px var(--carolina-blue) solid;
+  padding: 30px;
+  width: 450px;
+  height: 400px;
+  box-shadow: 0px 0px 2px 5px rgba(0, 52, 89, 0.55);
+  text-decoration: none;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  transition: margin-bottom 0.3s ease-in-out;
+}
+.mainPage__card h2 {
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+
+  transition: text-decoration-color 0.3s ease-in-out;
+}
+
+.mainPage__card p {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+.mainPage__card li {
+  font-size: 0.8rem;
+}
+.mainPage__card:hover {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.mainPage__card:hover h2 {
+  text-decoration-color: black;
+}
+
+/*  */
+/* Styling of components */
+/*  */
 
 /* Header */
 
@@ -27,19 +84,19 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 8px;
+  height: 50px;
 }
 header p {
   font-weight: 500;
   color: white;
 }
 
-/* General button styling */
+/* Button */
 .btn {
   background-color: var(--carolina-blue);
   color: #fff;
   font-weight: 600;
   padding: 15px;
-  margin: 30px auto;
   border: 2px solid var(--prussian-blue);
   border-radius: 8px;
   text-decoration: none;
@@ -51,44 +108,23 @@ header p {
   border: 2px solid var(--carolina-blue);
   text-decoration: none;
 }
-
-.homePageButton {
-  align-self: flex-start;
-  font-weight: 500;
-  border: 1px solid var(--prussian-blue);
-  border-radius: 10px;
-  padding: 8px;
+.btn--small {
+  transform: scale(0.6);
+  transition: all 0.4s ease-in-out;
+  transition-property: margin-bottom, border;
 }
-.homePageButton:hover,
-.homePageButton:active {
-  cursor: pointer;
+.btn--white {
+  color: #000;
   background-color: #fff;
-  border: 1px solid var(--carolina-blue);
-  text-decoration: none;
+}
+.btn--white:hover,
+.btn--white:active {
+  border: 2px solid var(--carolina-blue);
+  color: #000;
+  background-color: #fff;
+  margin-bottom: 2px;
 }
 
-/* Content of home page - choose your day */
-
-.containerOfDayToChoose {
-  margin: 10% auto;
-  width: 1000px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-.card {
-  border: 2px var(--carolina-blue) solid;
-  padding: 30px;
-  width: 450px;
-  height: 400px;
-}
-.card p {
-  text-align: justify;
-}
-.containerOfDayToChoose button:hover {
-  box-shadow: 1px 1px 1px 3px rgba(0, 52, 89, 0.55);
-  cursor: pointer;
-}
 /* --- */
 /* Instruction and agreement */
 /* --- */
