@@ -1,26 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TutorialBox from "../components/TutorialBox";
 import jsonData from "../public/tutorialText.json";
 
-async function handleKey(e) {
-  if (e.key === " ") {
-    console.log("Spacja!");
-  }
-}
-
 const data = [...jsonData];
-console.log(data);
+
 export default function Tutorial() {
   const [phase, setPhase] = useState(0);
+  const [tutorialDone, setTutorialDone] = useState(false);
+  function handleKey(e) {
+    if (e.key === " ") {
+      setPhase(phase + 1);
+      console.log(phase);
+      console.log(data.length);
+    }
+  }
+  useEffect(() => {
+    if (phase === data.length) {
+      setTutorialDone(true);
+    }
+  }, [phase]);
+
   return (
     <div className="container">
-      <TutorialBox
-        boxVisible={true}
-        boxContent="A"
-        header="Sprawdzam czy działa"
-        para="Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur assumenda tenetur minima cumque? Quam veniam in, maiores reprehenderit impedit, quidem, veritatis eveniet ipsum libero ea rerum similique mollitia aspernatur."
-        func={handleKey}
-      />
+      {!tutorialDone && (
+        <TutorialBox
+          boxVisible={data[phase].boxVisible}
+          boxContent={data[phase].boxContent}
+          header={data[phase].header}
+          para={data[phase].para}
+          func={handleKey}
+        />
+      )}
+      {tutorialDone && <h1>Counting now!</h1>}
     </div>
   );
 }

@@ -233,7 +233,7 @@ header p {
   justify-content: center;
   align-items: center;
 }
-.tutorial__box-visible {
+.tutorial__box--visible {
   display: flex;
 }
 .tutorial__letter {
@@ -252,9 +252,11 @@ header p {
   text-align: justify;
 }
 .tutorial__alert {
-  align-self: center;
-  margin-top: 1rem;
+  position: absolute;
   text-decoration: underline;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 /* Intruction styling */

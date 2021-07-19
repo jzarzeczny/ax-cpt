@@ -16,13 +16,22 @@ export default function TutorialBox({
   });
   return (
     <div className="tutorial__container">
-      <div className={`tutorial__box ${boxVisible && "tutorial__box-visible"}`}>
-        <p className="tutorial__letter">{boxContent}</p>
+      <div
+        data-testid="tutorial__box"
+        className={`tutorial__box ${boxVisible && "tutorial__box--visible"}`}
+      >
+        <p data-testid="tutorial__letter" className="tutorial__letter">
+          {boxContent}
+        </p>
       </div>
       <div className="tutorial__text">
-        <h3 className="tutorial__header">{header}</h3>
-        <p className="tutorial__para">{para}</p>
-        <p className="tutorial__alert">
+        <h3 data-testid="tutorial__header" className="tutorial__header">
+          {header}
+        </h3>
+        <p data-testid="tutorial__para" className="tutorial__para">
+          {para}
+        </p>
+        <p data-testid="tutorial__alert" className="tutorial__alert">
           <strong>Naciśnij Spację aby kontyunować</strong>
         </p>
       </div>
