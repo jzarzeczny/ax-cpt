@@ -214,54 +214,47 @@ header p {
   margin-bottom: 2px;
 }
 
-/* --- */
-/* Instruction and agreement */
-/* --- */
+/* TutorialBox */
 
-.instructions {
-  padding: 50px;
-  margin: 40px auto;
-  max-width: 800px;
-  border: 1px solid var(--prussian-blue);
-  border-radius: 15px;
+.tutorial__container {
+  height: 400px;
+  width: 500px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.instructions h2 {
-  text-align: left;
+.tutorial__box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
-
-.instructions .key-info {
-  margin-top: 20px;
-  color: var(--carolina-blue);
-  text-decoration: underline;
-  text-decoration-color: red;
+.tutorial__box-visible {
+  display: flex;
 }
-
-.instructions p {
-  margin-top: 20px;
+.tutorial__letter {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.tutorial__text {
+  display: flex;
+  flex-direction: column;
+}
+.tutorial__header {
+  align-self: center;
+  margin-bottom: 1rem;
+}
+.tutorial__para {
   text-align: justify;
 }
-
-.agree {
-  margin-top: 20px;
-  position: relative;
-}
-
-.agree label {
-  font-size: 1.2em;
-  margin-right: 15px;
-}
-/* Instruction -> checkbox styling */
-#agreement {
-  transform: scale(1.3);
-}
-
-/* Styling of button at the end of page */
-.buttonWrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.tutorial__alert {
+  align-self: center;
+  margin-top: 1rem;
+  text-decoration: underline;
 }
 
 /* Intruction styling */

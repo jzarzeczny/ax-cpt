@@ -209,8 +209,8 @@ const Tutorial = () => {
     };
   });
   return (
-    <div className="paper">
-      <div className="container">
+    <div className="container">
+      <div className="formContainer">
         {content}
 
         <p className="space">Naciśnij SPACJĘ aby kontynuować</p>

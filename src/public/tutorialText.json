@@ -1,0 +1,19 @@
+[
+    {
+        "boxVisible":true,
+        "boxContent": "A",
+        "header": "Tytuł nr 1",
+        "para": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur assumenda tenetur minima cumque? Quam veniam in, maiores reprehenderit impedit, quidem, veritatis eveniet ipsum libero ea rerum similique mollitia aspernatur."
+
+    },
+    {
+        "boxVisible":false,
+        "boxContent": "B",
+        "header": "Tytuł nr 1",
+        "para": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur assumenda tenetur minima cumque? Quam veniam in, maiores reprehenderit impedit, quidem, veritatis eveniet ipsum libero ea rerum similique mollitia aspernatur."
+
+    }
+
+]
+
+ 

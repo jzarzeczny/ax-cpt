@@ -15,6 +15,7 @@ import EndDay2 from "./EndDay2";
 
 import IntroSecondDay from "./IntroDay2";
 import ReactiveInstruction from "./strategy/reactive/InstructionsReactive";
+import Tutorial from "./pages/Tutorial";
 
 function App() {
   return (
@@ -62,6 +63,9 @@ function App() {
           </Route>
           <Route path="/endr">
             <EndDay1 />
+          </Route>
+          <Route path="/testing">
+            <Tutorial />
           </Route>
         </Switch>
       </Router>
