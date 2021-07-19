@@ -1,8 +1,6 @@
-import Agreement from "./Agreement";
-import Header from "./components/Header";
+import Agreement from "./pages/Agreement";
 import Main from "./pages/Main";
 import Metrics from "./pages/Metrics";
-import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import InstructionsTutorial from "./strategy/tutorial/InstructionsTutorial";
 import DisplayTutorial from "./strategy/tutorial/DisplayTutorial";

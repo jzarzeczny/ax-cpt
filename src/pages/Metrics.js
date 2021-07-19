@@ -43,14 +43,13 @@ const Metrics = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     if (Object.keys(formData).length === 0) {
       setErrors(validate(formData));
     } else if (Object.keys(formData).length === 5) {
       setErrors(validate(formData));
       console.log(errors);
       if (JSON.stringify(errors) === "{}") {
-        console.log(JSON.stringify(formData, null, 2));
+        // console.log(JSON.stringify(formData, null, 2));
         history.push("/agreement");
       }
     } else {
@@ -70,8 +69,8 @@ const Metrics = () => {
         <h1>Metryczka</h1>
         <p>
           Poniżej znajduje się metryczka, pomoże ona w analizie wyników. Twoje
-          dane nie zostaną nikomu przekazane. Proszę, wypełnij ankietę zgodnie z
-          prawdą. 
+          dane nie zostaną nikomu udostępnione. Proszę, wypełnij ankietę zgodnie
+          z prawdą. 
         </p>
         <form onSubmit={handleSubmit}>
           <label>
