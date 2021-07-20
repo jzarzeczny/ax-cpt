@@ -9,13 +9,18 @@ async function sleep(ms) {
 }
 
 async function waitForClue() {
+  let waitForAnswer;
   return new Promise((resolve) => {
+    waitForAnswer = setTimeout(() => {
+      resolve("no answer");
+    }, 1000);
     document.addEventListener("keydown", (event) => {
       if (event.key === "a") {
         resolve(true);
       }
     });
-  });
+    waitForAnswer();
+  }).finally(clearTimeout(waitForAnswer));
 }
 
 async function waitForResponse() {
@@ -35,6 +40,7 @@ console.log(images);
 const values = Object.values(images);
 
 const useDisplayLogic = (data, route) => {
+  console.log(data);
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
   const history = useHistory();
