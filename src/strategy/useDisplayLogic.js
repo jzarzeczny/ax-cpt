@@ -9,26 +9,34 @@ async function sleep(ms) {
 }
 
 async function waitForClue() {
-  let waitForAnswer;
   return new Promise((resolve) => {
-    waitForAnswer = setTimeout(() => {
-      resolve("no answer");
-    }, 1000);
+    const waitForAnswer = () =>
+      setTimeout(() => {
+        resolve("no answer");
+        clearTimeout(waitForAnswer);
+      }, 1000);
+    waitForAnswer();
     document.addEventListener("keydown", (event) => {
       if (event.key === "a") {
         resolve(true);
       }
     });
-    waitForAnswer();
-  }).finally(clearTimeout(waitForAnswer));
+  });
 }
 
 async function waitForResponse() {
   return new Promise((resolve) => {
+    const waitForAnswer = () =>
+      setTimeout(() => {
+        resolve("no answer");
+        clearTimeout(waitForAnswer);
+      }, 1000);
+    waitForAnswer();
     document.addEventListener("keydown", (event) => {
       if (event.key === "a") {
         resolve("A");
-      } else if (event.key === "l") {
+      }
+      if (event.key === "l") {
         resolve("L");
       }
     });
@@ -66,6 +74,7 @@ const useDisplayLogic = (data, route) => {
         const clueSeen = await waitForClue();
         //Response came
         if (clueSeen) {
+          data[i].clueReaction = clueSeen;
           //Display the wait-for-probe template without the border
           setBorder(false);
           setValue("+ + +");
@@ -80,7 +89,7 @@ const useDisplayLogic = (data, route) => {
         //Waiting for response of participant
         const response = await waitForResponse();
         //Response happen ether Button1 or Button2
-        if (response === "A" || response === "L") {
+        if (response === "A" || response === "L" || response === "no answer") {
           // End of the measure of reaction time
           reaction.end = Date.now();
           // Saving the data about reaction time

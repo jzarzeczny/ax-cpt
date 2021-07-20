@@ -15,18 +15,11 @@ import EndDay2 from "./EndDay2";
 
 import IntroSecondDay from "./IntroDay2";
 import ReactiveInstruction from "./strategy/reactive/InstructionsReactive";
-<<<<<<< HEAD
-<<<<<<< HEAD
 import My404 from "./My404";
-=======
-import Tutorial from "./pages/Tutorial";
->>>>>>> 8d19a0c661a52536d1bb91a4e37816037d4bc6b9
-=======
->>>>>>> ec579f598352a29e3628afbdadb7900f255c8cf6
-
 // Temp import for testing, remove!!!!!!
 import testDataJSON from "./data/tutorial.json";
 import DisplayTest from "./components/DisplayTest";
+
 function App() {
   return (
     <div className="App">
@@ -74,20 +67,14 @@ function App() {
           <Route path="/endr">
             <EndDay1 />
           </Route>
-<<<<<<< HEAD
-          <Route path="*">
-            <My404 />
-=======
           <Route path="/testing">
-<<<<<<< HEAD
-            <Tutorial />
->>>>>>> 8d19a0c661a52536d1bb91a4e37816037d4bc6b9
-=======
             <DisplayTest
               route={testDataJSON.route}
               sequence={testDataJSON.sequence}
             />
->>>>>>> ec579f598352a29e3628afbdadb7900f255c8cf6
+          </Route>
+          <Route path="*">
+            <My404 />
           </Route>
         </Switch>
       </Router>
