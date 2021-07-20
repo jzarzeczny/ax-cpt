@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const Header = (props) => {
   function doIKnowYou(name) {
@@ -12,7 +13,7 @@ const Header = (props) => {
   return (
     <header>
       <Link to="/">
-        <button className="homePageButton">Strona główna</button>
+        <Button name={"Strona główna"} styling={"btn--small btn--white"} />
       </Link>
       <p>{doIKnowYou(props.name)}</p>
     </header>

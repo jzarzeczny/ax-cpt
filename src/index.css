@@ -11,7 +11,8 @@
   margin: 0;
   font-family: "Quicksand";
   color: #333;
-  font-size: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 h2 {
@@ -19,27 +20,172 @@ h2 {
   margin-bottom: 20px;
 }
 
+/* Initial styling */
+.App {
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*  */
+/* Pages styling */
+/*  */
+
+/* Styling of Main page  */
+
+.mainPage {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.mainPage__card {
+  border: 2px var(--carolina-blue) solid;
+  padding: 30px;
+  width: 450px;
+  height: 400px;
+  box-shadow: 0px 0px 2px 5px rgba(0, 52, 89, 0.55);
+  text-decoration: none;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  transition: margin-bottom 0.3s ease-in-out;
+}
+.mainPage__card h2 {
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+
+  transition: text-decoration-color 0.3s ease-in-out;
+}
+
+.mainPage__card p {
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+.mainPage__card li {
+  font-size: 0.8rem;
+}
+.mainPage__card:hover {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.mainPage__card:hover h2 {
+  text-decoration-color: black;
+}
+
+/* Styling of Metric page */
+
+.formContainer,
+.agreementContainer {
+  padding: 2rem;
+  border: 3px solid var(--carolina-blue);
+  border-radius: 10px;
+}
+.formContainer form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.formContainer label {
+  margin: 20px 20px 0;
+}
+.formContainer label > input,
+.formContainer label > select {
+  margin-left: 10px;
+}
+.error {
+  color: red;
+  margin-left: 20px;
+}
+
+.formContainer form > button {
+  width: 200px;
+  margin: 20px auto 0;
+}
+
+/* Styling od Agreement page */
+
+.agreementContainer {
+  padding: 50px;
+  margin: 40px auto;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.agreementContainer h2 {
+  text-align: left;
+}
+
+.agreementContainer .key-info {
+  color: var(--carolina-blue);
+  margin-top: 1rem;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+.agreementContainer p {
+  text-align: justify;
+}
+
+.agree {
+  position: relative;
+}
+.agreementContainer form {
+  align-self: center;
+  margin-bottom: 1rem;
+}
+.agree label {
+  font-size: 1.2em;
+  margin-right: 15px;
+}
+
+#agreement {
+  transform: scale(1.2);
+}
+.agreementContainer a {
+  align-self: center;
+}
+
+/*  */
+/* Styling of components */
+/*  */
+
 /* Header */
 
 header {
   background-color: var(--carolina-blue);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px;
+  height: 50px;
 }
 header p {
   font-weight: 500;
   color: white;
 }
 
-/* General button styling */
+/* Button */
 .btn {
   background-color: var(--carolina-blue);
   color: #fff;
   font-weight: 600;
   padding: 15px;
-  margin: 30px auto;
   border: 2px solid var(--prussian-blue);
   border-radius: 8px;
   text-decoration: none;
@@ -51,121 +197,68 @@ header p {
   border: 2px solid var(--carolina-blue);
   text-decoration: none;
 }
-
-.homePageButton {
-  align-self: flex-start;
-  font-weight: 500;
-  border: 1px solid var(--prussian-blue);
-  border-radius: 10px;
-  padding: 8px;
+.btn--small {
+  transform: scale(0.6);
+  transition: all 0.4s ease-in-out;
+  transition-property: margin-bottom, border;
 }
-.homePageButton:hover,
-.homePageButton:active {
-  cursor: pointer;
+.btn--white {
+  color: #000;
   background-color: #fff;
-  border: 1px solid var(--carolina-blue);
-  text-decoration: none;
+}
+.btn--white:hover,
+.btn--white:active {
+  border: 2px solid var(--carolina-blue);
+  color: #000;
+  background-color: #fff;
+  margin-bottom: 2px;
 }
 
-/* Content of home page - choose your day */
+/* TutorialBox */
 
-.containerOfDayToChoose {
-  margin: 10% auto;
-  width: 1000px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-.card {
-  border: 2px var(--carolina-blue) solid;
-  padding: 30px;
-  width: 450px;
+.tutorial__container {
   height: 400px;
-}
-.card p {
-  text-align: justify;
-}
-.containerOfDayToChoose button:hover {
-  box-shadow: 1px 1px 1px 3px rgba(0, 52, 89, 0.55);
-  cursor: pointer;
-}
-/* --- */
-/* Instruction and agreement */
-/* --- */
-
-.instructions {
-  padding: 50px;
-  margin: 40px auto;
-  max-width: 800px;
-  border: 1px solid var(--prussian-blue);
-  border-radius: 15px;
-}
-
-.instructions h2 {
-  text-align: left;
-}
-
-.instructions .key-info {
-  margin-top: 20px;
-  color: var(--carolina-blue);
-  text-decoration: underline;
-  text-decoration-color: red;
-}
-
-.instructions p {
-  margin-top: 20px;
-  text-align: justify;
-}
-
-.agree {
-  margin-top: 20px;
-  position: relative;
-}
-
-.agree label {
-  font-size: 1.2em;
-  margin-right: 15px;
-}
-/* Instruction -> checkbox styling */
-#agreement {
-  transform: scale(1.3);
-}
-
-/* Styling of button at the end of page */
-.buttonWrapper {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Form styling */
-.form-container,
-.instruction-container {
-  width: 1200px;
-  margin: 40px auto;
-  padding: 40px;
-  border: 3px solid var(--carolina-blue);
-  border-radius: 10px;
-}
-form {
+  width: 500px;
   display: flex;
   flex-flow: column nowrap;
-}
-label {
-  margin: 30px 20px 10px 20px;
-}
-label > input,
-label > select {
-  margin-left: 10px;
-}
-.error {
-  color: red;
-  margin-left: 20px;
+  justify-content: space-around;
+  align-items: center;
 }
 
-form > button {
+.tutorial__box {
   width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.tutorial__box--visible {
+  display: flex;
+}
+.tutorial__letter {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+.tutorial__text {
+  display: flex;
+  flex-direction: column;
+}
+.tutorial__header {
+  align-self: center;
+  margin-bottom: 1rem;
+}
+.tutorial__para {
+  text-align: justify;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+.tutorial__alert {
+  position: absolute;
+  text-decoration: underline;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 /* Intruction styling */
@@ -223,11 +316,11 @@ img {
 }
 
 /* Instructions of proactive task */
-.container {
+/* .container {
   max-width: 700px;
   display: flex;
   flex-flow: column wrap;
-}
+} */
 
 .container > h3 {
   margin-bottom: 30px;

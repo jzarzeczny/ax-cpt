@@ -1,8 +1,6 @@
-import Agreement from "./Agreement";
-import Header from "./Header";
-import DayToChoose from "./DayToChoose";
-import Metrics from "./Metrics";
-import { useState } from "react";
+import Agreement from "./pages/Agreement";
+import Main from "./pages/Main";
+import Metrics from "./pages/Metrics";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import InstructionsTutorial from "./strategy/tutorial/InstructionsTutorial";
 import DisplayTutorial from "./strategy/tutorial/DisplayTutorial";
@@ -17,18 +15,19 @@ import EndDay2 from "./EndDay2";
 
 import IntroSecondDay from "./IntroDay2";
 import ReactiveInstruction from "./strategy/reactive/InstructionsReactive";
+<<<<<<< HEAD
 import My404 from "./My404";
+=======
+import Tutorial from "./pages/Tutorial";
+>>>>>>> 8d19a0c661a52536d1bb91a4e37816037d4bc6b9
 
 function App() {
-  const [name, setName] = useState(null);
-
   return (
     <div className="App">
       <Router>
-        <Header name={name} />
         <Switch>
           <Route exact path="/">
-            <DayToChoose />
+            <Main />
           </Route>
           <Route path="/metrics">
             <Metrics />
@@ -69,8 +68,13 @@ function App() {
           <Route path="/endr">
             <EndDay1 />
           </Route>
+<<<<<<< HEAD
           <Route path="*">
             <My404 />
+=======
+          <Route path="/testing">
+            <Tutorial />
+>>>>>>> 8d19a0c661a52536d1bb91a4e37816037d4bc6b9
           </Route>
         </Switch>
       </Router>
