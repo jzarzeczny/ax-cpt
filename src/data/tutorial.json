@@ -6,16 +6,18 @@
       "clue": "A",
       "probe": "X",
       "warriety": "AX",
-      "response": null,
+      "clueResponse": null,
+      "probeResponse": null,
       "reactionTime": null,
       "affectId": null
     },
     {
       "id": 2,
       "clue": "A",
+      "clueResponse": null,
+      "probeResponse": null,
       "probe": "B",
       "warriety": "AY",
-      "response": null,
       "reactionTime": null,
       "affectId": null
     },
@@ -24,7 +26,8 @@
       "clue": "B",
       "probe": "X",
       "warriety": "BX",
-      "response": null,
+      "clueResponse": null,
+      "probeResponse": null,
       "reactionTime": null,
       "affectId": null
     },
@@ -33,7 +36,8 @@
       "clue": "B",
       "probe": "Y",
       "warriety": "BY",
-      "response": null,
+      "clueResponse": null,
+      "probeResponse": null,
       "reactionTime": null,
       "affectId": null
     },
@@ -41,8 +45,9 @@
       "id": 5,
       "clue": "B",
       "probe": "0",
-      "warriety": "BY",
-      "response": null,
+      "warriety": "No-go",
+      "clueResponse": null,
+      "probeResponse": null,
       "reactionTime": null,
       "affectId": null
     }

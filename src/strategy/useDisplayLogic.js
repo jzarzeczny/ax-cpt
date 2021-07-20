@@ -72,7 +72,7 @@ const useDisplayLogic = (data, getData) => {
         const clueSeen = await waitForClue();
         //Response came
         if (clueSeen) {
-          data[i].clueReaction = clueSeen;
+          data[i].clueResponse = clueSeen;
           //Display the wait-for-probe template without the border
           setBorder(false);
           setValue("+ + +");
