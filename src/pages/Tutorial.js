@@ -5,7 +5,6 @@ import DisplayTest from "../components/DisplayTest";
 import testDataJSON from "../data/tutorial.json";
 const data = [...jsonData];
 // const testData = JSON.parse(testDataJSON);
-console.log(testDataJSON.sequence);
 export default function Tutorial() {
   const [phase, setPhase] = useState(0);
   const [tutorialDone, setTutorialDone] = useState(false);
