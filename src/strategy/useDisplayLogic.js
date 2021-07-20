@@ -35,6 +35,7 @@ console.log(images);
 const values = Object.values(images);
 
 const useDisplayLogic = (data, route) => {
+  console.log(data);
   const [value, setValue] = useState();
   const history = useHistory();
   useEffect(() => {

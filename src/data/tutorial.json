@@ -1,47 +1,52 @@
-[
-  {
-    "id": 1,
-    "clue": "A",
-    "probe": "X",
-    "warriety": "AX",
-    "response": null,
-    "reactionTime": null,
-    "affectId": null
-  },
-  {
-    "id": 2,
-    "clue": "A",
-    "probe": "Y",
-    "warriety": "AY",
-    "response": null,
-    "reactionTime": null,
-    "affectId": null
-  },
-  {
-    "id": 3,
-    "clue": "B",
-    "probe": "X",
-    "warriety": "BX",
-    "response": null,
-    "reactionTime": null,
-    "affectId": null
-  },
-  {
-    "id": 4,
-    "clue": "B",
-    "probe": "Y",
-    "warriety": "BY",
-    "response": null,
-    "reactionTime": null,
-    "affectId": null
-  },
-  {
-    "id": 5,
-    "clue": "B",
-    "probe": "Y",
-    "warriety": "BY",
-    "response": null,
-    "reactionTime": null,
-    "affectId": null
-  }
-]
+{
+  "route":"/testing",
+  "sequence": [
+    {
+      "id": 1,
+      "clue": "A",
+      "probe": "X",
+      "warriety": "AX",
+      "response": null,
+      "reactionTime": null,
+      "affectId": null
+    },
+    {
+      "id": 2,
+      "clue": "A",
+      "probe": "B",
+      "warriety": "AY",
+      "response": null,
+      "reactionTime": null,
+      "affectId": null
+    },
+    {
+      "id": 3,
+      "clue": "B",
+      "probe": "X",
+      "warriety": "BX",
+      "response": null,
+      "reactionTime": null,
+      "affectId": null
+    },
+    {
+      "id": 4,
+      "clue": "B",
+      "probe": "Y",
+      "warriety": "BY",
+      "response": null,
+      "reactionTime": null,
+      "affectId": null
+    },
+    {
+      "id": 5,
+      "clue": "B",
+      "probe": "0",
+      "warriety": "BY",
+      "response": null,
+      "reactionTime": null,
+      "affectId": null
+    }
+  
+  ]
+}
+
