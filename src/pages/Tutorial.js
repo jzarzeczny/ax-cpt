@@ -1,41 +1,46 @@
 import React, { useState, useEffect } from "react";
 import TutorialBox from "../components/TutorialBox";
-import jsonData from "../public/tutorialText.json";
+import instructionsData from "../public/tutorialText.json";
 import DisplayTest from "../components/DisplayTest";
-import testDataJSON from "../data/tutorial.json";
-const data = [...jsonData];
-// const testData = JSON.parse(testDataJSON);
+import TestValidation from "../components/TestValidation";
+import sequenceData from "../data/tutorial.json";
+const instructionData = [...instructionsData];
+// const testData = JSON.parse(sequenceData);
 export default function Tutorial() {
   const [phase, setPhase] = useState(0);
   const [tutorialDone, setTutorialDone] = useState(false);
+  const [testDone, setTestDone] = useState(false);
+  const [result, setResult] = useState([]);
+  console.log(result.length + "  " + sequenceData.sequence.length);
   function handleKey(e) {
     if (e.key === " ") {
       setPhase(phase + 1);
     }
   }
   useEffect(() => {
-    if (phase === data.length - 1) {
+    if (phase === instructionData.length - 1) {
       setTutorialDone(true);
     }
-  }, [phase]);
+    if (result.length !== 0) {
+      setTestDone(true);
+    }
+  }, [phase, result]);
 
   return (
     <div className="container">
       {!tutorialDone && (
         <TutorialBox
-          boxVisible={data[phase].boxVisible}
-          boxContent={data[phase].boxContent}
-          header={data[phase].header}
-          para={data[phase].para}
+          boxVisible={instructionData[phase].boxVisible}
+          boxContent={instructionData[phase].boxContent}
+          header={instructionData[phase].header}
+          para={instructionData[phase].para}
           func={handleKey}
         />
       )}
-      {tutorialDone && (
-        <DisplayTest
-          route={testDataJSON.route}
-          sequence={testDataJSON.sequence}
-        />
+      {tutorialDone && !testDone && (
+        <DisplayTest sequence={sequenceData.sequence} getData={setResult} />
       )}
+      {testDone && <TestValidation />}
     </div>
   );
 }

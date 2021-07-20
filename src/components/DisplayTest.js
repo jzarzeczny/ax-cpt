@@ -1,8 +1,8 @@
 import useDisplayLogic from "../strategy/useDisplayLogic";
 
-const DisplayTest = ({ route, sequence }) => {
+const DisplayTest = ({ getData, sequence }) => {
   const data = sequence;
-  const value = useDisplayLogic(data, route);
+  const value = useDisplayLogic(data, getData);
 
   return <>{value}</>;
 };

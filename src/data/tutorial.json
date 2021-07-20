@@ -1,5 +1,5 @@
 {
-  "route":"/testing",
+  "route": "/tutorial",
   "sequence": [
     {
       "id": 1,
@@ -46,7 +46,5 @@
       "reactionTime": null,
       "affectId": null
     }
-  
   ]
 }
-

@@ -42,13 +42,11 @@ async function waitForResponse() {
     });
   });
 }
-console.log(images);
 
 //Something to impove later on.
 const values = Object.values(images);
 
-const useDisplayLogic = (data, route) => {
-  console.log(data);
+const useDisplayLogic = (data, getData) => {
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
   const history = useHistory();
@@ -96,7 +94,7 @@ const useDisplayLogic = (data, route) => {
           data[i].reactionTime = reaction.end - reaction.start + "ms";
           // Saving response data
 
-          data[i].response = response;
+          data[i].probeResponse = response;
           // Waiting for new set for 3s
           setBorder(false);
           setValue("  +\n+  +");
@@ -107,8 +105,8 @@ const useDisplayLogic = (data, route) => {
         }
         // Iterated over whole set
       } else {
-        console.log(JSON.stringify(data, null, 2));
-        history.push(route);
+        // console.log(JSON.stringify(data, null, 2));
+        getData(data);
       }
     }
 
