@@ -1,33 +1,85 @@
 [
-    {
-        "boxVisible":true,
-        "boxContent": "A",
-        "header": "Tytuł nr 1",
-        "para": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur assumenda tenetur minima cumque? Quam veniam in, maiores reprehenderit impedit, quidem, veritatis eveniet ipsum libero ea rerum similique mollitia aspernatur."
-
-    },
-    {
-        "boxVisible":false,
-        "boxContent": "B",
-        "header": "Tytuł nr 2",
-        "para": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur assumenda tenetur minima cumque? Quam veniam in, maiores reprehenderit impedit, quidem, veritatis eveniet ipsum libero ea rerum similique mollitia aspernatur."
-
-    },
-    {
-        "boxVisible":false,
-        "boxContent": "B",
-        "header": "Tytuł nr 3",
-        "para": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur assumenda tenetur minima cumque? Quam veniam in, maiores reprehenderit impedit, quidem, veritatis eveniet ipsum libero ea rerum similique mollitia aspernatur."
-
-    },
-    {
-        "boxVisible":false,
-        "boxContent": "B",
-        "header": "Tytuł nr 4",
-        "para": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo aspernatur assumenda tenetur minima cumque? Quam veniam in, maiores reprehenderit impedit, quidem, veritatis eveniet ipsum libero ea rerum similique mollitia aspernatur."
-
-    }
-
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Witam",
+    "para": "To zadanie polega na reagowani na pary liter tak szybko i dokładnie jak to tylko możliwe."
+  },
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Podczas każdej próby",
+    "para": "Zobaczysz pierwszą literę \n -Naciśnij klawisz A kiedy ją zobaczysz \n -Zobaczysz drugą literę \nTwoim zadaniem będzie reakcja klawiszami A lub L \n Pamiętajaby nacisnąć klawisz A za każdym razem gdy zobaczysz pierwszą literę!"
+  },
+  {
+    "boxVisible": true,
+    "boxContent": "A",
+    "header": "Celem zadania jest wykrycie pary liter A-X",
+    "para": "Jeżeli wykryjesz tą parę liter (pierwsza litera A, druga litera X), twoim zadaniem będzie naciśnięcie klawisza L tak szybko jak to tylko możliwe. \nPamiętaj aby nacinąć przycik A, gdy zobaczysz pierwzą literę \n Teraz na ekranie wyświetla się litera A"
+  },
+  {
+    "boxVisible": true,
+    "boxContent": "X",
+    "header": "Kolejna litera - X",
+    "para": "Na poprzednim ekranie, wyświetlała się litera A, teraz wyświetla się X.\nW takiej sytacji twoim zadaniem jest naciśnięcie klawisza L"
+  },
+  {
+    "boxVisible": true,
+    "boxContent": "+++",
+    "header": "+++ - wskazówka ",
+    "para": "Zadanie poleka na sekwencji par. Midzy każdą parą, będzie znak poziomych +++, aby była pewność, iż zaraz pokaże się druga litera tej samej sekwencji. "
+  },
+  {
+    "boxVisible": true,
+    "boxContent": "B",
+    "header": "Inne litery",
+    "para": "Opisany wcześniej dotyczy pary A-X\nJeżeli sekwencja jest różna (np. piersza litera to B, a druga to Y to: \n-Gdy zobaczysz pierwszą literę, powinieneś nacisnąć przycisk A\n-Gdy pojawi się druga litera, również naciśnij przycisk A."
+  },
+  {
+    "boxVisible": true,
+    "boxContent": "5",
+    "header": "Cyfry",
+    "para": "W niektórych przypadkach, drugi bodziec nie będzie literą, a cyfrą.\nW takich przypadkach nie naciskaj żadnego przycisku. Po prostu poczekaj, bodziec zniknie samoczynnie."
+  }
+  ,
+  {
+    "boxVisible": true,
+    "boxContent": "Y",
+    "header": "Czas odpowiedzi",
+    "para": "Masz tylko jedną sekundę na udzielenie odpowiedzi, postaraj się reagować tak szybko i dokładnie jak to tylko możliwe. "
+  }
+  ,
+  {
+    "boxVisible": true,
+    "boxContent": "Y",
+    "header": "Możliwości",
+    "para": "Oto kilka przykładów, które pomogą ci zrozumieć zadanie:\n-Próba pierwsza: widzisz A następuje długa przerwa, widzisz X. Powinieneś/-aś wcisnąć przycisk A, gdy pojawi się A, i przycisk L, gdy pojawi się X.\n-Próba druga: widzisz B, następuje długa przerwa, widzisz X. Powinieneś wcisnąć przycisk A, gdy pojawi się B, i przycisk A, gdy pojawi się X.\nPróba trzecia: widzisz A, jest duże opóźnienie, widzisz 6. Powinieneś wcisnąć przycisk 1 (A), gdy pojawi się A, i w ogóle nie reagować, gdy zobaczysz 6."
+  }
+  ,
+  {
+    "boxVisible": true,
+    "boxContent": "+++",
+    "header": "Zdjęcia",
+    "para": "Przed każdą sekwencją dwóch cyfr pojawią się znaki +++ ułożone w trójką, które znaczą, iż zaraz pojawi się nowa sekwencja dwóch cyfr. Dodatkowo, przed każdą sekwencją będzie pojawiało się zdjęcie. "
+  },
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Dźwięk błędu",
+    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk L, gdy zobaczysz drugą literę, ale parą nie było A-X,\n lub gdy nacisnąłeś przycisk A, a parą liter było A-X "
+  }
+  ,
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Dźwięk reakcji na cyfrę",
+    "para": "W końcu, jeśli naciśniesz jakiś przycisk w odpowiedzi na cyfrę (pamiętaj, że nigdy nie powinieneś/-aś naciskać przycisku odpowiedzi, gdy drugim bodźcem jest cyfra), usłyszysz dźwięk dee-dum."
+  }
+  ,
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Koniec teorii, czas na trening.",
+    "para": "Czas przejśc do treningu, bardzo ważnym jest abyś zrozumiał zadanie. Umieść palce na przycisku A i L. Zaraz Zaczynamy!"
+  }
 ]
-
- 
