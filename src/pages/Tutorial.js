@@ -15,7 +15,7 @@ export default function Tutorial() {
     }
   }
   useEffect(() => {
-    if (phase === data.length) {
+    if (phase === data.length - 1) {
       setTutorialDone(true);
     }
   }, [phase]);

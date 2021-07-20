@@ -250,6 +250,8 @@ header p {
 }
 .tutorial__para {
   text-align: justify;
+  white-space: pre-wrap;
+  line-height: 1.5;
 }
 .tutorial__alert {
   position: absolute;

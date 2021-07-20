@@ -7,7 +7,6 @@ export default function TutorialBox({
   para,
   func,
 }) {
-  console.log(boxVisible);
   useEffect(() => {
     document.addEventListener("keydown", func);
     return () => {

@@ -9,13 +9,13 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Podczas każdej próby",
-    "para": "Zobaczysz pierwszą literę \n -Naciśnij klawisz A kiedy ją zobaczysz \n -Zobaczysz drugą literę \nTwoim zadaniem będzie reakcja klawiszami A lub L \n Pamiętajaby nacisnąć klawisz A za każdym razem gdy zobaczysz pierwszą literę!"
+    "para": "Zobaczysz pierwszą literę \n-Naciśnij klawisz A kiedy ją zobaczysz \n-Zobaczysz drugą literę \nTwoim zadaniem będzie reakcja klawiszami A lub L \nPamiętajaby nacisnąć klawisz A za każdym razem gdy zobaczysz pierwszą literę!"
   },
   {
     "boxVisible": true,
     "boxContent": "A",
     "header": "Celem zadania jest wykrycie pary liter A-X",
-    "para": "Jeżeli wykryjesz tą parę liter (pierwsza litera A, druga litera X), twoim zadaniem będzie naciśnięcie klawisza L tak szybko jak to tylko możliwe. \nPamiętaj aby nacinąć przycik A, gdy zobaczysz pierwzą literę \n Teraz na ekranie wyświetla się litera A"
+    "para": "Jeżeli wykryjesz tą parę liter (pierwsza litera A, druga litera X), twoim zadaniem będzie naciśnięcie klawisza L tak szybko jak to tylko możliwe. \nPamiętaj aby nacinąć przycik A, gdy zobaczysz pierwzą literę \nTeraz na ekranie wyświetla się litera A"
   },
   {
     "boxVisible": true,
@@ -50,7 +50,7 @@
   }
   ,
   {
-    "boxVisible": true,
+    "boxVisible": false,
     "boxContent": "Y",
     "header": "Możliwości",
     "para": "Oto kilka przykładów, które pomogą ci zrozumieć zadanie:\n-Próba pierwsza: widzisz A następuje długa przerwa, widzisz X. Powinieneś/-aś wcisnąć przycisk A, gdy pojawi się A, i przycisk L, gdy pojawi się X.\n-Próba druga: widzisz B, następuje długa przerwa, widzisz X. Powinieneś wcisnąć przycisk A, gdy pojawi się B, i przycisk A, gdy pojawi się X.\nPróba trzecia: widzisz A, jest duże opóźnienie, widzisz 6. Powinieneś wcisnąć przycisk 1 (A), gdy pojawi się A, i w ogóle nie reagować, gdy zobaczysz 6."
@@ -81,5 +81,8 @@
     "boxContent": "",
     "header": "Koniec teorii, czas na trening.",
     "para": "Czas przejśc do treningu, bardzo ważnym jest abyś zrozumiał zadanie. Umieść palce na przycisku A i L. Zaraz Zaczynamy!"
+  },
+  {
+
   }
 ]
