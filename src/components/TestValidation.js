@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 const dataValidation = (data) => {
   console.log(data);
+  console.log(typeof data);
   let re = [];
   data.map((iteration) => {
     if (
@@ -79,14 +80,14 @@ const dataValidation = (data) => {
   return re;
 };
 
-export default function TestValidation({ data, oneMoreTime }) {
+export default function TestValidation({ data, setFailedTest }) {
   const [correct, setCorrect] = useState(null);
-  const results = dataValidation(data);
-
+  const newData = data;
   useEffect(() => {
+    const results = dataValidation(newData);
     const correctAnswers = results.map((result) => result.correct === true);
     setCorrect(correctAnswers.length);
-  }, []);
+  }, [newData]);
 
   return (
     <div className="resultContainer">
@@ -112,12 +113,7 @@ export default function TestValidation({ data, oneMoreTime }) {
             Przeczytaj instrukcję raz jeszcze i ponownie wykonaj sesje
             treningową.
           </p>
-
-          <Button
-            type="button"
-            name="Zacznij jeszcze raz"
-            onClick={oneMoreTime(false, false)}
-          />
+          <Button name="Zacznij jeszcze raz" func={() => setFailedTest(true)} />
         </>
       )}
     </div>

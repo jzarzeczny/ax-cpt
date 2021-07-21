@@ -11,15 +11,13 @@ export default function Tutorial() {
   const [tutorialDone, setTutorialDone] = useState(false);
   const [testDone, setTestDone] = useState(false);
   const [result, setResult] = useState([]);
+  const [failedTest, setFailedTest] = useState(false);
   function handleKey(e) {
     if (e.key === " ") {
       setPhase(phase + 1);
     }
   }
-  const oneMoreTime = (arg1, arg2) => {
-    setTestDone(arg1);
-    setResult(arg2);
-  };
+  console.log(failedTest);
   useEffect(() => {
     if (phase === instructionData.length - 1) {
       setTutorialDone(true);
@@ -27,7 +25,14 @@ export default function Tutorial() {
     if (result.length !== 0) {
       setTestDone(true);
     }
-  }, [phase, result]);
+    if (failedTest) {
+      setPhase(0);
+      setTutorialDone(false);
+      setTestDone(false);
+      setResult([]);
+      setFailedTest(false);
+    }
+  }, [phase, result, failedTest]);
   console.log(tutorialDone, testDone);
   return (
     <div className="container">
@@ -43,7 +48,9 @@ export default function Tutorial() {
       {tutorialDone && !testDone && (
         <DisplayTest sequence={sequenceData.sequence} getData={setResult} />
       )}
-      {testDone && <TestValidation data={result} oneMoreTime={oneMoreTime} />}
+      {testDone && !failedTest && (
+        <TestValidation data={result} setFailedTest={setFailedTest} />
+      )}
     </div>
   );
 }

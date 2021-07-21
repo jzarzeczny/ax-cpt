@@ -279,7 +279,8 @@ header p {
 .resultContainer p {
   font-size: 1.3rem;
 }
-.resultContainer a {
+.resultContainer a,
+.resultContainer button {
   display: block;
   width: 100%;
   margin: 2rem auto;
