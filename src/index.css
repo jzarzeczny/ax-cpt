@@ -85,7 +85,8 @@ h2 {
 /* Styling of Metric page */
 
 .formContainer,
-.agreementContainer {
+.agreementContainer,
+.resultContainer {
   padding: 2rem;
   border: 3px solid var(--carolina-blue);
   border-radius: 10px;
@@ -260,6 +261,8 @@ header p {
   left: 50%;
   transform: translate(-50%);
 }
+
+/* Test Result page */
 
 /* Intruction styling */
 

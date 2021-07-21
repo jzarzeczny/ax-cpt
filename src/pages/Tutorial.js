@@ -11,7 +11,6 @@ export default function Tutorial() {
   const [tutorialDone, setTutorialDone] = useState(false);
   const [testDone, setTestDone] = useState(false);
   const [result, setResult] = useState([]);
-  console.log(result.length + "  " + sequenceData.sequence.length);
   function handleKey(e) {
     if (e.key === " ") {
       setPhase(phase + 1);

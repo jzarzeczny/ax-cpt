@@ -2,11 +2,7 @@ import React from "react";
 
 const dataValidation = (data) => {
   let re = [];
-  console.log("im here");
-  data.filter((iteration) => {
-    console.log(iteration);
-    console.log(re);
-
+  data.map((iteration) => {
     if (
       iteration.warriety === "AX" &&
       iteration.clueResponse &&
@@ -77,17 +73,19 @@ const dataValidation = (data) => {
       };
       re.push(object);
     }
-
-    return re;
   });
+  return re;
 };
 
 export default function TestValidation({ data }) {
   console.log(data);
   const results = dataValidation(data);
   console.log(results);
+  const correctAnswers = results.map((result) => result.correct === true);
+  console.log(correctAnswers.length);
+
   return (
-    <div>
+    <div className="resultContainer">
       <h1>Hi there!</h1>
     </div>
   );
