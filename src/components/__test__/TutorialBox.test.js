@@ -17,7 +17,6 @@ describe("TutorialBox", () => {
         func={jest.fn()}
       />
     );
-    const boxElement = screen.getByTestId("tutorial__box");
     const boxLetterElement = screen.getByTestId("tutorial__letter");
     const headerElement = screen.getByTestId("tutorial__header");
     const paraElement = screen.getByTestId("tutorial__para");

@@ -2,15 +2,22 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import TestValidation from "../TestValidation";
-
+import { BrowserRouter } from "react-router-dom";
+const MockedTestValidation = (data) => {
+  return (
+    <BrowserRouter>
+      <TestValidation data={data} />
+    </BrowserRouter>
+  );
+};
 const mockedData = [
   {
     id: 1,
     clue: "A",
     probe: "X",
     warriety: "AX",
-    clueResponse: "no answer",
-    probeResponse: "A",
+    clueResponse: true,
+    probeResponse: "L",
     reactionTime: "127ms",
     affectId: null,
   },
@@ -50,17 +57,17 @@ const mockedData = [
     probe: "0",
     warriety: "No-go",
     clueResponse: true,
-    probeResponse: "A",
+    probeResponse: "no answer",
     reactionTime: "361ms",
     affectId: null,
   },
 ];
 
 describe("TestValidation", () => {
-  test("Renders a Button component", () => {
-    render(<TestValidation />);
+  test("Renders a TestValidation component", () => {
+    render(<MockedTestValidation data={mockedData} />);
   });
-  test("Renders corrcect data", () => {
-    render(<TestValidation data={mockedData} />);
-  });
+  // test("Renders corrcect data", () => {
+  //   render(<TestValidation data={mockedData} />);
+  // });
 });

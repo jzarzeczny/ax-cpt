@@ -16,6 +16,10 @@ export default function Tutorial() {
       setPhase(phase + 1);
     }
   }
+  const oneMoreTime = (arg1, arg2) => {
+    setTestDone(arg1);
+    setResult(arg2);
+  };
   useEffect(() => {
     if (phase === instructionData.length - 1) {
       setTutorialDone(true);
@@ -24,7 +28,7 @@ export default function Tutorial() {
       setTestDone(true);
     }
   }, [phase, result]);
-
+  console.log(tutorialDone, testDone);
   return (
     <div className="container">
       {!tutorialDone && (
@@ -39,7 +43,7 @@ export default function Tutorial() {
       {tutorialDone && !testDone && (
         <DisplayTest sequence={sequenceData.sequence} getData={setResult} />
       )}
-      {testDone && <TestValidation data={result} />}
+      {testDone && <TestValidation data={result} oneMoreTime={oneMoreTime} />}
     </div>
   );
 }

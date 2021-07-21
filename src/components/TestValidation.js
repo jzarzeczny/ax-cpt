@@ -1,6 +1,8 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Button from "./Button";
 const dataValidation = (data) => {
+  console.log(data);
   let re = [];
   data.map((iteration) => {
     if (
@@ -77,16 +79,48 @@ const dataValidation = (data) => {
   return re;
 };
 
-export default function TestValidation({ data }) {
-  console.log(data);
+export default function TestValidation({ data, oneMoreTime }) {
+  const [correct, setCorrect] = useState(null);
   const results = dataValidation(data);
-  console.log(results);
-  const correctAnswers = results.map((result) => result.correct === true);
-  console.log(correctAnswers.length);
+
+  useEffect(() => {
+    const correctAnswers = results.map((result) => result.correct === true);
+    setCorrect(correctAnswers.length);
+  }, []);
 
   return (
     <div className="resultContainer">
-      <h1>Hi there!</h1>
+      {correct > 3 && (
+        <>
+          <h3>Świetnie sobie poradziłeś! </h3>
+          <p>
+            Udało Ci się udzielić poprawniej odpowiedzieć na {correct}/
+            {data.length} bloków! Zaraz zacznie się pierwsze z dwóch zadań
+            przewidzianych na dziejszy dzień.
+          </p>
+          <Link to="/testing">
+            <Button type="button" name="Zacznij zadanie" />
+          </Link>
+        </>
+      )}
+      {correct < 3 && correct !== null && (
+        <>
+          <h3>
+            Niestety, nie udzieliłeś prawidłowej odpowiedzi na większośc pytań.
+          </h3>
+          <p>
+            Przeczytaj instrukcję raz jeszcze i ponownie wykonaj sesje
+            treningową.
+          </p>
+
+          <Button
+            type="button"
+            name="Zacznij jeszcze raz"
+            onClick={oneMoreTime(false, false)}
+          />
+        </>
+      )}
     </div>
   );
 }
+// Validation -> decisiton making -> display correct content -> change state to render correct screen either instuction of test one more time or reactive test!
