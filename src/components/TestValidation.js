@@ -5,7 +5,7 @@ const dataValidation = (data) => {
   console.log(data);
   console.log(typeof data);
   let re = [];
-  data.map((iteration) => {
+  data.forEach((iteration) => {
     if (
       iteration.warriety === "AX" &&
       iteration.clueResponse &&
