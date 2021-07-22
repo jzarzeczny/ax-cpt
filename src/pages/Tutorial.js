@@ -7,42 +7,26 @@ import sequenceData from "../data/tutorial.json";
 const instructionData = [...instructionsData];
 // const testData = JSON.parse(sequenceData);
 export default function Tutorial() {
-  const [phase, setPhase] = useState(0);
   const [tutorialDone, setTutorialDone] = useState(false);
   const [testDone, setTestDone] = useState(false);
   const [result, setResult] = useState([]);
   const [failedTest, setFailedTest] = useState(false);
-  function handleKey(e) {
-    if (e.key === " ") {
-      setPhase(phase + 1);
-    }
-  }
-  console.log(failedTest);
+
   useEffect(() => {
-    if (phase === instructionData.length - 1) {
-      setTutorialDone(true);
-    }
     if (result.length !== 0) {
       setTestDone(true);
     }
     if (failedTest) {
-      setPhase(0);
       setTutorialDone(false);
       setTestDone(false);
       setResult([]);
       setFailedTest(false);
     }
-  }, [phase, result, failedTest]);
+  }, [result, failedTest]);
   return (
     <div className="container">
       {!tutorialDone && (
-        <TutorialBox
-          boxVisible={instructionData[phase].boxVisible}
-          boxContent={instructionData[phase].boxContent}
-          header={instructionData[phase].header}
-          para={instructionData[phase].para}
-          func={handleKey}
-        />
+        <TutorialBox func={setTutorialDone} data={instructionData} />
       )}
       {tutorialDone && !testDone && (
         <DisplayTest sequence={sequenceData.sequence} getData={setResult} />
