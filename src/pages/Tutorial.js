@@ -33,7 +33,6 @@ export default function Tutorial() {
       setFailedTest(false);
     }
   }, [phase, result, failedTest]);
-  console.log(tutorialDone, testDone);
   return (
     <div className="container">
       {!tutorialDone && (

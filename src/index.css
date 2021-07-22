@@ -282,9 +282,9 @@ header p {
 .resultContainer a,
 .resultContainer button {
   display: block;
-  width: 100%;
   margin: 2rem auto;
   text-align: center;
+  text-decoration: none;
 }
 
 /* Intruction styling */

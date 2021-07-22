@@ -1,0 +1,26 @@
+[
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Intrukcja do tego zadania",
+    "para": "Dzisiejsze zadanie będzie modyfikacją testu, który wykonywałeś podczas treningu.\nTo zadanie polega na reagoaniu tak szybko i dokładnie, jak to tylko możliwe."
+  },
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Modyfikacja",
+    "para": "Zasada działania eksperymentu jest taka sama, modyfikacja zakłada, iż druga litera w cyklu będzie w górnej lub dolej części ekrany, oraz będzie w czerwonej lub czarnej ramce."
+  },
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Zasady",
+    "para": "Podobnie jak wcześniej, zawsze nacikaj przycisk A, gdy pojawi się pierwsza litera.\n\nTwoim celem jest wykrycie pary litera A-X\n\nJeżeli pierwsza litera w próbue to A, a druga litera X, wciśnij przycik L tak szybko jak to możliwe.\n\nNie widzisz pary A-X to powinieneś \n-Nacisnąc przycik A, gdy pojawi się pierwsza litera\n-Nacinąć przycisk A, gdy pojawi się druga litera.\n\nJeżeli drugi bodziec będzie cyfrą, nie naciskaj przyciku i poczekać, aż zniknie samoczynnie."
+  },
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Wskazówka",
+    "para": "Masz tylko jedną sekundę, aby zareagować na kady bodziec, więc reaguj tak szbyko i dokładnie jak to tylko możliwe.\n\nPamiętaj, że reackja na każdy bodziec NIE zależy od jego lokazacji ani od koloru obramowania. Odpowiedź powinna być oparta o literę lub numer, który widzisz.\n\nJednakże, niektórzy uważają, że lokalizacja i kolor obramowania są pomocne przy udzielaniu odpowiedzi."
+  }
+]

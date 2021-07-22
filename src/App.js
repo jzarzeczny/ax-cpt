@@ -17,8 +17,7 @@ import IntroSecondDay from "./IntroDay2";
 import ReactiveInstruction from "./strategy/reactive/InstructionsReactive";
 import My404 from "./My404";
 // Temp import for testing, remove!!!!!!
-import testDataJSON from "./data/tutorial.json";
-import DisplayTest from "./components/DisplayTest";
+import Reactive from "./pages/Reactive";
 
 function App() {
   return (
@@ -68,10 +67,7 @@ function App() {
             <EndDay1 />
           </Route>
           <Route path="/testing">
-            <DisplayTest
-              route={testDataJSON.route}
-              sequence={testDataJSON.sequence}
-            />
+            <Reactive />
           </Route>
           <Route path="*">
             <My404 />

@@ -51,7 +51,7 @@ const dataValidation = (data) => {
     if (
       iteration.warriety === "BY" &&
       iteration.clueResponse &&
-      iteration.probeResponse === "L"
+      iteration.probeResponse === "A"
     ) {
       let object = {
         id: iteration.id,
@@ -85,13 +85,13 @@ export default function TestValidation({ data, setFailedTest }) {
   const newData = data;
   useEffect(() => {
     const results = dataValidation(newData);
+    console.log(results);
     const correctAnswers = results.map((result) => result.correct === true);
     setCorrect(correctAnswers.length);
   }, [newData]);
-
   return (
     <div className="resultContainer">
-      {correct > 3 && (
+      {correct >= 3 && (
         <>
           <h3>Świetnie sobie poradziłeś! </h3>
           <p>
