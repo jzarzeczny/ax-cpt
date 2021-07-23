@@ -67,6 +67,9 @@ function App() {
           <Route path="/endr">
             <EndDay1 />
           </Route>
+          <Route path="/reactive">
+            <Reactive />
+          </Route>
           <Route path="/testing">
             <Reactive />
           </Route>

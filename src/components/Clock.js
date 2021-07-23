@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 export default function Clock({ func }) {
-  const [clock, setClock] = useState(5);
+  const [clock, setClock] = useState(60);
   useEffect(() => {
     const tick = setInterval(() => {
       setClock(clock - 1);
@@ -16,7 +16,7 @@ export default function Clock({ func }) {
 
   return (
     <div className="clock__container">
-      <h1>{clock}</h1>
+      <h1>{clock}s</h1>
       <p>
         Odpocznij, zreklasuj się. Gdy timer skończy odliczać zacznie się
         ostatnia sesja tego dnia.

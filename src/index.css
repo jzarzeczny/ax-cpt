@@ -38,6 +38,17 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
+/* Page contaiener */
+.formContainer,
+.agreementContainer,
+.resultContainer,
+.clock__container {
+  padding: 2rem;
+  border: 3px solid var(--carolina-blue);
+  border-radius: 10px;
+}
+
 /*  */
 /* Pages styling */
 /*  */
@@ -88,13 +99,6 @@ h2 {
 
 /* Styling of Metric page */
 
-.formContainer,
-.agreementContainer,
-.resultContainer {
-  padding: 2rem;
-  border: 3px solid var(--carolina-blue);
-  border-radius: 10px;
-}
 .formContainer form {
   display: flex;
   flex-flow: column nowrap;
@@ -285,6 +289,18 @@ header p {
   margin: 2rem auto;
   text-align: center;
   text-decoration: none;
+}
+
+/* Clock */
+
+.clock__container h1 {
+  text-align: center;
+  font-size: 10rem;
+}
+
+.clock__container p {
+  text-align: center;
+  font-size: 2rem;
 }
 
 /* Intruction styling */

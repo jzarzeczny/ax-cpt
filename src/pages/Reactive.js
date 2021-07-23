@@ -5,6 +5,7 @@ import TutorialBox from "../components/TutorialBox";
 import lowApproach from "../data/lowApproachReactive.json";
 import DisplayTest from "../components/DisplayTest";
 import Clock from "../components/Clock";
+import Finish from "../components/Finish";
 
 export default function Reactive() {
   const [instructionsDone, setInstructionsDone] = useState(false);
@@ -23,6 +24,9 @@ export default function Reactive() {
       setTestDone(true);
     }
   }, [firstTryResult, secoundTryResult, brakeDone]);
+  console.log(firstTryResult);
+  console.log(secoundTryResult);
+
   return (
     <div className="container">
       {!instructionsDone && (
@@ -31,11 +35,11 @@ export default function Reactive() {
       {instructionsDone && !testDone && !brakeDone && (
         <DisplayTest sequence={lowApproach} getData={setFirstTryResult} />
       )}
-      {testDone && <Clock func={setBrakeDone} />}
+      {testDone && !brakeDone && <Clock func={setBrakeDone} />}
       {instructionsDone && !testDone && brakeDone && (
         <DisplayTest sequence={lowApproach} getData={setSecoundTryResult} />
       )}
-      {instructionsDone && testDone && brakeDone && <h1>Zakończenie dnia!</h1>}
+      {instructionsDone && testDone && brakeDone && <Finish from="rective" />}
     </div>
   );
 }
