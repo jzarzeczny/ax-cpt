@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import reactiveText from "../public/reactiveText.json";
+import reactiveText from "../public/proactiveText.json";
 import TutorialBox from "../components/TutorialBox";
-import lowApproach from "../data/reactive/lowApproachReactive.json";
-import highApproach from "../data/reactive/highApproachReactive.json";
+import lowApproach from "../data/proactive/lowApproachProactive.json";
+import highApproach from "../data/proactive/highApproachProactive.json";
 import DisplayTest from "../components/DisplayTest";
 import Clock from "../components/Clock";
 import Finish from "../components/Finish";
@@ -10,23 +10,21 @@ import Finish from "../components/Finish";
 export default function Reactive() {
   const [instructionsDone, setInstructionsDone] = useState(false);
   const [testDone, setTestDone] = useState(false);
-  const [refirstTryResult, setReFirstTryResult] = useState([]);
-  const [resecoundTryResult, setReSecoundTryResult] = useState([]);
+  const [proFirstTryResult, setProFirstTryResult] = useState([]);
+  const [proSecoundTryResult, setProSecoundTryResult] = useState([]);
   const [brakeDone, setBrakeDone] = useState(false);
   const [horizontStyling, setHorizontStyling] = useState({});
   useEffect(() => {
-    if (refirstTryResult.length !== 0) {
+    if (proFirstTryResult.length !== 0) {
       setTestDone(true);
     }
     if (brakeDone === true) {
       setTestDone(false);
     }
-    if (resecoundTryResult.length !== 0) {
+    if (proSecoundTryResult.length !== 0) {
       setTestDone(true);
     }
-  }, [refirstTryResult, resecoundTryResult, brakeDone]);
-  console.log(refirstTryResult);
-  console.log(resecoundTryResult);
+  }, [proFirstTryResult, proSecoundTryResult, brakeDone]);
 
   return (
     <div className="container" style={horizontStyling}>
@@ -36,7 +34,7 @@ export default function Reactive() {
       {instructionsDone && !testDone && !brakeDone && (
         <DisplayTest
           sequence={lowApproach}
-          getData={setReFirstTryResult}
+          getData={setProFirstTryResult}
           setHorizontStyling={setHorizontStyling}
         />
       )}
@@ -44,7 +42,7 @@ export default function Reactive() {
       {instructionsDone && !testDone && brakeDone && (
         <DisplayTest
           sequence={highApproach}
-          getData={setReSecoundTryResult}
+          getData={setProSecoundTryResult}
           setHorizontStyling={setHorizontStyling}
         />
       )}

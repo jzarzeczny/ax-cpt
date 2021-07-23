@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import images from "../images";
+import images from "./images";
 
 async function sleep(ms) {
   return new Promise((resolve) => {

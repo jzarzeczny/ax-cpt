@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "clue": "A",
+    "probe": "X",
+    "warriety": "AX",
+    "reactionTime": null,
+    "affectId": "6"
+  },
+  {
+    "id": 2,
+    "clue": "A",
+    "probe": "Y",
+    "warriety": "AY",
+    "reactionTime": null,
+    "affectId": "7"
+  },
+  {
+    "id": 3,
+    "clue": "B",
+    "probe": "X",
+    "warriety": "BX",
+    "reactionTime": null,
+    "affectId": "8"
+  },
+  {
+    "id": 4,
+    "clue": "B",
+    "probe": "Y",
+    "warriety": "BY",
+    "reactionTime": null,
+    "affectId": "9"
+  },
+  {
+    "id": 5,
+    "clue": "B",
+    "probe": "3",
+    "warriety": "no-go",
+    "reactionTime": null,
+    "affectId": "10"
+  }
+]
