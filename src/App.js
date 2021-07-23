@@ -4,7 +4,6 @@ import Metrics from "./pages/Metrics";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import DisplayTutorial from "./strategy/tutorial/DisplayTutorial";
 import ProactiveInstruction from "./strategy/proactive/InstructionsProactive";
-import DisplayProactive from "./strategy/proactive/DisplayProactive";
 import MiddleProactive from "./strategy/proactive/MiddleProactive";
 import DisplayReactive from "./strategy/reactive/DisplayReactive";
 import MiddleReactive from "./strategy/reactive/MiddleReactive";

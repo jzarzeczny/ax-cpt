@@ -3,6 +3,7 @@ import reactiveText from "../public/reactiveText.json";
 import TutorialBox from "../components/TutorialBox";
 
 import lowApproach from "../data/lowApproachReactive.json";
+import highApproach from "../data/highApproachReactive.json";
 import DisplayTest from "../components/DisplayTest";
 import Clock from "../components/Clock";
 import Finish from "../components/Finish";
@@ -13,6 +14,7 @@ export default function Reactive() {
   const [firstTryResult, setFirstTryResult] = useState([]);
   const [secoundTryResult, setSecoundTryResult] = useState([]);
   const [brakeDone, setBrakeDone] = useState(false);
+  const [horizontStyling, setHorizontStyling] = useState({});
   useEffect(() => {
     if (firstTryResult.length !== 0) {
       setTestDone(true);
@@ -28,16 +30,24 @@ export default function Reactive() {
   console.log(secoundTryResult);
 
   return (
-    <div className="container">
+    <div className="container" style={horizontStyling}>
       {!instructionsDone && (
         <TutorialBox func={setInstructionsDone} data={reactiveText} />
       )}
       {instructionsDone && !testDone && !brakeDone && (
-        <DisplayTest sequence={lowApproach} getData={setFirstTryResult} />
+        <DisplayTest
+          sequence={lowApproach}
+          getData={setFirstTryResult}
+          setHorizontStyling={setHorizontStyling}
+        />
       )}
       {testDone && !brakeDone && <Clock func={setBrakeDone} />}
       {instructionsDone && !testDone && brakeDone && (
-        <DisplayTest sequence={lowApproach} getData={setSecoundTryResult} />
+        <DisplayTest
+          sequence={highApproach}
+          getData={setSecoundTryResult}
+          setStyling={setHorizontStyling}
+        />
       )}
       {instructionsDone && testDone && brakeDone && <Finish from="rective" />}
     </div>

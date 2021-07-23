@@ -10,7 +10,8 @@
 * {
   margin: 0;
   font-family: "Quicksand";
-  color: #333;
+  color: #fff;
+  background-color: #333;
   font-size: 16px;
   box-sizing: border-box;
 }
@@ -187,6 +188,10 @@ header {
 header p {
   font-weight: 500;
   color: white;
+  background-color: transparent;
+}
+header a {
+  background-color: transparent;
 }
 
 /* Button */
@@ -226,7 +231,7 @@ header p {
 /* TutorialBox */
 
 .tutorial__container {
-  height: 400px;
+  height: 500px;
   width: 500px;
   display: flex;
   flex-flow: column nowrap;
@@ -237,7 +242,7 @@ header p {
 .tutorial__box {
   width: 200px;
   height: 200px;
-  border: 1px solid black;
+  border: 2px solid white;
   display: none;
   justify-content: center;
   align-items: center;
@@ -333,9 +338,9 @@ header p {
   line-height: 1.5;
 }
 
-/* Styling trening of the test */
+/* Styling test box */
 
-.box {
+.test__box {
   width: 400px;
   height: 400px;
   display: flex;
@@ -343,11 +348,14 @@ header p {
   align-items: center;
 }
 
-.border {
-  border: 3px solid black;
+.test__box--border {
+  border: 3px solid #fff;
+}
+.test__box--color {
+  border: 3px solid red;
 }
 
-.letterInBox {
+.test__box p {
   font-size: 2em;
   white-space: pre-wrap;
 }
@@ -358,11 +366,6 @@ img {
 }
 
 /* Instructions of proactive task */
-/* .container {
-  max-width: 700px;
-  display: flex;
-  flex-flow: column wrap;
-} */
 
 .container > h3 {
   margin-bottom: 30px;

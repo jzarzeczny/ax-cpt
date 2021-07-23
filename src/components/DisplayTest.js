@@ -1,8 +1,8 @@
 import useDisplayLogic from "../strategy/useDisplayLogic";
 
-const DisplayTest = ({ getData, sequence }) => {
+const DisplayTest = ({ getData, sequence, setHorizontStyling }) => {
   const data = sequence;
-  const value = useDisplayLogic(data, getData);
+  const value = useDisplayLogic(data, getData, setHorizontStyling);
 
   return <>{value}</>;
 };

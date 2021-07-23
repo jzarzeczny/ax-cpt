@@ -46,9 +46,10 @@ async function waitForResponse() {
 //Something to impove later on.
 const values = Object.values(images);
 
-const useDisplayLogic = (data, getData) => {
+const useDisplayLogic = (data, getData, boxLocationStyling) => {
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
+  const [colorStyling, setColorStyling] = useState(false);
   const history = useHistory();
   if (data === null) {
     history.push("/wentwrong");
@@ -80,6 +81,23 @@ const useDisplayLogic = (data, getData) => {
           await sleep(3000);
         }
         //3s passed, display of probe
+        if (data[i].reactive) {
+          if (data[i].warriety === "AX" || data[i].warriety === "BY") {
+            boxLocationStyling({
+              alignItems: "flex-start",
+            });
+          }
+          if (
+            data[i].warriety === "AY" ||
+            data[i].warriety === "BX" ||
+            data[i].warriety === "no-go"
+          ) {
+            setColorStyling(true);
+            boxLocationStyling({
+              alignItems: "flex-end",
+            });
+          }
+        }
         setBorder(true);
         setValue(data[i].probe);
         // Start the measure of reaction time
@@ -97,6 +115,11 @@ const useDisplayLogic = (data, getData) => {
           data[i].probeResponse = response;
           // Waiting for new set for 3s
           setBorder(false);
+          setColorStyling(false);
+          if (data[i].reactive) {
+            boxLocationStyling(null);
+          }
+
           setValue("  +\n+  +");
           await sleep(3000);
 
@@ -114,7 +137,11 @@ const useDisplayLogic = (data, getData) => {
   }, []);
 
   return (
-    <div className={`box ${border ? "border" : ""}`}>
+    <div
+      className={`test__box ${border ? "test__box--border" : null} ${
+        colorStyling ? "test__box--color" : null
+      }`}
+    >
       <p className="letterInBox">{value}</p>
     </div>
   );
