@@ -46,7 +46,7 @@ export default function Reactive() {
         <DisplayTest
           sequence={highApproach}
           getData={setSecoundTryResult}
-          setStyling={setHorizontStyling}
+          setHorizontStyling={setHorizontStyling}
         />
       )}
       {instructionsDone && testDone && brakeDone && <Finish from="rective" />}
