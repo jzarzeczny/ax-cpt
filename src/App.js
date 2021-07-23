@@ -18,6 +18,7 @@ import ReactiveInstruction from "./strategy/reactive/InstructionsReactive";
 import My404 from "./My404";
 // Temp import for testing, remove!!!!!!
 import Reactive from "./pages/Reactive";
+import Clock from "./components/Clock";
 
 function App() {
   return (
@@ -42,9 +43,9 @@ function App() {
           <Route path="/instructionsproactive">
             <ProactiveInstruction />
           </Route>
-          <Route path="/displayproactive">
+          {/* <Route path="/displayproactive">
             <DisplayProactive />
-          </Route>
+          </Route> */}
           <Route path="/middlep">
             <MiddleProactive />
           </Route>
@@ -68,6 +69,9 @@ function App() {
           </Route>
           <Route path="/testing">
             <Reactive />
+          </Route>
+          <Route path="/testing2">
+            <Clock />
           </Route>
           <Route path="*">
             <My404 />

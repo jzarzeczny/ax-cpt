@@ -6,7 +6,8 @@
     "warriety": "AX",
     "response": null,
     "reactionTime": null,
-    "affectId": "6"
+    "affectId": "1",
+    "reactive": true
   },
   {
     "id": 2,
@@ -15,7 +16,8 @@
     "warriety": "AY",
     "response": null,
     "reactionTime": null,
-    "affectId": "7"
+    "affectId": "2",
+    "reactive": true
   },
   {
     "id": 3,
@@ -24,7 +26,8 @@
     "warriety": "BX",
     "response": null,
     "reactionTime": null,
-    "affectId": "8"
+    "affectId": "3",
+    "reactive": true
   },
   {
     "id": 4,
@@ -33,7 +36,8 @@
     "warriety": "BY",
     "response": null,
     "reactionTime": null,
-    "affectId": "9"
+    "affectId": "4",
+    "reactive": true
   },
   {
     "id": 5,
@@ -42,6 +46,7 @@
     "warriety": "no-go",
     "response": null,
     "reactionTime": null,
-    "affectId": "10"
+    "affectId": "5",
+    "reactive": true
   }
 ]

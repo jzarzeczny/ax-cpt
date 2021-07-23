@@ -1,29 +1,29 @@
-import { useLocation } from "react-router";
-import lowApproachData from "../../data/lowApproachProactive";
-import highApproachData from "../../data/highApproachhProactive";
+// import { useLocation } from "react-router";
+// import lowApproachData from "../../data/lowApproachProactive";
+// import highApproachData from "../../data/highApproachhProactive";
 
-import useDisplayLogic from "../useDisplayLogic";
+// import useDisplayLogic from "../useDisplayLogic";
 
-const DisplayReactive = () => {
-  const location = useLocation();
+// const DisplayReactive = () => {
+//   const location = useLocation();
 
-  let data = null;
-  let route = null;
+//   let data = null;
+//   let route = null;
 
-  function determineRoute(trail) {
-    if (trail === 1) {
-      data = lowApproachData;
-      route = "/middler";
-    } else if (trail === 2) {
-      data = highApproachData;
-      route = "/endr";
-    }
-  }
+//   function determineRoute(trail) {
+//     if (trail === 1) {
+//       data = lowApproachData;
+//       route = "/middler";
+//     } else if (trail === 2) {
+//       data = highApproachData;
+//       route = "/endr";
+//     }
+//   }
 
-  determineRoute(location.trail);
-  const value = useDisplayLogic(data, route);
+//   determineRoute(location.trail);
+//   const value = useDisplayLogic(data, route);
 
-  return <div className="paper">{value}</div>;
-};
+//   return <div className="paper">{value}</div>;
+// };
 
-export default DisplayReactive;
+// export default DisplayReactive;
