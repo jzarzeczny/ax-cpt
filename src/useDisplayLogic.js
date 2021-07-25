@@ -12,6 +12,7 @@ async function sleep(ms) {
 }
 async function playSound(track) {
   const audio = new Audio(track);
+  console.log("playing music" + track);
 
   audio.play();
 }
@@ -19,7 +20,6 @@ async function waitForClue() {
   return new Promise((resolve) => {
     const waitForAnswer = () =>
       setTimeout(() => {
-        playSound(NoRespAudio);
         resolve("no answer");
         clearTimeout(waitForAnswer);
       }, 1000);
@@ -36,7 +36,6 @@ async function waitForResponse() {
   return new Promise((resolve) => {
     const waitForAnswer = () =>
       setTimeout(() => {
-        playSound(NoRespAudio);
         resolve("no answer");
         clearTimeout(waitForAnswer);
       }, 1000);
@@ -82,6 +81,10 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         const clueSeen = await waitForClue();
         //Response came
         if (clueSeen) {
+          // Play sound if no reaction to clue
+          if (clueSeen === "no answer") {
+            playSound(NoRespAudio);
+          }
           data[i].clueResponse = clueSeen;
           //Display the wait-for-probe template without the border
           setBorder(false);
@@ -116,23 +119,33 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         //Response happen ether Button1 or Button2
         if (response === "A" || response === "L" || response === "no answer") {
           // Playing sound based on the response.
-          if (
-            data[i].warriety === "no-go" &&
-            (response === "A" || response === "L")
-          ) {
-            playSound(NoGoErrorAudio);
+          console.log(data[i].warriety);
+          console.log(response);
+          if (data[i].warriety !== "no-go" && response === "no answer") {
+            playSound(NoRespAudio);
+          } else {
+            if (
+              data[i].warriety === "no-go" &&
+              (response === "A" || response === "L")
+            ) {
+              playSound(NoGoErrorAudio);
+            }
+            if (
+              data[i].warriety === "AX" &&
+              (response === "A" || response === "no answer")
+            ) {
+              playSound(WrongAudio);
+            }
+            if (
+              (data[i].warriety === "AY" ||
+                data[i].warriety === "BX" ||
+                data[i].warriety === "BY") &&
+              (response === "L" || response === "no answer")
+            ) {
+              playSound(WrongAudio);
+            }
           }
-          if (data[i].warriety === "AX" && response !== "L") {
-            playSound(WrongAudio);
-          }
-          if (
-            (data[i].warriety === "AY" ||
-              data[i].warriety === "BX" ||
-              data[i].warriety === "BY") &&
-            response !== "A"
-          ) {
-            playSound(WrongAudio);
-          }
+
           // End of the measure of reaction time
           reaction.end = Date.now();
           // Saving the data about reaction time

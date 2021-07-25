@@ -2,6 +2,16 @@
   "route": "/tutorial",
   "sequence": [
     {
+      "id": 5,
+      "clue": "B",
+      "probe": "0",
+      "warriety": "no-go",
+      "clueResponse": null,
+      "probeResponse": null,
+      "reactionTime": null,
+      "affectId": null
+    },
+    {
       "id": 1,
       "clue": "A",
       "probe": "X",
@@ -36,16 +46,6 @@
       "clue": "B",
       "probe": "Y",
       "warriety": "BY",
-      "clueResponse": null,
-      "probeResponse": null,
-      "reactionTime": null,
-      "affectId": null
-    },
-    {
-      "id": 5,
-      "clue": "B",
-      "probe": "0",
-      "warriety": "No-go",
       "clueResponse": null,
       "probeResponse": null,
       "reactionTime": null,
