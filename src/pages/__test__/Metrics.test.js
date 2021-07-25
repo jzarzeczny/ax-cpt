@@ -37,17 +37,4 @@ describe("Metrics", () => {
     fireEvent.change(inputElement, { target: { value: input } });
     expect(inputElement.value).toBe("");
   });
-  test("Checking if empty nickname field generate error with correct value", async () => {
-    render(<Metrics />);
-    const inputElement = screen.getByRole("textbox");
-    const buttonElement = screen.getByRole("button");
-    const input = "sdsd";
-    fireEvent.change(inputElement, { target: { value: input } });
-
-    const clickEvent = new MouseEvent("click");
-    Object.assign(clickEvent, { preventDefault: jest.fn() });
-    fireEvent(buttonElement, clickEvent);
-
-    expect(clickEvent.preventDefault).toHaveBeenCalled();
-  });
 });

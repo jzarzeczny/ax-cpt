@@ -72,7 +72,7 @@ const Metrics = () => {
           dane nie zostaną nikomu udostępnione. Proszę, wypełnij ankietę zgodnie
           z prawdą. 
         </p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-testid="formElement">
           <label>
             Nick:
             <input

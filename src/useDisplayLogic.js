@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import images from "./images";
+import NoRespAudio from "./public/audio/Noresp.wav";
+import WrongAudio from "./public/audio/Wrong.wav";
+import NoGoErrorAudio from "./public/audio/NoGoError.wav";
 
 async function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
+async function playSound(track) {
+  const audio = new Audio(track);
 
+  audio.play();
+}
 async function waitForClue() {
   return new Promise((resolve) => {
     const waitForAnswer = () =>
       setTimeout(() => {
+        playSound(NoRespAudio);
         resolve("no answer");
         clearTimeout(waitForAnswer);
       }, 1000);
@@ -28,6 +36,7 @@ async function waitForResponse() {
   return new Promise((resolve) => {
     const waitForAnswer = () =>
       setTimeout(() => {
+        playSound(NoRespAudio);
         resolve("no answer");
         clearTimeout(waitForAnswer);
       }, 1000);
@@ -106,6 +115,24 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         const response = await waitForResponse();
         //Response happen ether Button1 or Button2
         if (response === "A" || response === "L" || response === "no answer") {
+          // Playing sound based on the response.
+          if (
+            data[i].warriety === "no-go" &&
+            (response === "A" || response === "L")
+          ) {
+            playSound(NoGoErrorAudio);
+          }
+          if (data[i].warriety === "AX" && response !== "L") {
+            playSound(WrongAudio);
+          }
+          if (
+            (data[i].warriety === "AY" ||
+              data[i].warriety === "BX" ||
+              data[i].warriety === "BY") &&
+            response !== "A"
+          ) {
+            playSound(WrongAudio);
+          }
           // End of the measure of reaction time
           reaction.end = Date.now();
           // Saving the data about reaction time
@@ -113,6 +140,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
           // Saving response data
 
           data[i].probeResponse = response;
+
           // Waiting for new set for 3s
           setBorder(false);
           setColorStyling(false);

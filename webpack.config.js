@@ -4,5 +4,9 @@ module.exports = {
       test: /\.mdx?$/,
       use: ["babel-loader", "@mdx-js/loader"],
     },
+    {
+      test: /\.wav$/,
+      loader: "file-loader",
+    },
   ],
 };
