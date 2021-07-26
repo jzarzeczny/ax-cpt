@@ -1,8 +1,8 @@
 # AX-CPT test presentation
 
-Aim of this program is to demonstate the practical usage of AX-CPT test used in psychology in order to measure stuff like for instance cognitive control.
+This program will be used for experiment based on "Dual mechanizm of cognitive controll theory" (Braver, 2009). Due to pandemic, I decided to create the web adaptation of the test. What is more, this approach force me to development as a newbie deveoper, due to the fact that my graduation is strongly realated with this program!
 
-Demo was created to illustrate the mechanisim (it's quite complitated) of the test and as my first project while learning programming.
+Aim of this repo is to show the process of development. Each 'level' has branch with old code.
 
 ## Versions
 
@@ -14,14 +14,26 @@ Currently it allows to check how each pair works (clue - probe) + perform simple
 
 In next version -> object, async js, get rid of known bugs
 
-### 0.5 - 19.05
+### level-1 - 19.05
 
-Moved to react. Decided to prepare for online research. 
+Moved to react. Decided to prepare for online research.
 
-Currently created: Basic concept, hardcoded tutorial, tutoiral ax-cpt with json file to store important data. 
+Currently created: Basic concept, hardcoded tutorial, tutoiral ax-cpt with json file to store important data.
 
 Planning features: Measure the reaction time, implement proactive and reactive strategy, localstorage of "nickname", link the data with database/airtable.
 
+### level-2 - 26.07
+
+Refactored the majority of code. Learning tests. Abstracted lots of data into json file. Changed the structure of project. Added sounds effect.
+
+Next features:
+
+- Implement airtable connection to store data.
+- Make a autorization process.
+- Add tests.
+- Make sure text files are correct (in terms of experiment).
+
 ## Resources
 
-https://sites.wustl.edu/dualmechanisms/tasks/
+This research is based on [work of this lab](https://sites.wustl.edu/dualmechanisms/tasks/)
+In addition, there is a lot of research that use bahavioral task in lab. My goal is to move it to internet, check the area that noone test before.
