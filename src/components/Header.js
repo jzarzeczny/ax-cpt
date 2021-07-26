@@ -12,10 +12,9 @@ const Header = (props) => {
 
   return (
     <header>
-      <Link to="/">
-        <Button name={"Strona główna"} styling={"btn--small btn--white"} />
+      <Link to="/contact">
+        <Button name="Kontakt" styling={"btn btn--small btn--white"} />
       </Link>
-      <p>{doIKnowYou(props.name)}</p>
     </header>
   );
 };
