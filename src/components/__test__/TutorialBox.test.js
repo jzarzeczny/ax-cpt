@@ -1,42 +1,88 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import TutorialBox from "../TutorialBox";
 
+const mockedData = [
+  {
+    boxVisible: false,
+    boxContent: "",
+    header: "Hello",
+    para: "lorem",
+  },
+  {
+    boxVisible: false,
+    boxContent: "",
+    header: "Friend",
+    para: "ipsum",
+  },
+  {
+    boxVisible: true,
+    boxContent: "A",
+    header: "How",
+    para: "lorem",
+  },
+  {
+    boxVisible: false,
+    boxContent: "A",
+    header: "Are",
+    para: "ipsum",
+  },
+];
+
 describe("TutorialBox", () => {
   test("Renders a Button component", () => {
-    render(<TutorialBox />);
+    render(<TutorialBox data={mockedData} func={jest.fn()} />);
   });
   test("Renders corrcect data", () => {
-    render(
-      <TutorialBox
-        boxVisible={true}
-        boxContent="A"
-        header="Header"
-        para="lorem ipsum"
-        func={jest.fn()}
-      />
-    );
+    render(<TutorialBox data={mockedData} func={jest.fn()} />);
     const boxLetterElement = screen.getByTestId("tutorial__letter");
     const headerElement = screen.getByTestId("tutorial__header");
     const paraElement = screen.getByTestId("tutorial__para");
     const alertElement = screen.getByTestId("tutorial__alert");
-    expect(boxLetterElement).toHaveTextContent("A");
-    expect(headerElement).toHaveTextContent("Header");
-    expect(paraElement).toHaveTextContent("lorem ipsum");
+    expect(boxLetterElement).toHaveTextContent("");
+    expect(headerElement).toHaveTextContent("Hello");
+    expect(paraElement).toHaveTextContent("lorem");
     expect(alertElement).toHaveTextContent("Naciśnij Spację aby kontyunować");
   });
-  test("Hides box", () => {
-    render(
-      <TutorialBox
-        boxVisible={false}
-        boxContent="A"
-        header="Header"
-        para="lorem ipsum"
-        func={jest.fn()}
-      />
-    );
+  test("Renders new data after spacebar click", () => {
+    render(<TutorialBox data={mockedData} func={jest.fn()} />);
     const boxElement = screen.getByTestId("tutorial__box");
-    expect(boxElement.classList).not.toBe("tutorial__box--visible");
+    const boxLetterElement = screen.getByTestId("tutorial__letter");
+    const headerElement = screen.getByTestId("tutorial__header");
+    const paraElement = screen.getByTestId("tutorial__para");
+    const alertElement = screen.getByTestId("tutorial__alert");
+    const containerElement = screen.getByTestId("tutorial__container");
+    fireEvent.keyDown(containerElement, { key: " ", code: "Space" });
+    expect(boxElement.classList).not.toContain("tutorial__box--visible");
+    expect(boxLetterElement).toHaveTextContent("");
+    expect(headerElement).toHaveTextContent("Friend");
+    expect(paraElement).toHaveTextContent("ipsum");
+    expect(alertElement).toHaveTextContent("Naciśnij Spację aby kontyunować");
+  });
+  test("Change class and render box with letter inside", () => {
+    render(<TutorialBox data={mockedData} func={jest.fn()} />);
+    const boxElement = screen.getByTestId("tutorial__box");
+    const boxLetterElement = screen.getByTestId("tutorial__letter");
+    const headerElement = screen.getByTestId("tutorial__header");
+    const paraElement = screen.getByTestId("tutorial__para");
+    const alertElement = screen.getByTestId("tutorial__alert");
+    const containerElement = screen.getByTestId("tutorial__container");
+    fireEvent.keyDown(containerElement, { key: " ", code: "Space" });
+    fireEvent.keyDown(containerElement, { key: " ", code: "Space" });
+    expect(boxElement.classList).toContain("tutorial__box--visible");
+    expect(boxLetterElement).toHaveTextContent("A");
+    expect(headerElement).toHaveTextContent("How");
+    expect(paraElement).toHaveTextContent("lorem");
+    expect(alertElement).toHaveTextContent("Naciśnij Spację aby kontyunować");
+  });
+  test("Remove visible class", () => {
+    render(<TutorialBox data={mockedData} func={jest.fn()} />);
+    const boxElement = screen.getByTestId("tutorial__box");
+    const containerElement = screen.getByTestId("tutorial__container");
+    fireEvent.keyDown(containerElement, { key: " ", code: "Space" });
+    fireEvent.keyDown(containerElement, { key: " ", code: "Space" });
+    fireEvent.keyDown(containerElement, { key: " ", code: "Space" });
+    expect(boxElement).not.toBeNull();
   });
 });

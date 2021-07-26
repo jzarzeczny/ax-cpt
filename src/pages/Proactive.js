@@ -46,7 +46,7 @@ export default function Reactive() {
           setHorizontStyling={setHorizontStyling}
         />
       )}
-      {instructionsDone && testDone && brakeDone && <Finish from="rective" />}
+      {instructionsDone && testDone && brakeDone && <Finish from="proactive" />}
     </div>
   );
 }

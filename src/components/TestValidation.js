@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 const dataValidation = (data) => {
-  console.log(data);
-  console.log(typeof data);
   let re = [];
   data.forEach((iteration) => {
     if (
@@ -85,18 +83,18 @@ export default function TestValidation({ data, setFailedTest }) {
   const newData = data;
   useEffect(() => {
     const results = dataValidation(newData);
-    console.log(results);
     const correctAnswers = results.map((result) => result.correct === true);
     setCorrect(correctAnswers.length);
+    // console.log(results);
   }, [newData]);
   return (
     <div className="resultContainer">
-      {correct >= 3 && (
+      {correct >= 3 && correct !== null && (
         <>
-          <h3>Świetnie sobie poradziłeś! </h3>
+          <h3>Świetnie sobie poradziłeś!</h3>
           <p>
             Udało Ci się udzielić poprawniej odpowiedzieć na {correct}/
-            {data.length} bloków! Zaraz zacznie się pierwsze z dwóch zadań
+            {newData.length} bloków! Zaraz zacznie się pierwsze z dwóch zadań
             przewidzianych na dziejszy dzień.
           </p>
           <Link to="/testing">

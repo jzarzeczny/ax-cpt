@@ -17,7 +17,7 @@ export default function TutorialBox({ func, data }) {
     };
   });
   return (
-    <div className="tutorial__container">
+    <div data-testid="tutorial__container" className="tutorial__container">
       <div
         data-testid="tutorial__box"
         className={`tutorial__box ${

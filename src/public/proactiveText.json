@@ -2,15 +2,10 @@
   {
     "boxVisible": false,
     "boxContent": "",
-    "header": "Intrukcja do tego zadania",
-    "para": "Dzisiejsze zadanie będzie modyfikacją testu, który wykonywałeś podczas treningu.\nTo zadanie polega na reagoaniu tak szybko i dokładnie, jak to tylko możliwe."
+    "header": "Witaj w drugim dniu badania",
+    "para": "Bardzo miło mi Cię znowu gościć.\nDzisiejszy dzień zakłada przypomnienie mechanizmu eksperymentu oraz dwie sesje eksperymentacyjne."
   },
-  {
-    "boxVisible": false,
-    "boxContent": "",
-    "header": "Modyfikacja",
-    "para": "Zasada działania eksperymentu jest taka sama, modyfikacja zakłada, iż druga litera w cyklu będzie w górnej lub dolej części ekrany, oraz będzie w czerwonej lub czarnej ramce."
-  },
+
   {
     "boxVisible": false,
     "boxContent": "",
@@ -21,6 +16,18 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Wskazówka",
-    "para": "Masz tylko jedną sekundę, aby zareagować na kady bodziec, więc reaguj tak szbyko i dokładnie jak to tylko możliwe.\n\nPamiętaj, że reackja na każdy bodziec NIE zależy od jego lokazacji ani od koloru obramowania. Odpowiedź powinna być oparta o literę lub numer, który widzisz.\n\nJednakże, niektórzy uważają, że lokalizacja i kolor obramowania są pomocne przy udzielaniu odpowiedzi."
+    "para": "Jeżeli pierwszą literą jest A, w tym zadaniu, w 80% przypadków, drugą literą będzie X. Tworzy to parę AX.\n\n80% to bardzo dużo.\n\nPrzydatną strategią jest to, aby podczas przerwy między pierwszą, a drugą literą (ekran +++) przygotować odpowiedź."
+  },
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Uwaga",
+    "para": "Ponieważ wskazówka podpowiada jaki jest stosunek procentowy występowania par, może to doprowadzić, do sytuacji, w której popełniasz więcej błędów podczas prób, gdzie po pierwszej literze pojawia się cyfra.\n\nNie ma w tym nic złego!\n\nW dniu dzisiejszym ważne jest znaczenie wskazówki."
+  },
+  {
+    "boxVisible": false,
+    "boxContent": "",
+    "header": "Zaczynamy.",
+    "para": "Przygotuj się!\n\nNastępny ekran to badanie."
   }
 ]
