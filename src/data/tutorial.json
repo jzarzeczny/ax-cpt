@@ -2,50 +2,10 @@
   "route": "/tutorial",
   "sequence": [
     {
-      "id": 5,
-      "clue": "B",
-      "probe": "0",
-      "warriety": "no-go",
-      "clueResponse": null,
-      "probeResponse": null,
-      "reactionTime": null,
-      "affectId": null
-    },
-    {
       "id": 1,
       "clue": "A",
       "probe": "X",
       "warriety": "AX",
-      "clueResponse": null,
-      "probeResponse": null,
-      "reactionTime": null,
-      "affectId": null
-    },
-    {
-      "id": 2,
-      "clue": "A",
-      "clueResponse": null,
-      "probeResponse": null,
-      "probe": "Y",
-      "warriety": "AY",
-      "reactionTime": null,
-      "affectId": null
-    },
-    {
-      "id": 3,
-      "clue": "B",
-      "probe": "X",
-      "warriety": "BX",
-      "clueResponse": null,
-      "probeResponse": null,
-      "reactionTime": null,
-      "affectId": null
-    },
-    {
-      "id": 4,
-      "clue": "B",
-      "probe": "Y",
-      "warriety": "BY",
       "clueResponse": null,
       "probeResponse": null,
       "reactionTime": null,

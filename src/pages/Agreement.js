@@ -1,15 +1,39 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Button from "../components/Button";
+import Airtable from "airtable";
+import { UserContext } from "../context";
+
+const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE }).base(
+  "app4JXWQeK5gxV5jO"
+);
 
 const Instructions = () => {
   const [agreement, setAgreement] = useState(false);
+  const { user } = useContext(UserContext);
+  console.log(user);
 
   function handleClick(e) {
     console.log(agreement);
     if (!agreement) {
       e.preventDefault();
     } else if (agreement) {
+      base("Metrics").update(
+        [
+          {
+            id: user,
+            fields: {
+              agreement: String(agreement),
+            },
+          },
+        ],
+        function (err) {
+          if (err) {
+            console.error(err);
+            return;
+          }
+        }
+      );
       return;
     }
   }

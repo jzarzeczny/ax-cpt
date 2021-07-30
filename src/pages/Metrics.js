@@ -1,6 +1,12 @@
-import { useState, useReducer } from "react";
+import React, { useState, useReducer, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
+import Airtable from "airtable";
+import { UserContext } from "../context";
+
+const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE }).base(
+  "app4JXWQeK5gxV5jO"
+);
 
 const validate = (values) => {
   const errors = {};
@@ -38,7 +44,7 @@ const formReducer = (state, event) => {
 const Metrics = () => {
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useReducer(formReducer, {});
-
+  const { userEvent } = useContext(UserContext);
   let history = useHistory();
 
   const handleSubmit = (e) => {
@@ -49,7 +55,6 @@ const Metrics = () => {
       setErrors(validate(formData));
       console.log(errors);
       if (JSON.stringify(errors) === "{}") {
-        // console.log(JSON.stringify(formData, null, 2));
         history.push("/agreement");
       }
     } else {

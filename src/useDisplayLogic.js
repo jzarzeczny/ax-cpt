@@ -12,7 +12,6 @@ async function sleep(ms) {
 }
 async function playSound(track) {
   const audio = new Audio(track);
-  console.log("playing music" + track);
 
   audio.play();
 }
@@ -119,8 +118,6 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         //Response happen ether Button1 or Button2
         if (response === "A" || response === "L" || response === "no answer") {
           // Playing sound based on the response.
-          console.log(data[i].warriety);
-          console.log(response);
           if (data[i].warriety !== "no-go" && response === "no answer") {
             playSound(NoRespAudio);
           } else {

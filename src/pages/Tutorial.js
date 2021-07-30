@@ -4,8 +4,11 @@ import instructionsData from "../public/tutorialText.json";
 import DisplayTest from "../components/DisplayTest";
 import TestValidation from "../components/TestValidation";
 import sequenceData from "../data/tutorial.json";
+
 const instructionData = [...instructionsData];
+
 // const testData = JSON.parse(sequenceData);
+
 export default function Tutorial() {
   const [tutorialDone, setTutorialDone] = useState(false);
   const [testDone, setTestDone] = useState(false);
@@ -15,12 +18,15 @@ export default function Tutorial() {
   useEffect(() => {
     if (result.length !== 0) {
       setTestDone(true);
+      console.log(result);
     }
     if (failedTest) {
       setTutorialDone(false);
       setTestDone(false);
       setResult([]);
       setFailedTest(false);
+    }
+    if (testDone && !failedTest) {
     }
   }, [result, failedTest]);
   return (
