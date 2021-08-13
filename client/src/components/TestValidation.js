@@ -89,7 +89,7 @@ export default function TestValidation({ data, setFailedTest }) {
   }, [newData]);
   return (
     <div className="resultContainer">
-      {correct >= 3 && correct !== null && (
+      {correct >= 1 && correct !== null && (
         <>
           <h3>Świetnie sobie poradziłeś!</h3>
           <p>
@@ -97,12 +97,12 @@ export default function TestValidation({ data, setFailedTest }) {
             {newData.length} bloków! Zaraz zacznie się pierwsze z dwóch zadań
             przewidzianych na dziejszy dzień.
           </p>
-          <Link to="/testing">
+          <Link to="/reactive">
             <Button type="button" name="Zacznij zadanie" />
           </Link>
         </>
       )}
-      {correct < 3 && correct !== null && (
+      {correct < 0 && correct !== null && (
         <>
           <h3>
             Niestety, nie udzieliłeś prawidłowej odpowiedzi na większośc pytań.

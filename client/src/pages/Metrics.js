@@ -1,13 +1,8 @@
 import React, { useState, useReducer, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
-import Airtable from "airtable";
-import { UserContext } from "../context";
-
-const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE }).base(
-  "app4JXWQeK5gxV5jO"
-);
-
+import axios from "axios";
+import { NicknameContext } from "../nicknameContext";
 const validate = (values) => {
   const errors = {};
   if (!values.nickname) {
@@ -44,7 +39,7 @@ const formReducer = (state, event) => {
 const Metrics = () => {
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useReducer(formReducer, {});
-  const { userEvent } = useContext(UserContext);
+  const [nickname, setNickname] = useContext(NicknameContext);
   let history = useHistory();
 
   const handleSubmit = (e) => {
@@ -55,10 +50,23 @@ const Metrics = () => {
       setErrors(validate(formData));
       console.log(errors);
       if (JSON.stringify(errors) === "{}") {
+        setNickname((state) => ({ ...state, nickname: formData.nickname }));
+        const newperson = {
+          nickname: formData.nickname,
+          age: formData.age,
+          gender: formData.gender,
+          education: formData.education,
+          location: formData.location,
+        };
+        axios
+          .post("http://localhost:5000/record/add", newperson)
+          .then((res) => {
+            console.log(res.data);
+          });
         history.push("/agreement");
+      } else {
+        setErrors(validate(formData));
       }
-    } else {
-      setErrors(validate(formData));
     }
   };
   const handleChange = (event) => {
@@ -167,3 +175,5 @@ const Metrics = () => {
 };
 
 export default Metrics;
+
+// Context to save nickname data

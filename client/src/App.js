@@ -1,5 +1,5 @@
 import Agreement from "./pages/Agreement";
-import React, { useState } from "react";
+import React from "react";
 import Main from "./pages/Main";
 import Metrics from "./pages/Metrics";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -8,28 +8,14 @@ import Reactive from "./pages/Reactive";
 import Proactive from "./pages/Proactive";
 import My404 from "./pages/My404";
 
-import { UserContext } from "./context";
-
-// Temp import for testing, remove!!!!!!
+import { NickNameProvider } from "./nicknameContext";
 
 function App() {
-  const [user, setUser] = useState(null);
-
-  const userEvent = (action, load) => {
-    switch (action) {
-      case "ADD_USER":
-        setUser(load);
-        return;
-      default:
-        return;
-    }
-  };
-
   return (
     <div className="App">
       <Router>
-        <UserContext.Provider value={{ user, userEvent }}>
-          <Switch>
+        <Switch>
+          <NickNameProvider>
             <Route exact path="/">
               <Main />
             </Route>
@@ -51,11 +37,11 @@ function App() {
             <Route path="/testing">
               <Proactive />
             </Route>
-            <Route path="*">
+            {/* <Route path="*">
               <My404 />
-            </Route>
-          </Switch>
-        </UserContext.Provider>
+            </Route> */}
+          </NickNameProvider>
+        </Switch>
       </Router>
     </div>
   );

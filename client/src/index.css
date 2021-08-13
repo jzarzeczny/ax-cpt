@@ -136,7 +136,9 @@ h2 {
 .agreementContainer h2 {
   text-align: left;
 }
-
+.agreement__button {
+  align-self: center;
+}
 .agreementContainer .key-info {
   color: var(--carolina-blue);
   margin-top: 1rem;

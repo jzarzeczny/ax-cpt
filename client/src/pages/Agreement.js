@@ -1,40 +1,27 @@
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useState, useContext } from "react";
 import Button from "../components/Button";
-import Airtable from "airtable";
-import { UserContext } from "../context";
-
-const base = new Airtable({ apiKey: process.env.REACT_APP_AIRTABLE }).base(
-  "app4JXWQeK5gxV5jO"
-);
+import axios from "axios";
+import { NicknameContext } from "../nicknameContext";
 
 const Instructions = () => {
   const [agreement, setAgreement] = useState(false);
-  const { user } = useContext(UserContext);
-  console.log(user);
-
+  const [nickname, setNickname] = useContext(NicknameContext);
+  let history = useHistory();
+  console.log(nickname);
   function handleClick(e) {
-    console.log(agreement);
+    e.preventDefault();
     if (!agreement) {
-      e.preventDefault();
-    } else if (agreement) {
-      base("Metrics").update(
-        [
-          {
-            id: user,
-            fields: {
-              agreement: String(agreement),
-            },
-          },
-        ],
-        function (err) {
-          if (err) {
-            console.error(err);
-            return;
-          }
-        }
-      );
       return;
+    } else if (agreement) {
+      const change = {
+        agreement: true,
+      };
+      localStorage.setItem("nickname", nickname.nickname);
+      axios
+        .post("http://localhost:5000/update/" + nickname.nickname, change)
+        .then((res) => console.log(res.data))
+        .then(history.push("/tutorial"));
     }
   }
 
@@ -68,14 +55,12 @@ const Instructions = () => {
           </div>
         </form>
 
-        <Link className="buttonContainer" to="/tutorial" onClick={handleClick}>
-          <Button
-            type="button"
-            name="Przejdz do kwestionaiusza"
-            to="/tutorial"
-            onClick={handleClick}
-          />
-        </Link>
+        <Button
+          styling="agreement__button"
+          type="button"
+          name="Przejdz do kwestionaiusza"
+          func={handleClick}
+        />
       </div>
     </div>
   );
