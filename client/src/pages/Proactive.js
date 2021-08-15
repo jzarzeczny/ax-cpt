@@ -7,6 +7,7 @@ import DisplayTest from "../components/DisplayTest";
 import Clock from "../components/Clock";
 import Finish from "../components/Finish";
 import axios from "axios";
+import sendResults from "../hooks/sendData";
 
 export default function Reactive() {
   const [instructionsDone, setInstructionsDone] = useState(false);
@@ -18,27 +19,14 @@ export default function Reactive() {
   const nickname = localStorage.getItem("nickname");
   useEffect(() => {
     if (proFirstTryResult.length !== 0) {
-      setTestDone(true);
-      proFirstTryResult.forEach((e) => (e.nickname = nickname));
-      axios
-        .post(
-          "http://localhost:5000/reactive/low/" + nickname,
-          proFirstTryResult
-        )
-        .then((res) => console.log(res));
+      sendResults(nickname, "proactive/low/", proFirstTryResult);
       setTestDone(true);
     }
     if (brakeDone === true) {
       setTestDone(false);
     }
     if (proSecoundTryResult.length !== 0) {
-      proSecoundTryResult.forEach((e) => (e.nickname = nickname));
-      axios
-        .post(
-          "http://localhost:5000/reactive/low/" + nickname,
-          proSecoundTryResult
-        )
-        .then((res) => console.log(res));
+      sendResults(nickname, "proactive/high/", proSecoundTryResult);
       setTestDone(true);
     }
   }, [proFirstTryResult, proSecoundTryResult, brakeDone, nickname]);

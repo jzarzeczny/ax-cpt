@@ -21,7 +21,7 @@ const Main = () => {
           <li>Druga sesja badania</li>
         </ul>
       </Link>
-      <Link to="proactive" className="mainPage__card">
+      <Link to="/login" className="mainPage__card">
         <h2>Drugi dzień badania</h2>
         <p>Wybierz tą opcję, jeżeli to twój drugi raz. Zawartość sekcji:</p>
         <ul>

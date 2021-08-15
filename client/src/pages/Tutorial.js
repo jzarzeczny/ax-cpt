@@ -5,16 +5,9 @@ import DisplayTest from "../components/DisplayTest";
 import TestValidation from "../components/TestValidation";
 import sequenceData from "../data/tutorial.json";
 // import { NicknameContext } from "../nicknameContext";
-import axios from "axios";
+import sendResults from "../hooks/sendData";
 
 const instructionData = [...instructionsData];
-
-const sendResults = (nickname, data) => {
-  data.forEach((e) => (e.nickname = nickname));
-  axios
-    .post("http://localhost:5000/trening/" + nickname.nickname, data)
-    .then((res) => console.log(res));
-};
 
 // const testData = JSON.parse(sequenceData);
 
@@ -28,8 +21,9 @@ export default function Tutorial() {
   console.log(nickname);
   useEffect(() => {
     if (result.length !== 0) {
+      sendResults(nickname, "trening/", result);
+
       setTestDone(true);
-      sendResults(nickname, result);
       console.log(result);
     }
     if (failedTest) {
@@ -38,8 +32,8 @@ export default function Tutorial() {
       setResult([]);
       setFailedTest(false);
     }
-    if (testDone && !failedTest) {
-      sendResults(nickname, result);
+    if (testDone && !failedTest && result.length !== 0) {
+      sendResults(nickname, "trening/", result);
     }
   }, [result, failedTest, nickname, testDone]);
   return (

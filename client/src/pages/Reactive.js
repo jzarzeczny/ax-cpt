@@ -6,7 +6,7 @@ import highApproach from "../data/reactive/highApproachReactive.json";
 import DisplayTest from "../components/DisplayTest";
 import Clock from "../components/Clock";
 import Finish from "../components/Finish";
-import axios from "axios";
+import sendResults from "../hooks/sendData";
 
 export default function Reactive() {
   const [instructionsDone, setInstructionsDone] = useState(false);
@@ -18,32 +18,22 @@ export default function Reactive() {
   const nickname = localStorage.getItem("nickname");
   useEffect(() => {
     if (refirstTryResult.length !== 0) {
+      sendResults(nickname, "reactive/low/", refirstTryResult);
+
       setTestDone(true);
-      refirstTryResult.forEach((e) => (e.nickname = nickname));
-      axios
-        .post(
-          "http://localhost:5000/reactive/low/" + nickname,
-          refirstTryResult
-        )
-        .then((res) => console.log(res));
     }
     if (brakeDone === true) {
       setTestDone(false);
     }
     if (resecoundTryResult.length !== 0) {
-      resecoundTryResult.forEach((e) => (e.nickname = nickname));
+      sendResults(nickname, "reactive/high/", resecoundTryResult);
 
-      axios
-        .post(
-          "http://localhost:5000/reactive/high/" + nickname,
-          resecoundTryResult
-        )
-        .then((res) => console.log(res));
       setTestDone(true);
     }
   }, [refirstTryResult, resecoundTryResult, brakeDone, nickname]);
-  console.log(refirstTryResult);
-  console.log(resecoundTryResult);
+  console.log(instructionsDone);
+  console.log(testDone);
+  console.log(brakeDone);
 
   return (
     <div className="container" style={horizontStyling}>
@@ -65,7 +55,7 @@ export default function Reactive() {
           setHorizontStyling={setHorizontStyling}
         />
       )}
-      {instructionsDone && testDone && brakeDone && <Finish from="rective" />}
+      {instructionsDone && testDone && brakeDone && <Finish from="reactive" />}
     </div>
   );
 }

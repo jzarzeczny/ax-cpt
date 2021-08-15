@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Tutorial from "./pages/Tutorial";
 import Reactive from "./pages/Reactive";
 import Proactive from "./pages/Proactive";
+import Login from "./pages/Login";
 import My404 from "./pages/My404";
 
 import { NickNameProvider } from "./nicknameContext";
@@ -35,7 +36,10 @@ function App() {
               <Proactive />
             </Route>
             <Route path="/testing">
-              <Proactive />
+              <Login />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
             {/* <Route path="*">
               <My404 />
