@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
+
 const validate = (values) => {
   const errors = {};
   if (!values.nickname) {
@@ -39,18 +40,19 @@ const formReducer = (state, event) => {
 const Metrics = () => {
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useReducer(formReducer, {});
-  const [nickname, setNickname] = useContext(NicknameContext);
+  const { setNickname } = useContext(NicknameContext);
   let history = useHistory();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.keys(formData).length === 0) {
+    if (Object.keys(formData).length !== 5) {
       setErrors(validate(formData));
-    } else if (Object.keys(formData).length === 5) {
+    }
+    if (Object.keys(formData).length === 5) {
       setErrors(validate(formData));
       console.log(errors);
       if (JSON.stringify(errors) === "{}") {
-        setNickname((state) => ({ ...state, nickname: formData.nickname }));
+        setNickname(() => formData.nickname);
         const newperson = {
           nickname: formData.nickname,
           age: formData.age,

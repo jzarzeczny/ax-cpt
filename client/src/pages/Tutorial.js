@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import TutorialBox from "../components/TutorialBox";
 import instructionsData from "../public/tutorialText.json";
 import DisplayTest from "../components/DisplayTest";
@@ -18,7 +18,7 @@ export default function Tutorial() {
   const [failedTest, setFailedTest] = useState(false);
   // const [nickname, setNickname] = useContext(NicknameContext);
   const nickname = localStorage.getItem("nickname");
-  console.log(nickname);
+
   useEffect(() => {
     if (result.length !== 0) {
       sendResults(nickname, "trening/", result);

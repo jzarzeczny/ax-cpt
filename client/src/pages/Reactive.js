@@ -13,7 +13,7 @@ export default function Reactive() {
   const [testDone, setTestDone] = useState(false);
   const [refirstTryResult, setReFirstTryResult] = useState([]);
   const [resecoundTryResult, setReSecoundTryResult] = useState([]);
-  const [brakeDone, setBrakeDone] = useState(false);
+  const [breakDone, setBreakDone] = useState(false);
   const [horizontStyling, setHorizontStyling] = useState({});
   const nickname = localStorage.getItem("nickname");
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Reactive() {
 
       setTestDone(true);
     }
-    if (brakeDone === true) {
+    if (breakDone === true) {
       setTestDone(false);
     }
     if (resecoundTryResult.length !== 0) {
@@ -30,32 +30,32 @@ export default function Reactive() {
 
       setTestDone(true);
     }
-  }, [refirstTryResult, resecoundTryResult, brakeDone, nickname]);
+  }, [refirstTryResult, resecoundTryResult, breakDone, nickname]);
   console.log(instructionsDone);
   console.log(testDone);
-  console.log(brakeDone);
+  console.log(breakDone);
 
   return (
     <div className="container" style={horizontStyling}>
       {!instructionsDone && (
         <TutorialBox func={setInstructionsDone} data={reactiveText} />
       )}
-      {instructionsDone && !testDone && !brakeDone && (
+      {instructionsDone && !testDone && !breakDone && (
         <DisplayTest
           sequence={lowApproach}
           getData={setReFirstTryResult}
           setHorizontStyling={setHorizontStyling}
         />
       )}
-      {testDone && !brakeDone && <Clock func={setBrakeDone} />}
-      {instructionsDone && !testDone && brakeDone && (
+      {testDone && !breakDone && <Clock func={setBreakDone} />}
+      {instructionsDone && !testDone && breakDone && (
         <DisplayTest
           sequence={highApproach}
           getData={setReSecoundTryResult}
           setHorizontStyling={setHorizontStyling}
         />
       )}
-      {instructionsDone && testDone && brakeDone && <Finish from="reactive" />}
+      {instructionsDone && testDone && breakDone && <Finish from="reactive" />}
     </div>
   );
 }

@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import My404 from "./pages/My404";
 
 import { NickNameProvider } from "./nicknameContext";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
             </Route>
             <Route path="/testing">
               <Login />
+            </Route>
+            <Route path="/admin">
+              <Admin />
             </Route>
             <Route path="/login">
               <Login />
