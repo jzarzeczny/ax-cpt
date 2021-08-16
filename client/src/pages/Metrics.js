@@ -38,37 +38,33 @@ const formReducer = (state, event) => {
 };
 
 const Metrics = () => {
-  const [errors, setErrors] = useState({});
   const [formData, setFormData] = useReducer(formReducer, {});
+  const [errors, setErrors] = useState({});
   const { setNickname } = useContext(NicknameContext);
   let history = useHistory();
+  console.log(errors);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.keys(formData).length !== 5) {
-      setErrors(validate(formData));
-    }
-    if (Object.keys(formData).length === 5) {
-      setErrors(validate(formData));
-      console.log(errors);
-      if (JSON.stringify(errors) === "{}") {
-        setNickname(() => formData.nickname);
-        const newperson = {
-          nickname: formData.nickname,
-          age: formData.age,
-          gender: formData.gender,
-          education: formData.education,
-          location: formData.location,
-        };
-        axios
-          .post("http://localhost:5000/record/add", newperson)
-          .then((res) => {
-            console.log(res.data);
-          });
-        history.push("/agreement");
-      } else {
-        setErrors(validate(formData));
-      }
+    const errorList = validate(formData);
+    setErrors(errorList);
+    console.log(
+      "Here's some metric errors:" + JSON.stringify(errorList, null, 2)
+    );
+    if (Object.keys(errorList).length === 0) {
+      console.log("Sending data!");
+      setNickname(() => formData.nickname);
+      const newperson = {
+        nickname: formData.nickname,
+        age: formData.age,
+        gender: formData.gender,
+        education: formData.education,
+        location: formData.location,
+      };
+      axios.post("http://localhost:5000/record/add", newperson).then((res) => {
+        console.log(res.data);
+      });
+      history.push("/agreement");
     }
   };
   const handleChange = (event) => {

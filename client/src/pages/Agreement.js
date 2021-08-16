@@ -7,6 +7,7 @@ import { NicknameContext } from "../nicknameContext";
 const Instructions = () => {
   const [agreement, setAgreement] = useState(false);
   const { nickname } = useContext(NicknameContext);
+  console.log(nickname);
   let history = useHistory();
   function handleClick(e) {
     e.preventDefault();
@@ -18,7 +19,7 @@ const Instructions = () => {
       };
       localStorage.setItem("nickname", nickname);
       axios
-        .post("http://localhost:5000/update/" + nickname.nickname, change)
+        .post("http://localhost:5000/update/" + nickname, change)
         .then((res) => console.log(res.data))
         .then(history.push("/tutorial"));
     }
