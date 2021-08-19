@@ -11,13 +11,15 @@ import sendResults from "../hooks/sendData";
 export default function Reactive() {
   const [instructionsDone, setInstructionsDone] = useState(false);
   const [testDone, setTestDone] = useState(false);
+  const [breakDone, setBreakDone] = useState(false);
+
   const [proFirstTryResult, setProFirstTryResult] = useState([]);
   const [proSecoundTryResult, setProSecoundTryResult] = useState([]);
-  const [breakDone, setBreakDone] = useState(false);
   const [horizontStyling, setHorizontStyling] = useState({});
   const nickname = localStorage.getItem("nickname");
   useEffect(() => {
-    if (proFirstTryResult.length !== 0) {
+    console.log(proSecoundTryResult);
+    if (proFirstTryResult.length !== 0 && breakDone === false) {
       sendResults(nickname, "proactive/low/", proFirstTryResult);
       setTestDone(true);
     }
@@ -28,7 +30,7 @@ export default function Reactive() {
       sendResults(nickname, "proactive/high/", proSecoundTryResult);
       setTestDone(true);
     }
-  }, [proFirstTryResult, proSecoundTryResult, breakDone, nickname]);
+  }, [proFirstTryResult, proSecoundTryResult, breakDone]);
 
   return (
     <div className="container" style={horizontStyling}>

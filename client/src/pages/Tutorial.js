@@ -22,9 +22,7 @@ export default function Tutorial() {
   useEffect(() => {
     if (result.length !== 0) {
       sendResults(nickname, "trening/", result);
-
       setTestDone(true);
-      console.log(result);
     }
     if (failedTest) {
       setTutorialDone(false);
@@ -35,7 +33,7 @@ export default function Tutorial() {
     if (testDone && !failedTest && result.length !== 0) {
       sendResults(nickname, "trening/", result);
     }
-  }, [result, failedTest, nickname, testDone]);
+  }, [result]);
   return (
     <div className="container">
       {!tutorialDone && (

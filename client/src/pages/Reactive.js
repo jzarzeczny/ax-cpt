@@ -17,9 +17,9 @@ export default function Reactive() {
   const [horizontStyling, setHorizontStyling] = useState({});
   const nickname = localStorage.getItem("nickname");
   useEffect(() => {
-    if (refirstTryResult.length !== 0) {
+    console.log(refirstTryResult, resecoundTryResult);
+    if (refirstTryResult.length !== 0 && breakDone === false) {
       sendResults(nickname, "reactive/low/", refirstTryResult);
-
       setTestDone(true);
     }
     if (breakDone === true) {
@@ -27,13 +27,9 @@ export default function Reactive() {
     }
     if (resecoundTryResult.length !== 0) {
       sendResults(nickname, "reactive/high/", resecoundTryResult);
-
       setTestDone(true);
     }
-  }, [refirstTryResult, resecoundTryResult, breakDone, nickname]);
-  console.log(instructionsDone);
-  console.log(testDone);
-  console.log(breakDone);
+  }, [refirstTryResult, resecoundTryResult, breakDone]);
 
   return (
     <div className="container" style={horizontStyling}>
