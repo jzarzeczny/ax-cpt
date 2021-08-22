@@ -1,10 +1,9 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import images from "./images";
 import NoRespAudio from "./public/audio/Noresp.wav";
 import WrongAudio from "./public/audio/Wrong.wav";
 import NoGoErrorAudio from "./public/audio/NoGoError.wav";
-import { NicknameContext } from "../nicknameContext";
 
 async function sleep(ms) {
   return new Promise((resolve) => {

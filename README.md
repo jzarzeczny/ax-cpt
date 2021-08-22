@@ -33,6 +33,21 @@ Next features:
 - Add tests.
 - Make sure text files are correct (in terms of experiment).
 
+### level-3 - 22.08
+
+Due to the limitation of airtable, I have decied to create MERN project. What is more, the data from Mongo is sent to the google sheet which enables some automatization and provided data to future validation in SPSS (sadly, Polish universities does not use sweet python and libs).
+
+What is more, app intentionally does not store the email + password (specially in terms of login), it's experiment, I need the metric data + the test data.
+
+This is MVP of this app.
+
+Next features:
+
+- Tests (decided to move this topic to next phase, due to unknown amount of time required to create MERN)
+- Bug fix + text fix
+- Make code more readable (specially useDisplayLogic - one of the oldest part of the app, which grown over the time and need a lot more readablility!)
+- Cypress test in the future
+
 ## Resources
 
 This research is based on [work of this lab](https://sites.wustl.edu/dualmechanisms/tasks/)
