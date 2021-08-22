@@ -1,15 +1,17 @@
-import React, { useState, useReducer, useContext } from "react";
+import React, { useState, useReducer, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
 
-const validate = (values) => {
+const validate = (values, listOfUsers) => {
   const errors = {};
   if (!values.nickname) {
     errors.nickname = "To pole jest wymagane";
   } else if (values.nickname.length > 8) {
     errors.nickname = "Wystarczy krótki, maksymalnie 8 znakowy";
+  } else if (listOfUsers.includes(values.nickname.toLowerCase())) {
+    errors.nickname = "Niestety ten nickname jest zajęty, proszę wybrać inny";
   }
 
   if (!values.age) {
@@ -36,34 +38,41 @@ const formReducer = (state, event) => {
     [event.name]: event.value,
   };
 };
-
 const Metrics = () => {
   const [formData, setFormData] = useReducer(formReducer, {});
   const [errors, setErrors] = useState({});
+  const [listOfUsers, setListOfUsers] = useState([]);
   const { setNickname } = useContext(NicknameContext);
   let history = useHistory();
-  console.log(errors);
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/record")
+      .then((res) =>
+        res.data.map((el) => {
+          return el.nickname.toLowerCase();
+        })
+      )
+      .then((result) => {
+        setListOfUsers(result);
+      });
+  }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
-    const errorList = validate(formData);
+    const errorList = validate(formData, listOfUsers);
     setErrors(errorList);
-    console.log(
-      "Here's some metric errors:" + JSON.stringify(errorList, null, 2)
-    );
     if (Object.keys(errorList).length === 0) {
-      console.log("Sending data!");
       setNickname(() => formData.nickname);
       const newperson = {
-        nickname: formData.nickname,
+        nickname: formData.nickname.toLowerCase(),
         age: formData.age,
         gender: formData.gender,
         education: formData.education,
         location: formData.location,
       };
-      axios.post("http://localhost:5000/record/add", newperson).then((res) => {
-        console.log(res.data);
-      });
+      axios
+        .post("http://localhost:5000/record/add", newperson)
+        .then((res) => {});
       history.push("/agreement");
     }
   };
