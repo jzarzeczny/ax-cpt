@@ -3,6 +3,6 @@ build
 .prettierrc
 .env
 
-.config.env
+config.env
 .gitignore
 
