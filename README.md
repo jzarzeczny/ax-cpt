@@ -4,6 +4,8 @@ This program will be used for experiment based on "Dual mechanizm of cognitive c
 
 Aim of this repo is to show the process of development. Each 'level' has branch with old code.
 
+**Curent live:** [heroku](https://ax--cpt.herokuapp.com)
+
 ## Versions
 
 ### 0.4
