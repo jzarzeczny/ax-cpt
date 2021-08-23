@@ -14,12 +14,13 @@ const Instructions = () => {
     if (!agreement) {
       return;
     } else if (agreement) {
+      localStorage.setItem("nickname", nickname.toLowerCase());
+      console.log(nickname);
       const change = {
         agreement: true,
       };
-      localStorage.setItem("nickname", nickname);
       axios
-        .post("http://localhost:5000/update/" + nickname, change)
+        .post("http://localhost:5000/update/" + nickname.toLowerCase(), change)
         .then((res) => console.log(res.data))
         .then(history.push("/tutorial"));
     }
