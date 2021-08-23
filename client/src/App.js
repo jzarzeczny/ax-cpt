@@ -1,5 +1,5 @@
 import Agreement from "./pages/Agreement";
-import React, { useState } from "react";
+import React from "react";
 import Main from "./pages/Main";
 import Metrics from "./pages/Metrics";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

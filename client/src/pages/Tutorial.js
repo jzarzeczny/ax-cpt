@@ -42,7 +42,7 @@ export default function Tutorial() {
       {tutorialDone && !testDone && (
         <DisplayTest sequence={sequenceData} getData={setResult} />
       )}
-      {testDone && !failedTest && (
+      {testDone && (
         <TestValidation data={result} setFailedTest={setFailedTest} />
       )}
     </div>

@@ -81,11 +81,12 @@ const dataValidation = (data) => {
 export default function TestValidation({ data, setFailedTest }) {
   const [correct, setCorrect] = useState(null);
   const newData = data;
+  console.log(correct);
   useEffect(() => {
     const results = dataValidation(newData);
     const correctAnswers = results.map((result) => result.correct === true);
     setCorrect(correctAnswers.length);
-    // console.log(results);
+    console.log(results);
   }, [newData]);
   return (
     <div className="resultContainer">
@@ -102,7 +103,7 @@ export default function TestValidation({ data, setFailedTest }) {
           </Link>
         </>
       )}
-      {correct < 0 && correct !== null && (
+      {correct < 1 && correct !== null && (
         <>
           <h3>
             Niestety, nie udzieliłeś prawidłowej odpowiedzi na większośc pytań.
