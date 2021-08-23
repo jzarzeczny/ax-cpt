@@ -33,7 +33,7 @@ export default function Tutorial() {
     if (testDone && !failedTest && result.length !== 0) {
       sendResults(nickname, "trening/", result);
     }
-  }, [result]);
+  }, [result, failedTest]);
   return (
     <div className="container">
       {!tutorialDone && (
