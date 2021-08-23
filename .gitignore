@@ -2,4 +2,7 @@ node_modules
 build
 .prettierrc
 .env
-config.env
+
+.config.env
+.gitignore
+
