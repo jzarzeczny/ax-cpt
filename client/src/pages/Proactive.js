@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import reactiveText from "../public/proactiveText.json";
+import reactiveText from "../assets/proactiveText.json";
 import TutorialBox from "../components/TutorialBox";
 import lowApproach from "../data/proactive/lowApproachProactive.json";
 import highApproach from "../data/proactive/highApproachProactive.json";

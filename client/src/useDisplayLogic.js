@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import images from "./images";
-import NoRespAudio from "./public/audio/Noresp.wav";
-import WrongAudio from "./public/audio/Wrong.wav";
-import NoGoErrorAudio from "./public/audio/NoGoError.wav";
+import NoRespAudio from "./assets/audio/Noresp.wav";
+import WrongAudio from "./assets/audio/Wrong.wav";
+import NoGoErrorAudio from "./assets/audio/NoGoError.wav";
 
 async function sleep(ms) {
   return new Promise((resolve) => {
@@ -50,9 +50,6 @@ async function waitForResponse() {
   });
 }
 
-//Something to impove later on.
-const values = Object.values(images);
-
 const useDisplayLogic = (data, getData, boxLocationStyling) => {
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
@@ -69,7 +66,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       if (i < data.length) {
         if (data[i].affectId !== null) {
           setValue(
-            <img src={values[data[i].affectId]} alt="images of something"></img>
+            <img src={images[data[i].affectId]} alt="images of something"></img>
           );
           await sleep(3000);
         }

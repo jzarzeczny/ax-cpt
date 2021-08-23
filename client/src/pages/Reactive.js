@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import reactiveText from "../public/reactiveText.json";
+import reactiveText from "../assets/reactiveText.json";
 import TutorialBox from "../components/TutorialBox";
 import lowApproach from "../data/reactive/lowApproachReactive.json";
 import highApproach from "../data/reactive/highApproachReactive.json";

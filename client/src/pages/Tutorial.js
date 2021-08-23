@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import TutorialBox from "../components/TutorialBox";
-import instructionsData from "../public/tutorialText.json";
+import instructionsData from "../assets/tutorialText.json";
 import DisplayTest from "../components/DisplayTest";
 import TestValidation from "../components/TestValidation";
 import sequenceData from "../data/tutorial.json";

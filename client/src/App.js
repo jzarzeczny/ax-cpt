@@ -14,7 +14,7 @@ import Admin from "./pages/Admin";
 import WrongDevice from "./pages/WrongDevice";
 
 function App() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const width = window.innerWidth;
   const brakePoint = 1120;
   return (
     <div className="App">
