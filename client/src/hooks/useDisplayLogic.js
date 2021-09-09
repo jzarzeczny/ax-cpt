@@ -5,46 +5,57 @@ import NoRespAudio from "./public/audio/Noresp.wav";
 import WrongAudio from "./public/audio/Wrong.wav";
 import NoGoErrorAudio from "./public/audio/NoGoError.wav";
 
+// Variables
+// Variants of the test
+const AX = "AX";
+const AY = "AY";
+const BX = "BX";
+const BY = "BY";
+const noGo = "no-go";
+const noAnswer = "no answer";
+
+// Keys used to operate the test
+const key1 = "z";
+const key2 = "m";
+
+// Content display between sesions
+const clueBrake = "+ + +";
+const probeBrake = "  +\n+  +";
+
+// Times
+const imageDisplayTime = 3000;
+const letterDisplayTime = 1000;
+
+// Support functions
+
+// Sleep for some time
 async function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
+// Play the sound during the test
 async function playSound(track) {
   const audio = new Audio(track);
 
   audio.play();
 }
-async function waitForClue() {
-  return new Promise((resolve) => {
-    const waitForAnswer = () =>
-      setTimeout(() => {
-        resolve("no answer");
-        clearTimeout(waitForAnswer);
-      }, 1000);
-    waitForAnswer();
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "a") {
-        resolve(true);
-      }
-    });
-  });
-}
 
+// Function that waits for user response
 async function waitForResponse() {
   return new Promise((resolve) => {
     const waitForAnswer = () =>
       setTimeout(() => {
-        resolve("no answer");
+        resolve(noAnswer);
         clearTimeout(waitForAnswer);
-      }, 1000);
+      }, letterDisplayTime);
     waitForAnswer();
     document.addEventListener("keydown", (event) => {
-      if (event.key === "a") {
-        resolve("A");
+      if (event.key === key1) {
+        resolve(key1);
       }
-      if (event.key === "l") {
-        resolve("L");
+      if (event.key === key2) {
+        resolve(key2);
       }
     });
   });
@@ -66,42 +77,53 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
     async function controlOfDisplay(i) {
       const reaction = {};
       if (i < data.length) {
+        // If there is need to display photo
         if (data[i].affectId !== null) {
           setValue(
             <img src={values[data[i].affectId]} alt="images of something"></img>
           );
-          await sleep(3000);
+          await sleep(imageDisplayTime);
         }
-        //Initial display of clue
 
+        //Initial display of clue
         setBorder(true);
         setValue(data[i].clue);
+
         //Waiting for response of user
-        const clueSeen = await waitForClue();
-        //Response came
+        const clueSeen = await waitForResponse();
+
+        //Reaction on the reponse
         if (clueSeen) {
           // Play sound if no reaction to clue
-          if (clueSeen === "no answer") {
+          if (clueSeen === noAnswer) {
             playSound(NoRespAudio);
           }
+          if (clueSeen === key2) {
+            playSound(WrongAudio);
+          }
+          // Save the data about the clue
           data[i].clueResponse = clueSeen;
-          //Display the wait-for-probe template without the border
+
+          //Display probe brake
           setBorder(false);
-          setValue("+ + +");
-          //Display for 3s
-          await sleep(3000);
+          setValue(clueBrake);
+          await sleep(imageDisplayTime);
         }
-        //3s passed, display of probe
+
+        // Display probe
+        // If the warriety of the experiment is 'reactive', change the place of the box
         if (data[i].reactive) {
-          if (data[i].warriety === "AX" || data[i].warriety === "BY") {
+          // Box at the top of the screen
+          if (data[i].warriety === AX || data[i].warriety === BY) {
             boxLocationStyling({
               alignItems: "flex-start",
             });
           }
+          // Box at the bottom of the screen
           if (
-            data[i].warriety === "AY" ||
-            data[i].warriety === "BX" ||
-            data[i].warriety === "no-go"
+            data[i].warriety === AY ||
+            data[i].warriety === BX ||
+            data[i].warriety === noGo
           ) {
             setColorStyling(true);
             boxLocationStyling({
@@ -109,35 +131,39 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
             });
           }
         }
+        // If warriety is test or proactive, display box with corresponding letter without change of the placement
         setBorder(true);
         setValue(data[i].probe);
-        // Start the measure of reaction time
+
+        // Get the time value for reaction time mearsurment
         reaction.start = Date.now();
-        //Waiting for response of participant
+
+        //Use function to get the response of user
         const response = await waitForResponse();
-        //Response happen ether Button1 or Button2
-        if (response === "A" || response === "L" || response === "no answer") {
+
+        // Get the response and validate it
+        if (response === key1 || response === key2 || response === noAnswer) {
           // Playing sound based on the response.
-          if (data[i].warriety !== "no-go" && response === "no answer") {
+          if (data[i].warriety !== noGo && response === noAnswer) {
             playSound(NoRespAudio);
           } else {
             if (
-              data[i].warriety === "no-go" &&
-              (response === "A" || response === "L")
+              data[i].warriety === noGo &&
+              (response === key1 || response === key2)
             ) {
               playSound(NoGoErrorAudio);
             }
             if (
-              data[i].warriety === "AX" &&
-              (response === "A" || response === "no answer")
+              data[i].warriety === AX &&
+              (response === key1 || response === noAnswer)
             ) {
               playSound(WrongAudio);
             }
             if (
-              (data[i].warriety === "AY" ||
-                data[i].warriety === "BX" ||
-                data[i].warriety === "BY") &&
-              (response === "L" || response === "no answer")
+              (data[i].warriety === AY ||
+                data[i].warriety === BX ||
+                data[i].warriety === BY) &&
+              (response === key2 || response === noAnswer)
             ) {
               playSound(WrongAudio);
             }
@@ -145,21 +171,22 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
 
           // End of the measure of reaction time
           reaction.end = Date.now();
+
           // Saving the data about reaction time
           data[i].reactionTime = reaction.end - reaction.start + "ms";
-          // Saving response data
 
+          // Saving response data
           data[i].probeResponse = response;
 
-          // Waiting for new set for 3s
+          // Probe brake
           setBorder(false);
           setColorStyling(false);
           if (data[i].reactive) {
             boxLocationStyling(null);
           }
 
-          setValue("  +\n+  +");
-          await sleep(3000);
+          setValue(probeBrake);
+          await sleep(imageDisplayTime);
 
           // Recursion with + 1
           controlOfDisplay(i + 1);
@@ -167,6 +194,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         // Iterated over whole set
       } else {
         // console.log(JSON.stringify(data, null, 2));
+        // Passing data up
         getData(data);
       }
     }
