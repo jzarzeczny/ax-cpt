@@ -135,8 +135,8 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
           });
         }
       }
-      // If warriety is test or proactive, display box with corresponding letter without change of the placement
 
+      // If warriety is test or proactive, display box with corresponding letter without change of the placement
       displayValues(true, setBorder, data[i].probe, setValue);
 
       // Get the time value for reaction time mearsurment
@@ -184,7 +184,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
 
         // Probe brake
         displayValues(false, setBorder, probeBrake, setValue);
-        // setBorder(false);
+
         setColorStyling(false);
         if (data[i].reactive) {
           boxLocationStyling(null);
@@ -194,7 +194,6 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         await sleep(imageDisplayTime);
 
         // Recursion with + 1
-
         controlOfDisplay(i + 1);
       }
       // Iterated over whole set
