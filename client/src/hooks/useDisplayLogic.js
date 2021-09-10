@@ -68,17 +68,19 @@ function displayValues(border, setBorder, value, setValue) {
 }
 
 //Something to impove later on.
-const values = Object.values(images);
 
 const useDisplayLogic = (data, getData, boxLocationStyling) => {
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
   const [colorStyling, setColorStyling] = useState(false);
-  const [listOfImages, setListOfImages] = useState([]);
   const history = useHistory();
   if (data === null) {
     history.push("/wentwrong");
   }
+
+  useEffect(() => {
+    controlOfDisplay(0);
+  }, []);
 
   async function controlOfDisplay(i) {
     const reaction = {};
@@ -86,10 +88,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       // If there is need to display photo
       if (data[i].affectId !== null) {
         setValue(
-          <img
-            src={listOfImages[data[i].affectId]}
-            alt="images of something"
-          ></img>
+          <img src={images[data[i].affectId]} alt="images of something"></img>
         );
         await sleep(imageDisplayTime);
       }
@@ -206,12 +205,6 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       getData(data);
     }
   }
-
-  useEffect(() => {
-    setListOfImages(Object.values(images));
-
-    controlOfDisplay(0);
-  }, []);
 
   return (
     <div
