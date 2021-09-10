@@ -1,4 +1,4 @@
-import useDisplayLogic from "../useDisplayLogic";
+import useDisplayLogic from "../hooks/useDisplayLogic";
 
 const DisplayTest = ({ getData, sequence, setHorizontStyling }) => {
   const data = sequence;

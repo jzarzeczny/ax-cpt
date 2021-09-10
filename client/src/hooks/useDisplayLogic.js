@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import images from "./images";
-import NoRespAudio from "./public/audio/Noresp.wav";
-import WrongAudio from "./public/audio/Wrong.wav";
-import NoGoErrorAudio from "./public/audio/NoGoError.wav";
+import images from "../images";
+import NoRespAudio from "../assets/audio/Noresp.wav";
+import WrongAudio from "../assets/audio/Wrong.wav";
+import NoGoErrorAudio from "../assets/audio/NoGoError.wav";
 
 // Variables
 // Variants of the test
@@ -61,6 +61,12 @@ async function waitForResponse() {
   });
 }
 
+// Basic function that display values in each phase of experiment
+function displayValues(border, setBorder, value, setValue) {
+  setBorder(border);
+  setValue(value);
+}
+
 //Something to impove later on.
 const values = Object.values(images);
 
@@ -73,132 +79,132 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
     history.push("/wentwrong");
   }
 
-  useEffect(() => {
-    async function controlOfDisplay(i) {
-      const reaction = {};
-      if (i < data.length) {
-        // If there is need to display photo
-        if (data[i].affectId !== null) {
-          setValue(
-            <img src={values[data[i].affectId]} alt="images of something"></img>
-          );
-          await sleep(imageDisplayTime);
+  async function controlOfDisplay(i) {
+    const reaction = {};
+    if (i < data.length) {
+      // If there is need to display photo
+      if (data[i].affectId !== null) {
+        setValue(
+          <img src={values[data[i].affectId]} alt="images of something"></img>
+        );
+        await sleep(imageDisplayTime);
+      }
+
+      //Initial display of clue
+      displayValues(true, setBorder, data[i].clue, setValue);
+
+      //Waiting for response of user
+      const clueSeen = await waitForResponse();
+
+      //Reaction on the reponse
+      if (clueSeen) {
+        // Play sound if no reaction to clue
+        if (clueSeen === noAnswer) {
+          playSound(NoRespAudio);
         }
+        if (clueSeen === key2) {
+          playSound(WrongAudio);
+        }
+        // Save the data about the clue
+        data[i].clueResponse = clueSeen;
 
-        //Initial display of clue
-        setBorder(true);
-        setValue(data[i].clue);
+        //Display probe brake
+        displayValues(false, setBorder, clueBrake, setValue);
 
-        //Waiting for response of user
-        const clueSeen = await waitForResponse();
+        await sleep(imageDisplayTime);
+      }
 
-        //Reaction on the reponse
-        if (clueSeen) {
-          // Play sound if no reaction to clue
-          if (clueSeen === noAnswer) {
-            playSound(NoRespAudio);
+      // Display probe
+      // If the warriety of the experiment is 'reactive', change the place of the box
+      if (data[i].reactive) {
+        // Box at the top of the screen
+        if (data[i].warriety === AX || data[i].warriety === BY) {
+          boxLocationStyling({
+            alignItems: "flex-start",
+          });
+        }
+        // Box at the bottom of the screen
+        if (
+          data[i].warriety === AY ||
+          data[i].warriety === BX ||
+          data[i].warriety === noGo
+        ) {
+          setColorStyling(true);
+          boxLocationStyling({
+            alignItems: "flex-end",
+          });
+        }
+      }
+      // If warriety is test or proactive, display box with corresponding letter without change of the placement
+
+      displayValues(true, setBorder, data[i].probe, setValue);
+
+      // Get the time value for reaction time mearsurment
+      reaction.start = Date.now();
+
+      //Use function to get the response of user
+      const response = await waitForResponse();
+
+      // Get the response and validate it
+      if (response === key1 || response === key2 || response === noAnswer) {
+        // Playing sound based on the response.
+        if (data[i].warriety !== noGo && response === noAnswer) {
+          playSound(NoRespAudio);
+        } else {
+          if (
+            data[i].warriety === noGo &&
+            (response === key1 || response === key2)
+          ) {
+            playSound(NoGoErrorAudio);
           }
-          if (clueSeen === key2) {
+          if (
+            data[i].warriety === AX &&
+            (response === key1 || response === noAnswer)
+          ) {
             playSound(WrongAudio);
           }
-          // Save the data about the clue
-          data[i].clueResponse = clueSeen;
-
-          //Display probe brake
-          setBorder(false);
-          setValue(clueBrake);
-          await sleep(imageDisplayTime);
-        }
-
-        // Display probe
-        // If the warriety of the experiment is 'reactive', change the place of the box
-        if (data[i].reactive) {
-          // Box at the top of the screen
-          if (data[i].warriety === AX || data[i].warriety === BY) {
-            boxLocationStyling({
-              alignItems: "flex-start",
-            });
-          }
-          // Box at the bottom of the screen
           if (
-            data[i].warriety === AY ||
-            data[i].warriety === BX ||
-            data[i].warriety === noGo
+            (data[i].warriety === AY ||
+              data[i].warriety === BX ||
+              data[i].warriety === BY) &&
+            (response === key2 || response === noAnswer)
           ) {
-            setColorStyling(true);
-            boxLocationStyling({
-              alignItems: "flex-end",
-            });
+            playSound(WrongAudio);
           }
         }
-        // If warriety is test or proactive, display box with corresponding letter without change of the placement
-        setBorder(true);
-        setValue(data[i].probe);
 
-        // Get the time value for reaction time mearsurment
-        reaction.start = Date.now();
+        // End of the measure of reaction time
+        reaction.end = Date.now();
 
-        //Use function to get the response of user
-        const response = await waitForResponse();
+        // Saving the data about reaction time
+        data[i].reactionTime = reaction.end - reaction.start + "ms";
 
-        // Get the response and validate it
-        if (response === key1 || response === key2 || response === noAnswer) {
-          // Playing sound based on the response.
-          if (data[i].warriety !== noGo && response === noAnswer) {
-            playSound(NoRespAudio);
-          } else {
-            if (
-              data[i].warriety === noGo &&
-              (response === key1 || response === key2)
-            ) {
-              playSound(NoGoErrorAudio);
-            }
-            if (
-              data[i].warriety === AX &&
-              (response === key1 || response === noAnswer)
-            ) {
-              playSound(WrongAudio);
-            }
-            if (
-              (data[i].warriety === AY ||
-                data[i].warriety === BX ||
-                data[i].warriety === BY) &&
-              (response === key2 || response === noAnswer)
-            ) {
-              playSound(WrongAudio);
-            }
-          }
+        // Saving response data
+        data[i].probeResponse = response;
 
-          // End of the measure of reaction time
-          reaction.end = Date.now();
-
-          // Saving the data about reaction time
-          data[i].reactionTime = reaction.end - reaction.start + "ms";
-
-          // Saving response data
-          data[i].probeResponse = response;
-
-          // Probe brake
-          setBorder(false);
-          setColorStyling(false);
-          if (data[i].reactive) {
-            boxLocationStyling(null);
-          }
-
-          setValue(probeBrake);
-          await sleep(imageDisplayTime);
-
-          // Recursion with + 1
-          controlOfDisplay(i + 1);
+        // Probe brake
+        displayValues(false, setBorder, probeBrake, setValue);
+        // setBorder(false);
+        setColorStyling(false);
+        if (data[i].reactive) {
+          boxLocationStyling(null);
         }
-        // Iterated over whole set
-      } else {
-        // console.log(JSON.stringify(data, null, 2));
-        // Passing data up
-        getData(data);
+
+        // setValue(probeBrake);
+        await sleep(imageDisplayTime);
+
+        // Recursion with + 1
+
+        controlOfDisplay(i + 1);
       }
+      // Iterated over whole set
+    } else {
+      // Passing data up
+      getData(data);
     }
+  }
 
+  useEffect(() => {
     controlOfDisplay(0);
   }, []);
 
