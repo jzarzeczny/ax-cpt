@@ -74,6 +74,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
   const [colorStyling, setColorStyling] = useState(false);
+  const [listOfImages, setListOfImages] = useState([]);
   const history = useHistory();
   if (data === null) {
     history.push("/wentwrong");
@@ -85,7 +86,10 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       // If there is need to display photo
       if (data[i].affectId !== null) {
         setValue(
-          <img src={values[data[i].affectId]} alt="images of something"></img>
+          <img
+            src={listOfImages[data[i].affectId]}
+            alt="images of something"
+          ></img>
         );
         await sleep(imageDisplayTime);
       }
@@ -204,6 +208,8 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
   }
 
   useEffect(() => {
+    setListOfImages(Object.values(images));
+
     controlOfDisplay(0);
   }, []);
 
