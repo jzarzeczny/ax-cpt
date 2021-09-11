@@ -4,8 +4,11 @@ import Button from "./Button";
 const Header = (props) => {
   return (
     <header>
+      <Link to="/">
+        <Button name="Strona główna" styling="btn btn--small btn--white" />
+      </Link>
       <Link to="/contact">
-        <Button name="Kontakt" styling={"btn btn--small btn--white"} />
+        <Button name="Kontakt" styling="btn btn--small btn--white" />
       </Link>
     </header>
   );

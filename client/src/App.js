@@ -11,6 +11,7 @@ import My404 from "./pages/My404";
 
 import { NickNameProvider } from "./nicknameContext";
 import WrongDevice from "./pages/WrongDevice";
+import Contact from "./pages/Contact";
 
 function App() {
   const width = window.innerWidth;
@@ -43,11 +44,11 @@ function App() {
               <Route path="/proactive">
                 <Proactive />
               </Route>
-              <Route path="/testing">
-                <Login />
-              </Route>
               <Route path="/login">
                 <Login />
+              </Route>
+              <Route path="/contact">
+                <Contact />
               </Route>
               {/* <Route path="*">
               <My404 />

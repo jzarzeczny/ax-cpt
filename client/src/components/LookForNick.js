@@ -8,8 +8,6 @@ export default function LookForNick({ setNickname, setNotFound }) {
   const nicknameInput = useRef(null);
 
   useEffect(() => {
-    console.log(value);
-
     if (value && value.data !== null) {
       setNickname(value.data.nickname);
       localStorage.setItem("nickname", value.data.nickname);

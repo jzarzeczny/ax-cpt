@@ -12,17 +12,20 @@
   font-family: "Quicksand";
   color: #fff;
   background-color: #333;
-  font-size: 16px;
+  font-size: 18px;
   box-sizing: border-box;
 }
-@media screen and (min-width: 1400px) {
-  * {
-    font-size: 18px;
-  }
-}
+
 h2 {
   font-size: 1.5em;
   margin-bottom: 20px;
+}
+p {
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Initial styling */
@@ -78,10 +81,6 @@ h2 {
 }
 .mainPage__card h2 {
   text-align: center;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-
-  transition: text-decoration-color 0.3s ease-in-out;
 }
 
 .mainPage__card p {
@@ -94,9 +93,6 @@ h2 {
 .mainPage__card:hover {
   margin-bottom: 10px;
   cursor: pointer;
-}
-.mainPage__card:hover h2 {
-  text-decoration-color: black;
 }
 
 /* Styling of Metric page */
@@ -187,6 +183,32 @@ h2 {
 }
 /* 404 */
 
+/* Styling of contact page */
+
+.contactContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  max-width: 700px;
+  line-height: 1.5;
+}
+.contactContainer div,
+.contactContainer a {
+  text-align: center;
+  display: inline;
+  font-size: 1.25em;
+  line-height: 1.5;
+  transition: color 0.5s ease;
+}
+.contactContainer a > div {
+  margin-right: 0.25em;
+}
+.contactContainer a:hover,
+.contactContainer a:active {
+  color: var(--carolina-blue);
+}
+
 /* Styling of mobile page */
 
 .mobileContainer {
@@ -219,15 +241,11 @@ header {
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 8px;
   height: 50px;
 }
-header p {
-  font-weight: 500;
-  color: white;
-  background-color: transparent;
-}
+
 header a {
   background-color: transparent;
 }
@@ -251,7 +269,7 @@ header a {
 }
 .btn--small {
   transform: scale(0.6);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
   transition-property: margin-bottom, border;
 }
 .btn--white {

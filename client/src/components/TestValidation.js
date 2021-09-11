@@ -6,12 +6,10 @@ import dataValidation from "../hooks/dataValidation";
 export default function TestValidation({ data, setFailedTest }) {
   const [correct, setCorrect] = useState(null);
   const newData = data;
-  console.log(correct);
   useEffect(() => {
     const results = dataValidation(newData);
     const correctAnswers = results.map((result) => result.correct === true);
     setCorrect(correctAnswers.length);
-    console.log(results);
   }, [newData]);
   return (
     <div className="resultContainer">

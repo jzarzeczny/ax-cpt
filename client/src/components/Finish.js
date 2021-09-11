@@ -1,8 +1,10 @@
 import React from "react";
+import Header from "../components/Header";
 
 export default function Finish({ from }) {
   return (
     <>
+      <Header />
       {from === "reactive" && (
         <div>
           <h1>Bardzo dziękuje Ci za udział w badania!</h1>
@@ -10,9 +12,13 @@ export default function Finish({ from }) {
             Pamiętaj, cały ekpseryment składa się z dwóch dni. Jutrzejsza próba
             jest ta samo ważna!
             <br />
-            Jeżeli masz jakieś pytania, wróć na stronę główną i naciśnij
-            przycisk "Kontakt".
             <br />
+            Możesz teraz zamknąć okno przeglądarki, twoje wyniki zostały
+            zapisane.
+            <br />
+            <br />
+            Jeżeli masz jakieś pytania, na górze strony znajduje się przycik
+            Kontakt.
           </p>
         </div>
       )}
@@ -22,8 +28,13 @@ export default function Finish({ from }) {
           <p>
             Twoja pomoc jest nieoceniona.
             <br />
-            Jeżeli masz jakieś pytania, wróć na stronę główną i naciśnij
-            przycisk "Kontakt".
+            <br />
+            Twoje wyniki zostały zapisane.
+            <br />
+            <br />
+            Jeżeli masz jakieś pytania, na górze strony znajduje się przycik
+            Kontakt.
+            <br />
             <br />
             Bardzo dziękuje!
           </p>
