@@ -50,11 +50,11 @@ function App() {
               <Route path="/contact">
                 <Contact />
               </Route>
-              {/* <Route path="*">
-              <My404 />
-            </Route> */}
             </NickNameProvider>
           )}
+          <Route path="*">
+            <My404 />
+          </Route>
         </Switch>
       </Router>
     </div>

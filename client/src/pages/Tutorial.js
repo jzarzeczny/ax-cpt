@@ -4,19 +4,15 @@ import instructionsData from "../assets/tutorialText.json";
 import DisplayTest from "../components/DisplayTest";
 import TestValidation from "../components/TestValidation";
 import sequenceData from "../data/tutorial.json";
-// import { NicknameContext } from "../nicknameContext";
 import sendResults from "../hooks/sendData";
 
 const instructionData = [...instructionsData];
-
-// const testData = JSON.parse(sequenceData);
 
 export default function Tutorial() {
   const [tutorialDone, setTutorialDone] = useState(false);
   const [testDone, setTestDone] = useState(false);
   const [result, setResult] = useState([]);
   const [failedTest, setFailedTest] = useState(false);
-  // const [nickname, setNickname] = useContext(NicknameContext);
   const nickname = localStorage.getItem("nickname");
 
   useEffect(() => {

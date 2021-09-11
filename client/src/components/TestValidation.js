@@ -41,4 +41,3 @@ export default function TestValidation({ data, setFailedTest }) {
     </div>
   );
 }
-// Validation -> decisiton making -> display correct content -> change state to render correct screen either instuction of test one more time or reactive test!

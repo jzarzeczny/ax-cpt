@@ -18,7 +18,6 @@ export default function Reactive() {
   const [horizontStyling, setHorizontStyling] = useState({});
   const nickname = localStorage.getItem("nickname");
   useEffect(() => {
-    console.log(proSecoundTryResult);
     if (proFirstTryResult.length !== 0 && breakDone === false) {
       sendResults(nickname, "proactive/low/", proFirstTryResult);
       setTestDone(true);

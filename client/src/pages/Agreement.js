@@ -7,7 +7,6 @@ import { NicknameContext } from "../nicknameContext";
 const Instructions = () => {
   const [agreement, setAgreement] = useState(false);
   const { nickname } = useContext(NicknameContext);
-  console.log(nickname);
   let history = useHistory();
   function handleClick(e) {
     e.preventDefault();
@@ -15,7 +14,6 @@ const Instructions = () => {
       return;
     } else if (agreement) {
       localStorage.setItem("nickname", nickname.toLowerCase());
-      console.log(nickname);
       const change = {
         agreement: true,
       };

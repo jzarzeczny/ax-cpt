@@ -1,8 +1,7 @@
 import useDisplayLogic from "../hooks/useDisplayLogic";
 
 const DisplayTest = ({ getData, sequence, setHorizontStyling }) => {
-  const data = sequence;
-  const value = useDisplayLogic(data, getData, setHorizontStyling);
+  const value = useDisplayLogic(sequence, getData, setHorizontStyling);
 
   return <>{value}</>;
 };
