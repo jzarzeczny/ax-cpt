@@ -73,16 +73,17 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
   const [colorStyling, setColorStyling] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const history = useHistory();
   if (data === null) {
     history.push("/wentwrong");
   }
 
   useEffect(() => {
-    cacheImages(images);
-    controlOfDisplay(0);
-  }, []);
+    if (isLoading) {
+      cacheImages(images);
+    } else controlOfDisplay(0);
+  }, [isLoading]);
 
   const cacheImages = async (imagesArray) => {
     const promises = await imagesArray.map((src) => {
