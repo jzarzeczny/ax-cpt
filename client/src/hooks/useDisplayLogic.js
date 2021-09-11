@@ -73,15 +73,30 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
   const [colorStyling, setColorStyling] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
   if (data === null) {
     history.push("/wentwrong");
   }
 
   useEffect(() => {
+    cacheImages(images);
     controlOfDisplay(0);
   }, []);
 
+  const cacheImages = async (imagesArray) => {
+    const promises = await imagesArray.map((src) => {
+      return new Promise(function (resolve, reject) {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve();
+        img.onerror = reject();
+      });
+    });
+    await Promise.all(promises);
+
+    setIsLoading(false);
+  };
   async function controlOfDisplay(i) {
     const reaction = {};
     if (i < data.length) {
@@ -207,13 +222,19 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
   }
 
   return (
-    <div
-      className={`test__box ${border ? "test__box--border" : null} ${
-        colorStyling ? "test__box--color" : null
-      }`}
-    >
-      <p className="letterInBox">{value}</p>
-    </div>
+    <>
+      {isLoading ? (
+        <div>Images are loading</div>
+      ) : (
+        <div
+          className={`test__box ${border ? "test__box--border" : null} ${
+            colorStyling ? "test__box--color" : null
+          }`}
+        >
+          <p className="letterInBox">{value}</p>
+        </div>
+      )}
+    </>
   );
 };
 
