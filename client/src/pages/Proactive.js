@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import reactiveText from "../assets/proactiveText.json";
-import TutorialBox from "../components/TutorialBox";
+import TutorialInstrunction from "../components/TutorialInstrunction";
 import lowApproach from "../data/proactive/lowApproachProactive.json";
 import highApproach from "../data/proactive/highApproachProactive.json";
 import DisplayTest from "../components/DisplayTest";
@@ -34,7 +34,7 @@ export default function Reactive() {
   return (
     <div className="container" style={horizontStyling}>
       {!instructionsDone && (
-        <TutorialBox func={setInstructionsDone} data={reactiveText} />
+        <TutorialInstrunction func={setInstructionsDone} data={reactiveText} />
       )}
       {instructionsDone && !testDone && !breakDone && (
         <DisplayTest

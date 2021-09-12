@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import TutorialBox from "../components/TutorialBox";
+import TutorialInstrunction from "../components/TutorialInstrunction";
 import instructionsData from "../assets/tutorialText.json";
 import DisplayTest from "../components/DisplayTest";
 import TestValidation from "../components/TestValidation";
@@ -33,7 +33,7 @@ export default function Tutorial() {
   return (
     <div className="container">
       {!tutorialDone && (
-        <TutorialBox func={setTutorialDone} data={instructionData} />
+        <TutorialInstrunction func={setTutorialDone} data={instructionData} />
       )}
       {tutorialDone && !testDone && (
         <DisplayTest sequence={sequenceData} getData={setResult} />

@@ -9,19 +9,19 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Podczas każdej próby",
-    "para": "Zobaczysz pierwszą literę \n-Naciśnij klawisz A kiedy ją zobaczysz \n-Zobaczysz drugą literę \nTwoim zadaniem będzie reakcja klawiszami A lub L \nPamiętajaby nacisnąć klawisz A za każdym razem gdy zobaczysz pierwszą literę!"
+    "para": "Zobaczysz pierwszą literę \n-Naciśnij klawisz Z kiedy ją zobaczysz \n-Zobaczysz drugą literę \nTwoim zadaniem będzie reakcja klawiszami Z lub M \nPamiętajaby nacisnąć klawisz Z za każdym razem gdy zobaczysz pierwszą literę!"
   },
   {
     "boxVisible": true,
     "boxContent": "A",
     "header": "Celem zadania jest wykrycie pary liter A-X",
-    "para": "Jeżeli wykryjesz tą parę liter (pierwsza litera A, druga litera X), twoim zadaniem będzie naciśnięcie klawisza L tak szybko jak to tylko możliwe. \nPamiętaj aby nacinąć przycik A, gdy zobaczysz pierwzą literę \nTeraz na ekranie wyświetla się litera A"
+    "para": "Jeżeli wykryjesz tą parę liter (pierwsza litera A, druga litera X), twoim zadaniem będzie naciśnięcie klawisza L tak szybko jak to tylko możliwe. \nPamiętaj aby nacinąć przycik Z, gdy zobaczysz pierwzą literę \nTeraz na ekranie wyświetla się litera A"
   },
   {
     "boxVisible": true,
     "boxContent": "X",
     "header": "Kolejna litera - X",
-    "para": "Na poprzednim ekranie, wyświetlała się litera A, teraz wyświetla się X.\nW takiej sytacji twoim zadaniem jest naciśnięcie klawisza L"
+    "para": "Na poprzednim ekranie, wyświetlała się litera A, teraz wyświetla się X.\nW takiej sytacji twoim zadaniem jest naciśnięcie klawisza M"
   },
   {
     "boxVisible": true,
@@ -33,7 +33,7 @@
     "boxVisible": true,
     "boxContent": "B",
     "header": "Inne litery",
-    "para": "Opisany wcześniej dotyczy pary A-X\nJeżeli sekwencja jest różna (np. piersza litera to B, a druga to Y to: \n-Gdy zobaczysz pierwszą literę, powinieneś nacisnąć przycisk A\n-Gdy pojawi się druga litera, również naciśnij przycisk A."
+    "para": "Opisany wcześniej dotyczy pary A-X\nJeżeli sekwencja jest różna (np. piersza litera to B, a druga to Y to: \n-Gdy zobaczysz pierwszą literę, powinieneś nacisnąć przycisk Z\n-Gdy pojawi się druga litera, również naciśnij przycisk Z."
   },
   {
     "boxVisible": true,
@@ -51,7 +51,7 @@
     "boxVisible": false,
     "boxContent": "Y",
     "header": "Możliwości",
-    "para": "Oto kilka przykładów, które pomogą ci zrozumieć zadanie:\n-Próba pierwsza: widzisz A następuje długa przerwa, widzisz X. Powinieneś/-aś wcisnąć przycisk A, gdy pojawi się A, i przycisk L, gdy pojawi się X.\n-Próba druga: widzisz B, następuje długa przerwa, widzisz X. Powinieneś wcisnąć przycisk A, gdy pojawi się B, i przycisk A, gdy pojawi się X.\nPróba trzecia: widzisz A, jest duże opóźnienie, widzisz 6. Powinieneś wcisnąć przycisk 1 (A), gdy pojawi się A, i w ogóle nie reagować, gdy zobaczysz 6."
+    "para": "Oto kilka przykładów, które pomogą ci zrozumieć zadanie:\n-Próba pierwsza: widzisz A następuje długa przerwa, widzisz X. Powinieneś/-aś wcisnąć przycisk Z, gdy pojawi się A, i przycisk M, gdy pojawi się X.\n-Próba druga: widzisz B, następuje długa przerwa, widzisz X. Powinieneś wcisnąć przycisk Z, gdy pojawi się B, i przycisk Z, gdy pojawi się X.\nPróba trzecia: widzisz A, jest duże opóźnienie, widzisz 6. Powinieneś wcisnąć przycisk Z, gdy pojawi się A, i w ogóle nie reagować, gdy zobaczysz 6."
   },
   {
     "boxVisible": true,
@@ -63,7 +63,7 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Dźwięk błędu",
-    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk L, gdy zobaczysz drugą literę, ale parą nie było A-X,\n lub gdy nacisnąłeś przycisk A, a parą liter było A-X "
+    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk M, gdy zobaczysz drugą literę, ale parą nie było A-X,\n lub gdy nacisnąłeś przycisk Z, a parą liter było A-X "
   },
   {
     "boxVisible": false,
@@ -75,7 +75,7 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Koniec teorii, czas na trening.",
-    "para": "Czas przejśc do treningu, bardzo ważnym jest abyś zrozumiał zadanie. Umieść palce na przycisku A i L. Zaraz Zaczynamy!"
+    "para": "Czas przejśc do treningu, bardzo ważnym jest abyś zrozumiał zadanie. Umieść palce na przycisku Z i M. Zaraz Zaczynamy!"
   },
   {}
 ]

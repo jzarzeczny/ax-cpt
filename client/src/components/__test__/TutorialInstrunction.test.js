@@ -1,7 +1,7 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import TutorialBox from "../TutorialBox";
+import TutorialInstrunction from "../TutorialInstrunction";
 
 const mockedData = [
   {
@@ -30,12 +30,12 @@ const mockedData = [
   },
 ];
 
-describe("TutorialBox", () => {
+describe("TutorialInstrunction", () => {
   test("Renders a Button component", () => {
-    render(<TutorialBox data={mockedData} func={jest.fn()} />);
+    render(<TutorialInstrunction data={mockedData} func={jest.fn()} />);
   });
   test("Renders corrcect data", () => {
-    render(<TutorialBox data={mockedData} func={jest.fn()} />);
+    render(<TutorialInstrunction data={mockedData} func={jest.fn()} />);
     const boxLetterElement = screen.getByTestId("tutorial__letter");
     const headerElement = screen.getByTestId("tutorial__header");
     const paraElement = screen.getByTestId("tutorial__para");
@@ -46,7 +46,7 @@ describe("TutorialBox", () => {
     expect(alertElement).toHaveTextContent("Naciśnij Spację aby kontyunować");
   });
   test("Renders new data after spacebar click", () => {
-    render(<TutorialBox data={mockedData} func={jest.fn()} />);
+    render(<TutorialInstrunction data={mockedData} func={jest.fn()} />);
     const boxElement = screen.getByTestId("tutorial__box");
     const boxLetterElement = screen.getByTestId("tutorial__letter");
     const headerElement = screen.getByTestId("tutorial__header");
@@ -61,7 +61,7 @@ describe("TutorialBox", () => {
     expect(alertElement).toHaveTextContent("Naciśnij Spację aby kontyunować");
   });
   test("Change class and render box with letter inside", () => {
-    render(<TutorialBox data={mockedData} func={jest.fn()} />);
+    render(<TutorialInstrunction data={mockedData} func={jest.fn()} />);
     const boxElement = screen.getByTestId("tutorial__box");
     const boxLetterElement = screen.getByTestId("tutorial__letter");
     const headerElement = screen.getByTestId("tutorial__header");
@@ -77,7 +77,7 @@ describe("TutorialBox", () => {
     expect(alertElement).toHaveTextContent("Naciśnij Spację aby kontyunować");
   });
   test("Remove visible class", () => {
-    render(<TutorialBox data={mockedData} func={jest.fn()} />);
+    render(<TutorialInstrunction data={mockedData} func={jest.fn()} />);
     const boxElement = screen.getByTestId("tutorial__box");
     const containerElement = screen.getByTestId("tutorial__container");
     fireEvent.keyDown(containerElement, { key: " ", code: "Space" });

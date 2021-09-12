@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
 import { validate } from "../hooks/validate";
+import metric from "../images/styling/metric.svg";
 
 const formReducer = (state, event) => {
   return {
@@ -59,7 +60,10 @@ const Metrics = () => {
 
   return (
     <Layout>
-      <div className="container__form container--blue">
+      <div
+        className="container__form 
+       container--basic "
+      >
         <h1>Metryczka</h1>
         <p>
           Poniżej znajduje się metryczka, pomoże ona w analizie wyników. Twoje
@@ -148,8 +152,9 @@ const Metrics = () => {
           {errors.location ? (
             <div className="form__error">{errors.location}</div>
           ) : null}
+          <img src={metric} alt="Metric" className="form__img" />
 
-          <Button name="Zapisz" type="submit" />
+          <Button styling="btn--standard" name="Zapisz" type="submit" />
         </form>
       </div>
     </Layout>

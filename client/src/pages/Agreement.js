@@ -1,6 +1,7 @@
 import { useHistory } from "react-router-dom";
 import { useState, useContext } from "react";
 import Button from "../components/Button";
+import Layout from "../components/Layout";
 import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
 
@@ -25,43 +26,54 @@ const Instructions = () => {
   }
 
   return (
-    <div className="container">
-      <div className="agreementContainer">
+    <Layout>
+      <div className="container__agreement container--basic ">
         <h2>Instrukcja</h2>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi,
-          aliquid cupiditate optio deserunt provident quos officiis a ipsum,
-          eius id ea odio! Dolores ratione aspernatur, illo nam aperiam
-          doloribus voluptates.
+          Badanie polega na reakcji na wyświetlane treści. Dokładne instrukcje
+          zostaną podane na kolejne stronie.
+        </p>
+        <p>
+          Kluczowe jest przejście procedury zarówno dnia pierwszegom, jak
+          również dnia drugiego. Tylko w takim wypadku dane mogą zostać poddane
+          analizie.
         </p>
         <h2 className="key-info">Informacje zbierane</h2>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis ex
-          consequatur obcaecati vel dolorem ipsam, nemo illo, perferendis velit
-          facere quos exercitationem odio, iure sint repellendus suscipit quia
-          ratione voluptatibus.
+          Oprócz danych metrycznych zebranych na poprzedniej stronie, dane
+          dotyczące Twoich odpowiedzi, zostaną przesłane do serwera.
         </p>
-        <form action="#">
-          <div className="agree">
-            <label htmlFor="agreement">Wyrażam zgodę na badanie:</label>
-            <input
-              defaultValue={agreement}
-              type="checkbox"
-              onChange={() => setAgreement(!agreement)}
-              id="agreement"
-              name="agreement"
-            ></input>
-          </div>
-        </form>
+        <p>
+          Powyższe informajce zostaną użyte tylko do analizy statystycznej
+          wyników.
+        </p>
+        <p>
+          Finalnie, Twoja przeglądarka będzie przechowywała dane lokalnie
+          (nickname) do identyfikacji dnia drugiego. Zostaną one wymazne pod
+          koniec dnia drugiego.
+        </p>
+
+        <label htmlFor="agreement" className="agreement__label">
+          Wyrażam zgodę na badanie:
+          <input
+            defaultValue={agreement}
+            type="checkbox"
+            onChange={() => setAgreement(!agreement)}
+            id="agreement"
+            name="agreement"
+            className="agreement__input"
+          ></input>
+          <span className="agreement__checkbox"></span>
+        </label>
 
         <Button
-          styling="agreement__button"
+          styling="btn--standard"
           type="button"
-          name="Przejdz do kwestionaiusza"
+          name="Przejdz do badania"
           func={handleClick}
         />
       </div>
-    </div>
+    </Layout>
   );
 };
 

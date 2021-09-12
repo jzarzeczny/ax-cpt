@@ -1,21 +1,37 @@
 import React, { useEffect, useState } from "react";
 
-export default function TutorialBox({ func, data }) {
+async function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+export default function TutorialInstrunction({ func, data }) {
   const [phase, setPhase] = useState(0);
-  function handleKey(e) {
+  const [next, setNext] = useState(false);
+  async function handleKey(e) {
+    setNext(true);
     if (e.key === " ") {
+      setNext(false);
+
       setPhase(phase + 1);
     }
   }
+
   useEffect(() => {
-    document.addEventListener("keydown", handleKey);
+    const delayOfClick = setTimeout(() => {
+      document.addEventListener("keydown", handleKey);
+      setNext(true);
+    }, 1000);
     if (phase === data.length - 1) {
       func(true);
     }
     return () => {
       document.removeEventListener("keydown", handleKey);
+      clearTimeout(delayOfClick);
     };
   });
+  console.log("rerender");
   return (
     <div data-testid="tutorial__container" className="tutorial__container">
       <div
@@ -35,7 +51,10 @@ export default function TutorialBox({ func, data }) {
         <p data-testid="tutorial__para" className="tutorial__para">
           {data[phase].para}
         </p>
-        <p data-testid="tutorial__alert" className="tutorial__alert">
+        <p
+          data-testid="tutorial__alert"
+          className={`tutorial__alert ${next && "tutorial__alert--visibile"}`}
+        >
           <strong>Naciśnij Spację aby kontyunować</strong>
         </p>
       </div>
