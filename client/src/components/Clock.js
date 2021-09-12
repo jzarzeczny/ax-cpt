@@ -17,7 +17,7 @@ export default function Clock({ func }) {
   return (
     <div className="clock__container">
       <h1>{clock}s</h1>
-      <p>
+      <p data-testid="clock-paragraph">
         Odpocznij, zreklasuj się. Gdy timer skończy odliczać zacznie się
         ostatnia sesja tego dnia.
       </p>

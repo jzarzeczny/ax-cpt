@@ -1,37 +1,11 @@
 import React, { useState, useReducer, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
+import Layout from "../components/Layout";
 import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
+import { validate } from "../hooks/validate";
 
-const validate = (values, listOfUsers) => {
-  const errors = {};
-  if (!values.nickname) {
-    errors.nickname = "To pole jest wymagane";
-  } else if (values.nickname.length > 8) {
-    errors.nickname = "Wystarczy krótki, maksymalnie 8 znakowy";
-  } else if (listOfUsers.includes(values.nickname.toLowerCase())) {
-    errors.nickname = "Niestety ten nickname jest zajęty, proszę wybrać inny";
-  }
-
-  if (!values.age) {
-    errors.age = "To pole jest wymagane";
-  }
-  if (parseInt(values.age) < 18 || parseInt(values.age) >= 100) {
-    errors.age = "Musisz mieć między 18, a 100 lat";
-  }
-
-  if (!values.gender) {
-    errors.gender = "Musisz wybrać płeć";
-  }
-  if (!values.education) {
-    errors.education = "Musisz wybrać poziom edukacji";
-  }
-  if (!values.location) {
-    errors.location = "Musisz wybrać miejsce zamieszkania";
-  }
-  return errors;
-};
 const formReducer = (state, event) => {
   return {
     ...state,
@@ -84,8 +58,8 @@ const Metrics = () => {
   };
 
   return (
-    <div className="container">
-      <div className="formContainer">
+    <Layout>
+      <div className="container__form container--blue">
         <h1>Metryczka</h1>
         <p>
           Poniżej znajduje się metryczka, pomoże ona w analizie wyników. Twoje
@@ -93,91 +67,92 @@ const Metrics = () => {
           z prawdą. 
         </p>
         <form onSubmit={handleSubmit} data-testid="formElement">
-          <label>
-            Nick:
-            <input
-              type="text"
-              name="nickname"
-              onChange={handleChange}
-              value={formData.nickname || ""}
-            />
-            <br />
-            (potrzebny do identyfikacji drugiego dnia)
+          <label className="label__nickname" htmlFor="nickname">
+            Nick
+            <span>(potrzebny do identyfikacji drugiego dnia)</span>
           </label>
+          <input
+            type="text"
+            name="nickname"
+            id="nickname"
+            onChange={handleChange}
+            value={formData.nickname || ""}
+          />
           {errors.nickname ? (
-            <div className="error" data-testid="nicknameError">
+            <div className="form__error" data-testid="nicknameError">
               {errors.nickname}
             </div>
           ) : null}
 
-          <label>
-            Wiek:
-            <input
-              type="number"
-              name="age"
-              onChange={handleChange}
-              value={formData.age || ""}
-            />
-          </label>
-          {errors.age ? <div className="error">{errors.age}</div> : null}
+          <label htmlFor="age">Wiek</label>
+          <input
+            id="age"
+            type="number"
+            name="age"
+            onChange={handleChange}
+            value={formData.age || ""}
+          />
 
-          <label>
-            Płeć:
-            <select
-              name="gender"
-              onChange={handleChange}
-              value={formData.gender || ""}
-            >
-              <option value="">Proszę wybrać płeć</option>
-              <option value="m">Mężczyzna</option>
-              <option value="f">Kobieta</option>
-            </select>
-          </label>
-          {errors.gender ? <div className="error">{errors.gender}</div> : null}
+          {errors.age ? <div className="form__error">{errors.age}</div> : null}
 
-          <label>
-            Wykształcenie:
-            <select
-              name="education"
-              onChange={handleChange}
-              value={formData.education || ""}
-            >
-              <option value="">Proszę wybrać wykształcenie</option>
-              <option value="podstawowe">Podstawowe</option>
-              <option value="średnie">Średnie</option>
-              <option value="wyższe">Wyższe</option>
-              <option value="zawodowe">Zawodowe</option>
-            </select>
-          </label>
-          {errors.education ? (
-            <div className="error">{errors.education}</div>
+          <label htmlFor="gender">Płeć</label>
+          <select
+            id="gender"
+            name="gender"
+            onChange={handleChange}
+            value={formData.gender || ""}
+          >
+            <option value="">Wybierz</option>
+            <option value="m">Mężczyzna</option>
+            <option value="f">Kobieta</option>
+          </select>
+
+          {errors.gender ? (
+            <div className="form__error">{errors.gender}</div>
           ) : null}
 
-          <label>
-            Miejsce zamieszkania:
-            <select name="location" onChange={handleChange}>
-              <option value="">Proszę wybrać miejsce zamieszkania</option>
-              <option value="wies">Wieś</option>
-              <option value="malemiasto">Miasto do 50tyś mieszkańców</option>
-              <option value="sredniemiasto">
-                Miasto od 50tyś mieszkańców do 150tyś mieszkańców
-              </option>
-              <option value="duzemiasto">
-                Miasto od 150tyś mieszkańców do 250tyś mieszkańców
-              </option>
-              <option value="metropolia">
-                Miasto powyżej 250tyś miekszańców
-              </option>
-            </select>
-          </label>
+          <label htmlFor="education">Wykształcenie:</label>
+          <select
+            id="eduction"
+            name="education"
+            onChange={handleChange}
+            value={formData.education || ""}
+          >
+            <option value="">Wybierz</option>
+            <option value="podstawowe">Podstawowe</option>
+            <option value="średnie">Średnie</option>
+            <option value="wyższe">Wyższe</option>
+            <option value="zawodowe">Zawodowe</option>
+          </select>
+
+          {errors.education ? (
+            <div className="form__error">{errors.education}</div>
+          ) : null}
+
+          <label htmlFor="location">Miejsce zamieszkania</label>
+          <select id="location" name="location" onChange={handleChange}>
+            <option value="">Wybierz</option>
+            <option value="wies">Wieś</option>
+            <option value="malemiasto">Miasto do 50tyś mieszkańców</option>
+            <option value="sredniemiasto">
+              Miasto od 50tyś mieszkańców do 150tyś mieszkańców
+            </option>
+            <option value="duzemiasto">
+              Miasto od 150tyś mieszkańców do 250tyś mieszkańców
+            </option>
+            <option value="metropolia">
+              Miasto powyżej 250tyś miekszańców
+            </option>
+          </select>
+
           {errors.location ? (
-            <div className="error">{errors.location}</div>
+            <div className="form__error">{errors.location}</div>
           ) : null}
 
           <Button name="Zapisz" type="submit" />
         </form>
       </div>
-    </div>
+    </Layout>
   );
 };
 
