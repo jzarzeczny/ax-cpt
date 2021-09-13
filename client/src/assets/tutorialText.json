@@ -55,9 +55,9 @@
   },
   {
     "boxVisible": true,
-    "boxContent": "+++",
+    "boxContent": "  +\n+  +",
     "header": "Zdjęcia",
-    "para": "Przed każdą sekwencją dwóch cyfr pojawi się znak \n  +\n+  +\n który oznacza, iż zaraz pojawi się nowa sekwencja dwóch cyfr. Dodatkowo, przed każdą sekwencją będzie pojawiało się zdjęcie. "
+    "para": "Przed każdą sekwencją dwóch liter pojawi się znak \n  +\n+  +\n który oznacza, iż zaraz pojawi się nowa sekwencja dwóch cyfr. Dodatkowo, przed każdą sekwencją będzie pojawiało się zdjęcie. "
   },
   {
     "boxVisible": false,

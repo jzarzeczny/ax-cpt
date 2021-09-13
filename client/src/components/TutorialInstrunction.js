@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-async function sleep(ms) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-}
-
 export default function TutorialInstrunction({ func, data }) {
   const [phase, setPhase] = useState(0);
   const [next, setNext] = useState(false);
