@@ -7,6 +7,7 @@ import dataValidation from "../hooks/dataValidation";
 export default function TestValidation({ data, setFailedTest }) {
   const [correct, setCorrect] = useState(null);
   const newData = data;
+  const NUMBER_OF_CORRECT = 1;
   useEffect(() => {
     const results = dataValidation(newData);
     const correctAnswers = results.map((result) => result.correct === true);
@@ -15,7 +16,7 @@ export default function TestValidation({ data, setFailedTest }) {
   return (
     <Layout>
       <div className="container__result container--small container--blue">
-        {correct >= 1 && correct !== null && (
+        {correct >= NUMBER_OF_CORRECT && correct !== null && (
           <>
             <h3>Świetnie sobie poradziłeś!</h3>
             <p>
@@ -28,7 +29,7 @@ export default function TestValidation({ data, setFailedTest }) {
             </Link>
           </>
         )}
-        {correct < 1 && correct !== null && (
+        {correct < NUMBER_OF_CORRECT && correct !== null && (
           <>
             <h3>
               Niestety, nie udzieliłeś prawidłowej odpowiedzi na większośc
