@@ -7,8 +7,6 @@ import sendResults from "../hooks/sendData";
 
 const takeCareOfData = (result) => {
   const nickname = localStorage.getItem("nickname");
-  console.log(nickname);
-  console.log(result);
   sendResults(nickname, "trening/", result);
 };
 
@@ -16,11 +14,12 @@ export default function TestValidation({ data, dispatch }) {
   const [correct, setCorrect] = useState(null);
   const newData = data;
   const NUMBER_OF_CORRECT = 1;
+
   useEffect(() => {
     const results = dataValidation(newData);
-    const correctAnswers = results.map((result) => result.correct === true);
+    const correctAnswers = results.filter((result) => result.correct);
     setCorrect(correctAnswers.length);
-    if (correct > NUMBER_OF_CORRECT) {
+    if (correctAnswers.length >= NUMBER_OF_CORRECT) {
       takeCareOfData(data);
     }
   }, [newData]);

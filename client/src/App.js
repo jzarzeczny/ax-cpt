@@ -52,9 +52,6 @@ function App() {
               </Route>
             </NickNameProvider>
           )}
-
-          {/* Test puropses */}
-
           <Route path="*">
             <My404 />
           </Route>

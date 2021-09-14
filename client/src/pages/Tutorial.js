@@ -9,7 +9,6 @@ const instructionData = [...instructionsData];
 const initialState = { phase: "displayTutorial" };
 
 function reducer(state, action) {
-  console.log(action);
   switch (action.type) {
     case "displayTutorial":
       return { phase: "displayTutorial" };
@@ -27,11 +26,8 @@ function reducer(state, action) {
 export default function Tutorial() {
   const [result, setResult] = useState([]);
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(result);
-  console.log("Reducer state: " + state.phase);
-  useEffect(() => {
-    console.log("Im in useEffect");
 
+  useEffect(() => {
     if (result.length !== 0) {
       dispatch({ type: "displayValidation" });
     }
