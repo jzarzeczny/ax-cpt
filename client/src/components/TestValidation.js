@@ -3,8 +3,16 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import Layout from "./Layout";
 import dataValidation from "../hooks/dataValidation";
+import sendResults from "../hooks/sendData";
 
-export default function TestValidation({ data, setFailedTest }) {
+const takeCareOfData = (result) => {
+  const nickname = localStorage.getItem("nickname");
+  console.log(nickname);
+  console.log(result);
+  sendResults(nickname, "trening/", result);
+};
+
+export default function TestValidation({ data, dispatch }) {
   const [correct, setCorrect] = useState(null);
   const newData = data;
   const NUMBER_OF_CORRECT = 1;
@@ -12,7 +20,11 @@ export default function TestValidation({ data, setFailedTest }) {
     const results = dataValidation(newData);
     const correctAnswers = results.map((result) => result.correct === true);
     setCorrect(correctAnswers.length);
+    if (correct > NUMBER_OF_CORRECT) {
+      takeCareOfData(data);
+    }
   }, [newData]);
+
   return (
     <Layout>
       <div className="container__result container--small container--blue">
@@ -41,7 +53,7 @@ export default function TestValidation({ data, setFailedTest }) {
             </p>
             <Button
               name="Zacznij jeszcze raz"
-              func={() => setFailedTest(true)}
+              func={() => dispatch({ type: "failedTest" })}
             />
           </>
         )}

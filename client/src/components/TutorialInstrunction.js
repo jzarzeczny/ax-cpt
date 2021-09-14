@@ -16,9 +16,9 @@ export default function TutorialInstrunction({ func, data }) {
     const delayOfClick = setTimeout(() => {
       document.addEventListener("keydown", handleKey);
       setNext(true);
-    }, 1000);
+    }, 0);
     if (phase === data.length - 1) {
-      func(true);
+      func({ type: "displayTest" });
     }
     return () => {
       document.removeEventListener("keydown", handleKey);

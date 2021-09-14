@@ -377,6 +377,7 @@ header a {
 .tutorial__letter {
   font-size: 1.3rem;
   font-weight: 400;
+  white-space: pre-wrap;
 }
 .tutorial__text {
   display: flex;

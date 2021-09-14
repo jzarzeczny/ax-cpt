@@ -1,45 +1,55 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import TutorialInstrunction from "../components/TutorialInstrunction";
 import instructionsData from "../assets/tutorialText.json";
 import DisplayTest from "../components/DisplayTest";
 import TestValidation from "../components/TestValidation";
 import sequenceData from "../data/tutorial.json";
-import sendResults from "../hooks/sendData";
-
 const instructionData = [...instructionsData];
 
-export default function Tutorial() {
-  const [tutorialDone, setTutorialDone] = useState(false);
-  const [testDone, setTestDone] = useState(false);
-  const [result, setResult] = useState([]);
-  const [failedTest, setFailedTest] = useState(false);
-  const nickname = localStorage.getItem("nickname");
+const initialState = { phase: "displayTutorial" };
 
+function reducer(state, action) {
+  console.log(action);
+  switch (action.type) {
+    case "displayTutorial":
+      return { phase: "displayTutorial" };
+    case "displayTest":
+      return { phase: "displayTest" };
+    case "displayValidation":
+      return { phase: "displayValidation" };
+    case "failedTest":
+      return { phase: "failedTest" };
+    default:
+      throw new Error();
+  }
+}
+
+export default function Tutorial() {
+  const [result, setResult] = useState([]);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  console.log(result);
+  console.log("Reducer state: " + state.phase);
   useEffect(() => {
+    console.log("Im in useEffect");
+
     if (result.length !== 0) {
-      sendResults(nickname, "trening/", result);
-      setTestDone(true);
+      dispatch({ type: "displayValidation" });
     }
-    if (failedTest) {
-      setTutorialDone(false);
-      setTestDone(false);
-      setResult([]);
-      setFailedTest(false);
-    }
-    if (testDone && !failedTest && result.length !== 0) {
-      sendResults(nickname, "trening/", result);
-    }
-  }, [result, failedTest]);
+  }, [result, state.phase]);
+  if (state.phase === "failedTest") {
+    setResult([]);
+    dispatch({ type: "displayTutorial" });
+  }
   return (
     <div className="container">
-      {!tutorialDone && (
-        <TutorialInstrunction func={setTutorialDone} data={instructionData} />
+      {state.phase === "displayTutorial" && (
+        <TutorialInstrunction func={dispatch} data={instructionData} />
       )}
-      {tutorialDone && !testDone && (
+      {state.phase === "displayTest" && (
         <DisplayTest sequence={sequenceData} getData={setResult} />
       )}
-      {testDone && (
-        <TestValidation data={result} setFailedTest={setFailedTest} />
+      {state.phase === "displayValidation" && (
+        <TestValidation data={result} dispatch={dispatch} />
       )}
     </div>
   );

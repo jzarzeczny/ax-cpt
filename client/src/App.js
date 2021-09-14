@@ -12,7 +12,6 @@ import My404 from "./pages/My404";
 import { NickNameProvider } from "./nicknameContext";
 import WrongDevice from "./pages/WrongDevice";
 import Contact from "./pages/Contact";
-import TestValidation from "./components/TestValidation";
 
 function App() {
   const width = window.innerWidth;
@@ -50,35 +49,6 @@ function App() {
               </Route>
               <Route path="/contact">
                 <Contact />
-              </Route>
-              <Route path="/test">
-                <TestValidation
-                  data={
-                    [
-                      // {
-                      //   id: 1,
-                      //   clue: "A",
-                      //   probe: "X",
-                      //   warriety: "AX",
-                      //   clueResponse: "z",
-                      //   probeResponse: "m",
-                      //   reactionTime: "127ms",
-                      //   affectId: null,
-                      // },
-                      // {
-                      //   id: 2,
-                      //   clue: "A",
-                      //   clueResponse: "z",
-                      //   probeResponse: "z",
-                      //   probe: "B",
-                      //   warriety: "AY",
-                      //   reactionTime: "444ms",
-                      //   affectId: null,
-                      // },
-                    ]
-                  }
-                  setFailedTest={() => {}}
-                />
               </Route>
             </NickNameProvider>
           )}
