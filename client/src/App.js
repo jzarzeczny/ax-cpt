@@ -3,8 +3,6 @@ import Main from "./pages/Main";
 import Metrics from "./pages/Metrics";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Tutorial from "./pages/Tutorial";
-import Reactive from "./pages/Reactive";
-import Proactive from "./pages/Proactive";
 import Login from "./pages/Login";
 import My404 from "./pages/My404";
 
@@ -38,20 +36,14 @@ function App() {
               <Route path="/tutorial">
                 <Tutorial />
               </Route>
-              <Route path="/reactive">
-                <Reactive />
-              </Route>
-              <Route path="/proactive">
-                <Proactive />
+              <Route path="/experiment">
+                <Experiment />
               </Route>
               <Route path="/login">
                 <Login />
               </Route>
               <Route path="/contact">
                 <Contact />
-              </Route>
-              <Route path="/experiment">
-                <Experiment />
               </Route>
             </NickNameProvider>
           )}

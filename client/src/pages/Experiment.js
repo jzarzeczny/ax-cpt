@@ -9,7 +9,6 @@ import { useLocation } from "react-router-dom";
 const initialState = { phase: "displayInstructions" };
 
 function reducer(state, action) {
-  console.log(action);
   switch (action.type) {
     case "displayTest":
       return { phase: "displayTest", sequence: "low" };
