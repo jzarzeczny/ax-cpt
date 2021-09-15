@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import instructionText from "../assets/index";
 
-export default function TutorialInstrunction({ dispatch, data }) {
+export default function Instruction({ dispatch, type }) {
   const [phase, setPhase] = useState(0);
   const [next, setNext] = useState(false);
+  const data = instructionText[type];
   async function handleKey(e) {
     setNext(true);
     if (e.key === " ") {
@@ -25,7 +27,6 @@ export default function TutorialInstrunction({ dispatch, data }) {
       clearTimeout(delayOfClick);
     };
   });
-  console.log("rerender");
   return (
     <div data-testid="tutorial__container" className="tutorial__container">
       <div

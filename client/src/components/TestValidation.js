@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Layout from "./Layout";
@@ -35,7 +35,12 @@ export default function TestValidation({ data, dispatch }) {
               {newData.length} bloków! Zaraz zacznie się pierwsze z dwóch zadań
               przewidzianych na dziejszy dzień.
             </p>
-            <Link to="/reactive">
+            <Link
+              to={{
+                pathname: "/experiment",
+                state: { type: "reactive" },
+              }}
+            >
               <Button type="button" name="Zacznij zadanie" />
             </Link>
           </>

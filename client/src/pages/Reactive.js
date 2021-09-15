@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import reactiveText from "../assets/reactiveText.json";
 import TutorialInstrunction from "../components/TutorialInstrunction";
 import lowApproach from "../data/reactive/lowApproachReactive.json";

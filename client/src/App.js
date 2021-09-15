@@ -1,5 +1,4 @@
 import Agreement from "./pages/Agreement";
-import React from "react";
 import Main from "./pages/Main";
 import Metrics from "./pages/Metrics";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -12,6 +11,7 @@ import My404 from "./pages/My404";
 import { NickNameProvider } from "./nicknameContext";
 import WrongDevice from "./pages/WrongDevice";
 import Contact from "./pages/Contact";
+import Experiment from "./pages/Experiment";
 
 function App() {
   const width = window.innerWidth;
@@ -50,8 +50,12 @@ function App() {
               <Route path="/contact">
                 <Contact />
               </Route>
+              <Route path="/experiment">
+                <Experiment />
+              </Route>
             </NickNameProvider>
           )}
+
           <Route path="*">
             <My404 />
           </Route>

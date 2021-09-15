@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Clock({ func }) {
+export default function Clock({ dispatch }) {
   const [clock, setClock] = useState(60);
   useEffect(() => {
     const tick = setInterval(() => {
       setClock(clock - 1);
     }, 1000);
     if (clock === 0) {
-      func(true);
+      dispatch({ type: "breakDone" });
     }
     return function cleanUp() {
       clearInterval(tick);

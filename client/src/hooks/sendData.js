@@ -1,6 +1,9 @@
 import axios from "axios";
 
 const sendResults = (nickname, path, data) => {
+  console.log(nickname);
+  console.log(path);
+  console.log(data);
   data.forEach((e) => (e.nickname = nickname));
   axios
     .post("http://localhost:5000/" + path + nickname.nickname, data)
