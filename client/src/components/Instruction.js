@@ -5,6 +5,8 @@ export default function Instruction({ dispatch, type }) {
   const [phase, setPhase] = useState(0);
   const [next, setNext] = useState(false);
   const data = instructionText[type];
+
+  const DELAY = 1000;
   async function handleKey(e) {
     setNext(true);
     if (e.key === " ") {
@@ -13,12 +15,13 @@ export default function Instruction({ dispatch, type }) {
       setPhase(phase + 1);
     }
   }
-
+  console.log(type);
+  console.log(instructionText);
   useEffect(() => {
     const delayOfClick = setTimeout(() => {
       document.addEventListener("keydown", handleKey);
       setNext(true);
-    }, 0);
+    }, DELAY);
     if (phase === data.length - 1) {
       dispatch({ type: "displayTest" });
     }

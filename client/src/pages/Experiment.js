@@ -3,7 +3,7 @@ import Instruction from "../components/Instruction";
 import DisplayTest from "../components/DisplayTest";
 import Clock from "../components/Clock";
 import Finish from "../components/Finish";
-import sendResults from "../hooks/sendData";
+import sendResults from "../utils/sendData";
 import { useLocation } from "react-router-dom";
 
 const initialState = { phase: "displayInstructions" };
@@ -38,7 +38,7 @@ export default function Experiment() {
       dispatch({ type: "displayBreak" });
     }
 
-    if (secondResults.length !== 0 && state.phase === "displayTest2") {
+    if (secondResults.length !== 0) {
       sendResults(nickname, type + "/" + state.sequence + "/", secondResults);
       dispatch({ type: "experimentDone" });
     }

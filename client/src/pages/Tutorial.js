@@ -1,9 +1,7 @@
 import { useState, useEffect, useReducer } from "react";
-import TutorialInstrunction from "../components/TutorialInstrunction";
-import instructionsData from "../assets/tutorialText.json";
+import Instruction from "../components/Instruction";
 import DisplayTest from "../components/DisplayTest";
 import TestValidation from "../components/TestValidation";
-const instructionData = [...instructionsData];
 
 const initialState = { phase: "displayTutorial" };
 
@@ -38,7 +36,7 @@ export default function Tutorial() {
   return (
     <div className="container">
       {state.phase === "displayTutorial" && (
-        <TutorialInstrunction dispatch={dispatch} data={instructionData} />
+        <Instruction dispatch={dispatch} type={"tutorial"} />
       )}
       {state.phase === "displayTest" && (
         <DisplayTest type="tutorial" getData={setResult} />

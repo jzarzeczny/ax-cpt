@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import Layout from "../components/Layout";
 import LookForNick from "../components/LookForNick";
 
 export default function Login() {
@@ -16,8 +17,8 @@ export default function Login() {
   };
   console.log(nickname);
   return (
-    <div className="container">
-      <div className="loginContainer">
+    <Layout>
+      <div className="login__container container--blue">
         <h2>WItaj drugiego dnia eksperymentu!</h2>
         <p>
           W celu ułatwienia badania, poniżej powinieneś zobaczyć nick, który
@@ -45,6 +46,6 @@ export default function Login() {
           <LookForNick setNickname={setNickname} setNotFound={setNotFound} />
         )}
       </div>
-    </div>
+    </Layout>
   );
 }

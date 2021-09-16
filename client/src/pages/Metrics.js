@@ -4,7 +4,7 @@ import Button from "../components/Button";
 import Layout from "../components/Layout";
 import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
-import { validate } from "../hooks/validate";
+import { formValidation } from "../utils/formValidation";
 import metric from "../images/styling/metric.svg";
 
 const formReducer = (state, event) => {
@@ -34,7 +34,7 @@ const Metrics = () => {
   }, []);
   const handleSubmit = (e) => {
     e.preventDefault();
-    const errorList = validate(formData, listOfUsers);
+    const errorList = formValidation(formData, listOfUsers);
     setErrors(errorList);
     if (Object.keys(errorList).length === 0) {
       setNickname(() => formData.nickname);

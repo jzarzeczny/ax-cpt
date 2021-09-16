@@ -1,10 +1,11 @@
 import Header from "../components/Header";
+import Layout from "../components/Layout";
 
 export default function Contact() {
   return (
-    <div className="container">
+    <Layout>
       <Header />
-      <div className="contactContainer">
+      <div className="container__contact container--small">
         <h2>Jeżeli masz jakiekolwiek pytania, pisz śmiało!</h2>
         <p>
           Na wszelkie pytania postaramy się odpowiedzieć tak szybko, jak to
@@ -22,6 +23,6 @@ export default function Contact() {
           <div>&#9993;</div>axcpt.kul@gmail.com
         </a>
       </div>
-    </div>
+    </Layout>
   );
 }

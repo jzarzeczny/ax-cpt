@@ -46,11 +46,7 @@ a {
 }
 
 /* Page contaiener */
-.container--blue,
-.agreementContainer,
-.resultContainer,
-.clock__container,
-.loginContainer {
+.container--blue {
   border: 3px solid var(--carolina-blue);
   border-radius: 10px;
   padding: 2rem;
@@ -225,11 +221,11 @@ a {
 
 /* Styling of Login page */
 
-.loginContainer h2,
-.loginContainer h3 {
+.login__container h2,
+.login__container h3 {
   text-align: center;
 }
-.loginContainer h3 {
+.login__container h3 {
   margin: 1rem;
 }
 .login__buttonContainer {
@@ -242,7 +238,7 @@ a {
 
 /* Styling of contact page */
 
-.contactContainer {
+.container__contact {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -250,25 +246,25 @@ a {
   max-width: 700px;
   line-height: 1.5;
 }
-.contactContainer div,
-.contactContainer a {
+.container__contact div,
+.container__contact a {
   text-align: center;
   display: inline;
   font-size: 1.25em;
   line-height: 1.5;
   transition: color 0.5s ease;
 }
-.contactContainer a > div {
+.container__contact a > div {
   margin-right: 0.25em;
 }
-.contactContainer a:hover,
-.contactContainer a:active {
+.container__contact a:hover,
+.container__contact a:active {
   color: var(--carolina-blue);
 }
 
 /* Styling of mobile page */
 
-.mobileContainer {
+.container__mobile {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -277,9 +273,9 @@ a {
   width: min(80%, 500px);
   height: 100vh;
 }
-.mobileContainer h2,
-.mobileContainer h3,
-.mobileContainer p {
+.container__mobile h2,
+.container__mobile h3,
+.container__mobile p {
   margin-bottom: 1em;
   text-align: center;
 }

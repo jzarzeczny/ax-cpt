@@ -1,4 +1,4 @@
-export const validate = (values, listOfUsers) => {
+export const formValidation = (values, listOfUsers) => {
   const errors = {};
   if (!values.nickname) {
     errors.nickname = "To pole jest wymagane";

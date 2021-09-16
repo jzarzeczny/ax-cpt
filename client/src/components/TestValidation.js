@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Layout from "./Layout";
-import dataValidation from "../hooks/dataValidation";
-import sendResults from "../hooks/sendData";
+import dataValidation from "../utils/dataValidation";
+import sendResults from "../utils/sendData";
 
 const takeCareOfData = (result) => {
   const nickname = localStorage.getItem("nickname");
