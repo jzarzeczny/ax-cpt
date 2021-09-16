@@ -6,6 +6,16 @@ Aim of this repo is to show the process of development. Each 'level' has branch 
 
 **Curent live:** [heroku](https://ax--cpt.herokuapp.com)
 
+## Technology
+
+- React
+- Vanilla CSS
+- BEM metodology
+- Express
+- Mongodb Atlas
+- Mongodb Realm - export results into google sheet
+- Google sheet scripts - visualization of data, prep for SPSS export
+
 ## Versions
 
 ### 0.4
@@ -50,7 +60,15 @@ Next features:
 - Make code more readable (specially useDisplayLogic - one of the oldest part of the app, which grown over the time and need a lot more readablility!)
 - Cypress test in the future
 
+### level-4 - 16.09
+
+Took care about readability of code. Included BEM into the project's CSS. Upgrade the conditionals. Done with refactor - there is probably a lot more to do, however I'm done for now.
+
+Goal for next level:
+
+- Test existing code, find bugs.
+
 ## Resources
 
-This research is based on [work of this lab](https://sites.wustl.edu/dualmechanisms/tasks/)
+This research is based on [work of this lab](https://sites.wustl.edu/dualmechanisms/tasks/).
 In addition, there is a lot of research that use bahavioral task in lab. My goal is to move it to internet, check the area that noone test before.
