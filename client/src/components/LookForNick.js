@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 
 export default function LookForNick({ setNickname, setNotFound }) {
@@ -8,8 +8,6 @@ export default function LookForNick({ setNickname, setNotFound }) {
   const nicknameInput = useRef(null);
 
   useEffect(() => {
-    console.log(value);
-
     if (value && value.data !== null) {
       setNickname(value.data.nickname);
       localStorage.setItem("nickname", value.data.nickname);

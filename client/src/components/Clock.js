@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Clock({ func }) {
+export default function Clock({ dispatch }) {
   const [clock, setClock] = useState(60);
   useEffect(() => {
     const tick = setInterval(() => {
       setClock(clock - 1);
     }, 1000);
     if (clock === 0) {
-      func(true);
+      dispatch({ type: "breakDone" });
     }
     return function cleanUp() {
       clearInterval(tick);
@@ -17,7 +17,7 @@ export default function Clock({ func }) {
   return (
     <div className="clock__container">
       <h1>{clock}s</h1>
-      <p>
+      <p data-testid="clock-paragraph">
         Odpocznij, zreklasuj się. Gdy timer skończy odliczać zacznie się
         ostatnia sesja tego dnia.
       </p>

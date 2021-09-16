@@ -1,187 +1,241 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import images from "./images";
-import NoRespAudio from "./public/audio/Noresp.wav";
-import WrongAudio from "./public/audio/Wrong.wav";
-import NoGoErrorAudio from "./public/audio/NoGoError.wav";
+import images from "../images";
+import NoRespAudio from "../assets/audio/Noresp.wav";
+import WrongAudio from "../assets/audio/Wrong.wav";
+import NoGoErrorAudio from "../assets/audio/NoGoError.wav";
 
+// Variables
+// Variants of the test
+const AX = "AX";
+const AY = "AY";
+const BX = "BX";
+const BY = "BY";
+const noGo = "no-go";
+const noAnswer = "no answer";
+
+// Keys used to operate the test
+const key1 = "z";
+const key2 = "m";
+
+// Content display between sesions
+const clueBrake = "+ + +";
+const probeBrake = "  +\n+  +";
+
+// Times
+const imageDisplayTime = 3000;
+const letterDisplayTime = 1000;
+
+// Support functions
+
+// Sleep for some time
 async function sleep(ms) {
   return new Promise((resolve) => {
     setTimeout(resolve, ms);
   });
 }
+// Play the sound during the test
 async function playSound(track) {
   const audio = new Audio(track);
 
   audio.play();
 }
-async function waitForClue() {
-  return new Promise((resolve) => {
-    const waitForAnswer = () =>
-      setTimeout(() => {
-        resolve("no answer");
-        clearTimeout(waitForAnswer);
-      }, 1000);
-    waitForAnswer();
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "a") {
-        resolve(true);
-      }
-    });
-  });
-}
 
+// Function that waits for user response
 async function waitForResponse() {
   return new Promise((resolve) => {
     const waitForAnswer = () =>
       setTimeout(() => {
-        resolve("no answer");
+        resolve(noAnswer);
         clearTimeout(waitForAnswer);
-      }, 1000);
+      }, letterDisplayTime);
     waitForAnswer();
     document.addEventListener("keydown", (event) => {
-      if (event.key === "a") {
-        resolve("A");
+      if (event.key === key1) {
+        resolve(key1);
       }
-      if (event.key === "l") {
-        resolve("L");
+      if (event.key === key2) {
+        resolve(key2);
       }
     });
   });
 }
 
+// Basic function that display values in each phase of experiment
+function displayValues(border, setBorder, value, setValue) {
+  setBorder(border);
+  setValue(value);
+}
+
 //Something to impove later on.
-const values = Object.values(images);
 
 const useDisplayLogic = (data, getData, boxLocationStyling) => {
   const [value, setValue] = useState();
   const [border, setBorder] = useState(false);
   const [colorStyling, setColorStyling] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const history = useHistory();
   if (data === null) {
     history.push("/wentwrong");
   }
 
   useEffect(() => {
-    async function controlOfDisplay(i) {
-      const reaction = {};
-      if (i < data.length) {
-        if (data[i].affectId !== null) {
-          setValue(
-            <img src={values[data[i].affectId]} alt="images of something"></img>
-          );
-          await sleep(3000);
-        }
-        //Initial display of clue
+    if (isLoading) {
+      cacheImages(images);
+    } else controlOfDisplay(0);
+  }, [isLoading]);
 
-        setBorder(true);
-        setValue(data[i].clue);
-        //Waiting for response of user
-        const clueSeen = await waitForClue();
-        //Response came
-        if (clueSeen) {
-          // Play sound if no reaction to clue
-          if (clueSeen === "no answer") {
-            playSound(NoRespAudio);
-          }
-          data[i].clueResponse = clueSeen;
-          //Display the wait-for-probe template without the border
-          setBorder(false);
-          setValue("+ + +");
-          //Display for 3s
-          await sleep(3000);
+  const cacheImages = async (imagesArray) => {
+    const promises = await imagesArray.map((src) => {
+      return new Promise(function (resolve, reject) {
+        const img = new Image();
+        img.src = src;
+        img.onload = resolve();
+        img.onerror = reject();
+      });
+    });
+    await Promise.all(promises);
+
+    setIsLoading(false);
+  };
+  async function controlOfDisplay(i) {
+    const reaction = {};
+    if (i < data.length) {
+      // If there is need to display photo
+      if (data[i].affectId !== null) {
+        setValue(
+          <img src={images[data[i].affectId]} alt="images of something"></img>
+        );
+        await sleep(imageDisplayTime);
+      }
+
+      //Initial display of clue
+      displayValues(true, setBorder, data[i].clue, setValue);
+
+      //Waiting for response of user
+      const clueSeen = await waitForResponse();
+
+      //Reaction on the reponse
+      if (clueSeen) {
+        // Play sound if no reaction to clue
+        if (clueSeen === noAnswer) {
+          playSound(NoRespAudio);
         }
-        //3s passed, display of probe
-        if (data[i].reactive) {
-          if (data[i].warriety === "AX" || data[i].warriety === "BY") {
-            boxLocationStyling({
-              alignItems: "flex-start",
-            });
+        if (clueSeen === key2) {
+          playSound(WrongAudio);
+        }
+        // Save the data about the clue
+        data[i].clueResponse = clueSeen;
+
+        //Display probe brake
+        displayValues(false, setBorder, clueBrake, setValue);
+
+        await sleep(imageDisplayTime);
+      }
+
+      // Display probe
+      // If the warriety of the experiment is 'reactive', change the place of the box
+      if (data[i].reactive) {
+        // Box at the top of the screen
+        if (data[i].warriety === AX || data[i].warriety === BY) {
+          boxLocationStyling({
+            alignItems: "flex-start",
+          });
+        }
+        // Box at the bottom of the screen
+        if (
+          data[i].warriety === AY ||
+          data[i].warriety === BX ||
+          data[i].warriety === noGo
+        ) {
+          setColorStyling(true);
+          boxLocationStyling({
+            alignItems: "flex-end",
+          });
+        }
+      }
+
+      // If warriety is test or proactive, display box with corresponding letter without change of the placement
+      displayValues(true, setBorder, data[i].probe, setValue);
+
+      // Get the time value for reaction time mearsurment
+      reaction.start = Date.now();
+
+      //Use function to get the response of user
+      const response = await waitForResponse();
+
+      // Get the response and validate it
+      if (response === key1 || response === key2 || response === noAnswer) {
+        // Playing sound based on the response.
+        if (data[i].warriety !== noGo && response === noAnswer) {
+          playSound(NoRespAudio);
+        } else {
+          if (
+            data[i].warriety === noGo &&
+            (response === key1 || response === key2)
+          ) {
+            playSound(NoGoErrorAudio);
           }
           if (
-            data[i].warriety === "AY" ||
-            data[i].warriety === "BX" ||
-            data[i].warriety === "no-go"
+            data[i].warriety === AX &&
+            (response === key1 || response === noAnswer)
           ) {
-            setColorStyling(true);
-            boxLocationStyling({
-              alignItems: "flex-end",
-            });
+            playSound(WrongAudio);
+          }
+          if (
+            (data[i].warriety === AY ||
+              data[i].warriety === BX ||
+              data[i].warriety === BY) &&
+            (response === key2 || response === noAnswer)
+          ) {
+            playSound(WrongAudio);
           }
         }
-        setBorder(true);
-        setValue(data[i].probe);
-        // Start the measure of reaction time
-        reaction.start = Date.now();
-        //Waiting for response of participant
-        const response = await waitForResponse();
-        //Response happen ether Button1 or Button2
-        if (response === "A" || response === "L" || response === "no answer") {
-          // Playing sound based on the response.
-          if (data[i].warriety !== "no-go" && response === "no answer") {
-            playSound(NoRespAudio);
-          } else {
-            if (
-              data[i].warriety === "no-go" &&
-              (response === "A" || response === "L")
-            ) {
-              playSound(NoGoErrorAudio);
-            }
-            if (
-              data[i].warriety === "AX" &&
-              (response === "A" || response === "no answer")
-            ) {
-              playSound(WrongAudio);
-            }
-            if (
-              (data[i].warriety === "AY" ||
-                data[i].warriety === "BX" ||
-                data[i].warriety === "BY") &&
-              (response === "L" || response === "no answer")
-            ) {
-              playSound(WrongAudio);
-            }
-          }
 
-          // End of the measure of reaction time
-          reaction.end = Date.now();
-          // Saving the data about reaction time
-          data[i].reactionTime = reaction.end - reaction.start + "ms";
-          // Saving response data
+        // End of the measure of reaction time
+        reaction.end = Date.now();
 
-          data[i].probeResponse = response;
+        // Saving the data about reaction time
+        data[i].reactionTime = reaction.end - reaction.start + "ms";
 
-          // Waiting for new set for 3s
-          setBorder(false);
-          setColorStyling(false);
-          if (data[i].reactive) {
-            boxLocationStyling(null);
-          }
+        // Saving response data
+        data[i].probeResponse = response;
 
-          setValue("  +\n+  +");
-          await sleep(3000);
+        // Probe brake
+        displayValues(false, setBorder, probeBrake, setValue);
 
-          // Recursion with + 1
-          controlOfDisplay(i + 1);
+        setColorStyling(false);
+        if (data[i].reactive) {
+          boxLocationStyling(null);
         }
-        // Iterated over whole set
-      } else {
-        // console.log(JSON.stringify(data, null, 2));
-        getData(data);
+
+        // setValue(probeBrake);
+        await sleep(imageDisplayTime);
+
+        // Recursion with + 1
+        controlOfDisplay(i + 1);
       }
+      // Iterated over whole set
+    } else {
+      // Passing data up
+      getData(data);
     }
-
-    controlOfDisplay(0);
-  }, []);
+  }
 
   return (
-    <div
-      className={`test__box ${border ? "test__box--border" : null} ${
-        colorStyling ? "test__box--color" : null
-      }`}
-    >
-      <p className="letterInBox">{value}</p>
-    </div>
+    <>
+      {isLoading ? (
+        <div>Images are loading</div>
+      ) : (
+        <div
+          className={`test__box ${border ? "test__box--border" : null} ${
+            colorStyling ? "test__box--color" : null
+          }`}
+        >
+          <p className="letterInBox">{value}</p>
+        </div>
+      )}
+    </>
   );
 };
 

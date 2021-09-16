@@ -22,5 +22,12 @@
     "boxContent": "",
     "header": "Wskazówka",
     "para": "Masz tylko jedną sekundę, aby zareagować na kady bodziec, więc reaguj tak szbyko i dokładnie jak to tylko możliwe.\n\nPamiętaj, że reackja na każdy bodziec NIE zależy od jego lokazacji ani od koloru obramowania. Odpowiedź powinna być oparta o literę lub numer, który widzisz.\n\nJednakże, niektórzy uważają, że lokalizacja i kolor obramowania są pomocne przy udzielaniu odpowiedzi."
-  }
+  },
+  {
+    "boxVisible": false,
+    "boxContent": "Powodzenia",
+    "header": "Badanie",
+    "para": "Badanie zacznie się po naciśnięci spacji."
+  },
+  {}
 ]

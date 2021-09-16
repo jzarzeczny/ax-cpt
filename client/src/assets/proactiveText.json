@@ -25,9 +25,10 @@
     "para": "Ponieważ wskazówka podpowiada jaki jest stosunek procentowy występowania par, może to doprowadzić, do sytuacji, w której popełniasz więcej błędów podczas prób, gdzie po pierwszej literze pojawia się cyfra.\n\nNie ma w tym nic złego!\n\nW dniu dzisiejszym ważne jest znaczenie wskazówki."
   },
   {
-    "boxVisible": false,
-    "boxContent": "",
-    "header": "Zaczynamy.",
-    "para": "Przygotuj się!\n\nNastępny ekran to badanie."
-  }
+    "boxVisible": true,
+    "boxContent": "Powodzenia",
+    "header": "Badanie",
+    "para": "Badanie zacznie się po naciśnięci spacji."
+  },
+  {}
 ]

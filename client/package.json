@@ -28,8 +28,15 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "react/prop-types": 0,
+      "react/react-in-jsx-scope": 0,
+      "react/jsx-uses-react": 0
+    }
   },
   "browserslist": {
     "production": [

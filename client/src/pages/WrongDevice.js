@@ -1,8 +1,6 @@
-import React from "react";
-
 export default function WrongDevice() {
   return (
-    <div className="mobileContainer">
+    <div className="container__mobile">
       <h2>Uwaga!</h2>
       <p>
         Z powodu specyfikacji badania, nie ma możliwości wykonania go na

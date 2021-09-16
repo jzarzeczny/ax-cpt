@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import Layout from "../components/Layout";
 import LookForNick from "../components/LookForNick";
 
 export default function Login() {
@@ -10,17 +11,14 @@ export default function Login() {
   useEffect(() => {
     setNickname(localStorage.getItem("nickname"));
   }, []);
-  let history = useHistory();
-  const letsrole = () => {
-    history.push("/proactive");
-  };
+
   const whereIsYourNickname = () => {
     setNotFound(true);
   };
   console.log(nickname);
   return (
-    <div className="container">
-      <div className="loginContainer">
+    <Layout>
+      <div className="login__container container--blue">
         <h2>WItaj drugiego dnia eksperymentu!</h2>
         <p>
           W celu ułatwienia badania, poniżej powinieneś zobaczyć nick, który
@@ -35,12 +33,19 @@ export default function Login() {
             func={whereIsYourNickname}
           />
 
-          <Button name="Zgadza się" styling="btn--true" func={letsrole} />
+          <Link
+            to={{
+              pathname: "/experiment",
+              state: { type: "proactive" },
+            }}
+          >
+            <Button type="button" styling="btn--true" name="Zacznij zadanie" />
+          </Link>
         </div>
         {notFound && (
           <LookForNick setNickname={setNickname} setNotFound={setNotFound} />
         )}
       </div>
-    </div>
+    </Layout>
   );
 }

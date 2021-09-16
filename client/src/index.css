@@ -4,7 +4,8 @@
   --rich-black-fogra-29: #00171fff;
   --prussian-blue: #003459ff;
   --cg-blue: #007ea7ff;
-  --carolina-blue: #00a8e8ff;
+  --carolina-blue: #00a8e8;
+  --carolina-blue-100: rgba(0, 166, 232, 0.294);
 }
 /* Base styles */
 * {
@@ -12,17 +13,21 @@
   font-family: "Quicksand";
   color: #fff;
   background-color: #333;
-  font-size: 16px;
+  font-size: 18px;
   box-sizing: border-box;
 }
-@media screen and (min-width: 1400px) {
-  * {
-    font-size: 18px;
-  }
-}
-h2 {
+
+h2,
+h3 {
   font-size: 1.5em;
   margin-bottom: 20px;
+}
+p {
+  line-height: 1.5;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Initial styling */
@@ -41,14 +46,20 @@ h2 {
 }
 
 /* Page contaiener */
-.formContainer,
-.agreementContainer,
-.resultContainer,
-.clock__container,
-.loginContainer {
-  padding: 2rem;
+.container--blue {
   border: 3px solid var(--carolina-blue);
   border-radius: 10px;
+  padding: 2rem;
+}
+.container--basic {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.container--small {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
 }
 
 /*  */
@@ -74,14 +85,10 @@ h2 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  transition: margin-bottom 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .mainPage__card h2 {
   text-align: center;
-  text-decoration: underline;
-  text-decoration-color: transparent;
-
-  transition: text-decoration-color 0.3s ease-in-out;
 }
 
 .mainPage__card p {
@@ -92,91 +99,133 @@ h2 {
   font-size: 0.8rem;
 }
 .mainPage__card:hover {
-  margin-bottom: 10px;
+  transform: translateY(10px);
   cursor: pointer;
-}
-.mainPage__card:hover h2 {
-  text-decoration-color: black;
 }
 
 /* Styling of Metric page */
 
-.formContainer form {
+.container__form h1 {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.container__form p {
+  font-size: 1rem;
+}
+.container__form form {
   display: flex;
   flex-flow: column nowrap;
-}
-.formContainer label {
-  margin: 20px 20px 0;
-}
-.formContainer label > input,
-.formContainer label > select {
-  margin-left: 10px;
-}
-.error {
-  color: red;
-  margin-left: 20px;
+  position: relative;
 }
 
-.formContainer form > button {
-  width: 200px;
-  margin: 20px auto 0;
+.container__form label {
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.container__form input,
+.container__form select {
+  width: 40%;
+  padding: 0.25em;
+}
+.container__form label > span {
+  display: block;
+  font-size: 0.8rem;
+}
+
+.form__error {
+  margin-top: 0.5rem;
+  color: red;
+}
+
+.form__img {
+  position: absolute;
+  max-width: 400px;
+  background-color: #333;
+  border-radius: 15px;
+  right: 0rem;
+  top: 40%;
+  transform: translateY(-40%);
 }
 
 /* Styling od Agreement page */
 
-.agreementContainer {
-  padding: 50px;
-  margin: 40px auto;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
+.container__agreement h2 {
+  text-align: center;
 }
 
-.agreementContainer h2 {
-  text-align: left;
-}
-.agreement__button {
-  align-self: center;
-}
-.agreementContainer .key-info {
+.container__agreement .key-info {
   color: var(--carolina-blue);
-  margin-top: 1rem;
-  text-decoration: underline;
-  text-decoration-color: red;
 }
 
-.agreementContainer p {
-  text-align: justify;
-}
-
-.agree {
-  position: relative;
-}
-.agreementContainer form {
-  align-self: center;
+.container__agreement p {
   margin-bottom: 1rem;
 }
-.agree label {
-  font-size: 1.2em;
-  margin-right: 15px;
-}
 
-#agreement {
-  transform: scale(1.2);
+/* Styling checkbox in agreement */
+.agreement__label {
+  position: relative;
+  font-size: 1.1em;
+  width: max-content;
 }
-.agreementContainer a {
-  align-self: center;
+.agreement__input {
+  position: absolute;
+  opacity: 0;
+}
+.agreement__label .agreement__checkbox {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: -2em;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid var(--carolina-blue);
+}
+.agreement__label .agreement__checkbox::after {
+  position: absolute;
+  content: "";
+  left: 12px;
+  top: 12px;
+  height: 0px;
+  width: 0px;
+  border-radius: 5px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(0deg) scale(0);
+  opacity: 1;
+}
+.agreement__input:checked ~ .agreement__checkbox {
+  background-color: var(--carolina-blue);
+  border-radius: 5px;
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  border: 2px solid var(--carolina-blue);
+}
+.agreement__input:checked ~ .agreement__checkbox::after {
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+  left: 6px;
+  top: 0px;
+  width: 8px;
+  height: 15px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
 }
 
 /* Styling of Login page */
 
-.loginContainer h2,
-.loginContainer h3 {
+.login__container h2,
+.login__container h3 {
   text-align: center;
 }
-.loginContainer h3 {
+.login__container h3 {
   margin: 1rem;
 }
 .login__buttonContainer {
@@ -187,9 +236,35 @@ h2 {
 }
 /* 404 */
 
+/* Styling of contact page */
+
+.container__contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+  max-width: 700px;
+  line-height: 1.5;
+}
+.container__contact div,
+.container__contact a {
+  text-align: center;
+  display: inline;
+  font-size: 1.25em;
+  line-height: 1.5;
+  transition: color 0.5s ease;
+}
+.container__contact a > div {
+  margin-right: 0.25em;
+}
+.container__contact a:hover,
+.container__contact a:active {
+  color: var(--carolina-blue);
+}
+
 /* Styling of mobile page */
 
-.mobileContainer {
+.container__mobile {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -198,9 +273,9 @@ h2 {
   width: min(80%, 500px);
   height: 100vh;
 }
-.mobileContainer h2,
-.mobileContainer h3,
-.mobileContainer p {
+.container__mobile h2,
+.container__mobile h3,
+.container__mobile p {
   margin-bottom: 1em;
   text-align: center;
 }
@@ -219,15 +294,11 @@ header {
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 8px;
   height: 50px;
 }
-header p {
-  font-weight: 500;
-  color: white;
-  background-color: transparent;
-}
+
 header a {
   background-color: transparent;
 }
@@ -246,12 +317,16 @@ header a {
 .btn:hover {
   cursor: pointer;
   background-color: var(--cg-blue);
-  border: 2px solid var(--carolina-blue);
   text-decoration: none;
+}
+.btn--standard {
+  text-align: center;
+  width: 200px;
+  margin: 20px auto 0;
 }
 .btn--small {
   transform: scale(0.6);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
   transition-property: margin-bottom, border;
 }
 .btn--white {
@@ -273,11 +348,11 @@ header a {
   background-color: red;
 }
 
-/* TutorialBox */
+/* TutorialInstrunction */
 
 .tutorial__container {
   height: 500px;
-  width: 500px;
+  width: 600px;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
@@ -285,8 +360,8 @@ header a {
 }
 
 .tutorial__box {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   border: 2px solid white;
   display: none;
   justify-content: center;
@@ -298,6 +373,7 @@ header a {
 .tutorial__letter {
   font-size: 1.3rem;
   font-weight: 400;
+  white-space: pre-wrap;
 }
 .tutorial__text {
   display: flex;
@@ -310,35 +386,41 @@ header a {
 .tutorial__para {
   text-align: justify;
   white-space: pre-wrap;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .tutorial__alert {
   position: absolute;
-  text-decoration: underline;
   bottom: 10%;
+  opacity: 0;
   left: 50%;
   transform: translate(-50%);
 }
+.tutorial__alert--visibile {
+  animation: show 1000ms;
+  animation-fill-mode: forwards;
+}
 
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* Test Result page */
 
-.resultContainer {
-  padding: 4rem;
-}
-.resultContainer h3 {
-  font-size: 1.5rem;
+.container__result h3 {
   text-align: center;
-  margin-bottom: 2rem;
 }
-.resultContainer p {
-  font-size: 1.3rem;
+.container__result p {
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
-.resultContainer a,
-.resultContainer button {
+.container__result a,
+.container__result button {
   display: block;
-  margin: 2rem auto;
-  text-align: center;
-  text-decoration: none;
+  margin: 0 auto;
 }
 
 /* Clock */
