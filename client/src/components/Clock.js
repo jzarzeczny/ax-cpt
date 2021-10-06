@@ -12,7 +12,7 @@ export default function Clock({ dispatch }) {
     return function cleanUp() {
       clearInterval(tick);
     };
-  });
+  }, [clock]);
 
   return (
     <div className="clock__container">

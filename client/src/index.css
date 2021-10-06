@@ -13,13 +13,13 @@
   font-family: "Quicksand";
   color: #fff;
   background-color: #333;
-  font-size: 18px;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
 h2,
 h3 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-bottom: 20px;
 }
 p {
@@ -110,9 +110,7 @@ a {
   text-align: center;
   margin-bottom: 1rem;
 }
-.container__form p {
-  font-size: 1rem;
-}
+
 .container__form form {
   display: flex;
   flex-flow: column nowrap;
@@ -121,7 +119,7 @@ a {
 
 .container__form label {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-top: 1rem;
   position: relative;
   margin-bottom: 0.5rem;
@@ -129,7 +127,7 @@ a {
 .container__form input,
 .container__form select {
   width: 40%;
-  padding: 0.25em;
+  padding: 0.1em;
 }
 .container__form label > span {
   display: block;
@@ -137,13 +135,21 @@ a {
 }
 
 .form__error {
-  margin-top: 0.5rem;
+  position: absolute;
+  margin-top: 0.25rem;
   color: red;
+  font-size: 0.75rem;
+  z-index: 1;
+}
+
+.form__control {
+  position: relative;
+  margin-bottom: 0.5rem;
 }
 
 .form__img {
   position: absolute;
-  max-width: 400px;
+  max-width: 350px;
   background-color: #333;
   border-radius: 15px;
   right: 0rem;
@@ -308,7 +314,7 @@ header a {
   background-color: var(--carolina-blue);
   color: #fff;
   font-weight: 600;
-  padding: 15px;
+  padding: 10px;
   border: 2px solid var(--prussian-blue);
   border-radius: 8px;
   text-decoration: none;
@@ -390,7 +396,7 @@ header a {
 }
 .tutorial__alert {
   position: absolute;
-  bottom: 10%;
+  bottom: 5%;
   opacity: 0;
   left: 50%;
   transform: translate(-50%);

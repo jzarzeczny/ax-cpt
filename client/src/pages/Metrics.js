@@ -71,87 +71,94 @@ const Metrics = () => {
           z prawdą. 
         </p>
         <form onSubmit={handleSubmit} data-testid="formElement">
-          <label className="label__nickname" htmlFor="nickname">
-            Nick
-            <span>(potrzebny do identyfikacji drugiego dnia)</span>
-          </label>
-          <input
-            type="text"
-            name="nickname"
-            id="nickname"
-            onChange={handleChange}
-            value={formData.nickname || ""}
-          />
-          {errors.nickname ? (
-            <div className="form__error" data-testid="nicknameError">
-              {errors.nickname}
-            </div>
-          ) : null}
+          <div className="form__control">
+            <label className="label__nickname" htmlFor="nickname">
+              Nick
+              <span>(potrzebny do identyfikacji drugiego dnia)</span>
+            </label>
+            <input
+              type="text"
+              name="nickname"
+              id="nickname"
+              onChange={handleChange}
+              value={formData.nickname || ""}
+            />
+            {errors.nickname ? (
+              <div className="form__error" data-testid="nicknameError">
+                {errors.nickname}
+              </div>
+            ) : null}
+          </div>
+          <div className="form__control">
+            <label htmlFor="age">Wiek</label>
+            <input
+              id="age"
+              type="number"
+              name="age"
+              onChange={handleChange}
+              value={formData.age || ""}
+            />
+            {errors.age ? (
+              <div className="form__error">{errors.age}</div>
+            ) : null}
+          </div>
 
-          <label htmlFor="age">Wiek</label>
-          <input
-            id="age"
-            type="number"
-            name="age"
-            onChange={handleChange}
-            value={formData.age || ""}
-          />
+          <div className="form__control">
+            <label htmlFor="gender">Płeć</label>
+            <select
+              id="gender"
+              name="gender"
+              onChange={handleChange}
+              value={formData.gender || ""}
+            >
+              <option value="">Wybierz</option>
+              <option value="m">Mężczyzna</option>
+              <option value="f">Kobieta</option>
+            </select>
+            {errors.gender ? (
+              <div className="form__error">{errors.gender}</div>
+            ) : null}
+          </div>
 
-          {errors.age ? <div className="form__error">{errors.age}</div> : null}
+          <div className="form__control">
+            <label htmlFor="education">Wykształcenie:</label>
+            <select
+              id="eduction"
+              name="education"
+              onChange={handleChange}
+              value={formData.education || ""}
+            >
+              <option value="">Wybierz</option>
+              <option value="podstawowe">Podstawowe</option>
+              <option value="średnie">Średnie</option>
+              <option value="wyższe">Wyższe</option>
+              <option value="zawodowe">Zawodowe</option>
+            </select>
+            {errors.education ? (
+              <div className="form__error">{errors.education}</div>
+            ) : null}
+          </div>
 
-          <label htmlFor="gender">Płeć</label>
-          <select
-            id="gender"
-            name="gender"
-            onChange={handleChange}
-            value={formData.gender || ""}
-          >
-            <option value="">Wybierz</option>
-            <option value="m">Mężczyzna</option>
-            <option value="f">Kobieta</option>
-          </select>
-
-          {errors.gender ? (
-            <div className="form__error">{errors.gender}</div>
-          ) : null}
-
-          <label htmlFor="education">Wykształcenie:</label>
-          <select
-            id="eduction"
-            name="education"
-            onChange={handleChange}
-            value={formData.education || ""}
-          >
-            <option value="">Wybierz</option>
-            <option value="podstawowe">Podstawowe</option>
-            <option value="średnie">Średnie</option>
-            <option value="wyższe">Wyższe</option>
-            <option value="zawodowe">Zawodowe</option>
-          </select>
-
-          {errors.education ? (
-            <div className="form__error">{errors.education}</div>
-          ) : null}
-
-          <label htmlFor="location">Miejsce zamieszkania</label>
-          <select id="location" name="location" onChange={handleChange}>
-            <option value="">Wybierz</option>
-            <option value="wies">Wieś</option>
-            <option value="malemiasto">Miasto do 50tyś mieszkańców</option>
-            <option value="sredniemiasto">
-              Miasto od 50tyś mieszkańców do 150tyś mieszkańców
-            </option>
-            <option value="duzemiasto">
-              Miasto od 150tyś mieszkańców do 250tyś mieszkańców
-            </option>
-            <option value="metropolia">
-              Miasto powyżej 250tyś miekszańców
-            </option>
-          </select>
-
-          {errors.location ? (
-            <div className="form__error">{errors.location}</div>
-          ) : null}
+          <div className="form__control">
+            <label htmlFor="location">Miejsce zamieszkania</label>
+            <select id="location" name="location" onChange={handleChange}>
+              <option value="">Wybierz</option>
+              <option value="wies">Wieś</option>
+              <option value="malemiasto">Miasto do 50tyś mieszkańców</option>
+              <option value="sredniemiasto">
+                Miasto od 50tyś mieszkańców do 150tyś mieszkańców
+              </option>
+              <option value="duzemiasto">
+                Miasto od 150tyś mieszkańców do 250tyś mieszkańców
+              </option>
+              <option value="metropolia">
+                Miasto powyżej 250tyś miekszańców
+              </option>
+            </select>
+            {errors.location ? (
+              <div className="form__error">{errors.location}</div>
+            ) : null}
+          </div>
           <img src={metric} alt="Metric" className="form__img" />
 
           <Button styling="btn--standard" name="Zapisz" type="submit" />
