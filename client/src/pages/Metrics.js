@@ -99,7 +99,9 @@ const Metrics = () => {
               value={formData.age || ""}
             />
             {errors.age ? (
-              <div className="form__error">{errors.age}</div>
+              <div className="form__error" data-testid="ageError">
+                {errors.age}
+              </div>
             ) : null}
           </div>
 

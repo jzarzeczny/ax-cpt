@@ -192,6 +192,9 @@ a {
   border-radius: 5px;
   border: 2px solid var(--carolina-blue);
 }
+.agreement__label .agreement__checkbox--fail {
+  border: 2px solid red;
+}
 .agreement__label .agreement__checkbox::after {
   position: absolute;
   content: "";
@@ -205,6 +208,7 @@ a {
   transform: rotate(0deg) scale(0);
   opacity: 1;
 }
+
 .agreement__input:checked ~ .agreement__checkbox {
   background-color: var(--carolina-blue);
   border-radius: 5px;
