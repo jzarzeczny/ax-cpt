@@ -5,11 +5,12 @@ import Experiment from "../../../src/pages/Experiment";
 
 describe("Tutorial component", () => {
   beforeEach(() => {
-    cy.visit("localhost:3000/experiment");
     cy.setLocalStorage("nickname", "test");
   });
   afterEach(() => {
     cy.clearLocalStorage();
   });
-  it("Render the reactive expermient", () => {});
+  it("Render the reactive expermient", () => {
+    mount(<Experiment />);
+  });
 });
