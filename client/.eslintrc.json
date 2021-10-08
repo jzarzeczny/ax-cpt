@@ -1,1 +1,10 @@
-{ "extends": "plugin:cypress/recommended" }
+{
+  "rules": {
+    "react/prop-types": 0
+  },
+  "extends": [
+    "plugin:cypress/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ]
+}

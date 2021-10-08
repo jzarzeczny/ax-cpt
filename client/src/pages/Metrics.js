@@ -1,4 +1,4 @@
-import { useState, useReducer, useContext, useEffect } from "react";
+import React, { useState, useReducer, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
@@ -45,9 +45,9 @@ const Metrics = () => {
         education: formData.education,
         location: formData.location,
       };
-      axios
-        .post("http://localhost:5000/record/add", newperson)
-        .then((res) => {});
+      axios.post("http://localhost:5000/record/add", newperson).then((res) => {
+        console.log(res);
+      });
       history.push("/agreement");
     }
   };
@@ -68,7 +68,7 @@ const Metrics = () => {
         <p>
           Poniżej znajduje się metryczka, pomoże ona w analizie wyników. Twoje
           dane nie zostaną nikomu udostępnione. Proszę, wypełnij ankietę zgodnie
-          z prawdą. 
+          z prawdą.
         </p>
         <form onSubmit={handleSubmit} data-testid="formElement">
           <div className="form__control">

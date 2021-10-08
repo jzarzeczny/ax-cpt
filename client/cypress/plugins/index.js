@@ -20,7 +20,7 @@ const injectDevServer = require("@cypress/react/plugins/react-scripts");
 const webpackPreprocessor = require("@cypress/webpack-preprocessor");
 
 module.exports = (on, config) => {
-  // on("file:preprocessor", webpackPreprocessor());
+  on("file:preprocessor", webpackPreprocessor());
 
   if (config.testingType === "component") {
     injectDevServer(on, config);

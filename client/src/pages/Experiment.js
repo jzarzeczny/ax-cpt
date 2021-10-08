@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import Instruction from "../components/Instruction";
 import DisplayTest from "../components/DisplayTest";
 import Clock from "../components/Clock";

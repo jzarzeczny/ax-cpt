@@ -2,9 +2,8 @@ import "cypress-localstorage-commands";
 
 describe("Tutorial component", () => {
   beforeEach(() => {
+    cy.visit("localhost:3000/tutorial");
     cy.setLocalStorage("nickname", "test");
-
-    cy.visit("/tutorial");
   });
   afterEach(() => {
     cy.clearLocalStorage();
