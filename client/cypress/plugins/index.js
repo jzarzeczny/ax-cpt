@@ -16,7 +16,11 @@
  * @type {Cypress.PluginConfig}
  */
 // eslint-disable-next-line no-unused-vars
+const webpackPreprocessor = require("@cypress/webpack-preprocessor");
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
+  on("file:preprocessor", webpackPreprocessor());
+  require("@cypress/react/plugins/react-scripts")(on, config);
+  // IMPORTANT to return the config object
+  // with the any changed environment variables
+  return config;
+};

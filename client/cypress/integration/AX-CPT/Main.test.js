@@ -1,6 +1,6 @@
 describe("Initial cypress", () => {
   beforeEach(() => {
-    cy.visit("localhost:3000");
+    cy.visit("/");
   });
   it("Correct cards rendered", () => {
     cy.get(".mainPage__card").should("have.length", 2);
@@ -21,7 +21,7 @@ describe("Initial cypress", () => {
 
 describe("Testing metrics", () => {
   beforeEach(() => {
-    cy.visit("localhost:3000/metrics");
+    cy.visit("/metrics");
   });
   it("Check if errors display correctly", () => {
     cy.get("[type='submit']").click();
