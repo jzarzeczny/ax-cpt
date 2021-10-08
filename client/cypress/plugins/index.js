@@ -1,3 +1,5 @@
+const injectDevServer = require("@cypress/react/plugins/react-scripts");
+
 /// <reference types="cypress" />
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
@@ -8,7 +10,6 @@
 // You can read more here:
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
-
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 
@@ -17,10 +18,13 @@
  */
 // eslint-disable-next-line no-unused-vars
 const webpackPreprocessor = require("@cypress/webpack-preprocessor");
+
 module.exports = (on, config) => {
-  on("file:preprocessor", webpackPreprocessor());
-  require("@cypress/react/plugins/react-scripts")(on, config);
-  // IMPORTANT to return the config object
-  // with the any changed environment variables
-  return config;
+  // on("file:preprocessor", webpackPreprocessor());
+
+  if (config.testingType === "component") {
+    injectDevServer(on, config);
+  }
+
+  return config; // IMPORTANT to return a config
 };
