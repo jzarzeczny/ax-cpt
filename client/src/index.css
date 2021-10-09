@@ -470,11 +470,17 @@ header a {
 /* Styling test box */
 
 .test__box {
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 1500px) {
+  .test__box {
+    width: 325px;
+    height: 325px;
+  }
 }
 
 .test__box--border {

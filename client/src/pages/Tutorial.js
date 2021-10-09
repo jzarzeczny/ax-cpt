@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import Instruction from "../components/Instruction";
 import DisplayTest from "../components/DisplayTest";
 import TestValidation from "../components/TestValidation";
