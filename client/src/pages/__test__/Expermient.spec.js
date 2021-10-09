@@ -158,7 +158,7 @@ describe("Experiment component - reactive version", () => {
     cy.intercept(
       {
         method: "POST",
-        url: '/"http://localhost:5000/reactive/low/*',
+        url: "http://localhost:5000/reactive/low/*",
       },
       []
     ).as("POST data re-low");
@@ -242,7 +242,7 @@ describe("Experiment component - reactive version", () => {
     cy.intercept(
       {
         method: "POST",
-        url: '/"http://localhost:5000/reactive/high/*',
+        url: "http://localhost:5000/reactive/high/*",
       },
       []
     ).as("POST data re-high");
@@ -410,7 +410,7 @@ describe("Experiment component - proactive version", () => {
     cy.intercept(
       {
         method: "POST",
-        url: '/"http://localhost:5000/proactive/low/*',
+        url: "http://localhost:5000/proactive/low/*",
       },
       []
     ).as("POST data pro-low");
@@ -494,7 +494,7 @@ describe("Experiment component - proactive version", () => {
     cy.intercept(
       {
         method: "POST",
-        url: '/"http://localhost:5000/proactive/high/*',
+        url: "http://localhost:5000/proactive/high/*",
       },
       []
     ).as("POST data pro-high");
