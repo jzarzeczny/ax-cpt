@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Button({ name, styling, type, func = null }) {
   return (
     <>

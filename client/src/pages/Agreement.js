@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
 import axios from "axios";
@@ -7,11 +7,13 @@ import { NicknameContext } from "../nicknameContext";
 
 const Instructions = () => {
   const [agreement, setAgreement] = useState(false);
+  const [failed, setFailed] = useState(false);
   const { nickname } = useContext(NicknameContext);
   let history = useHistory();
   function handleClick(e) {
     e.preventDefault();
     if (!agreement) {
+      setFailed(true);
       return;
     } else if (agreement) {
       localStorage.setItem("nickname", nickname.toLowerCase());
@@ -63,7 +65,11 @@ const Instructions = () => {
             name="agreement"
             className="agreement__input"
           ></input>
-          <span className="agreement__checkbox"></span>
+          <span
+            className={`agreement__checkbox ${
+              failed && "agreement__checkbox--fail"
+            }`}
+          ></span>
         </label>
 
         <Button

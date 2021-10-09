@@ -192,6 +192,9 @@ a {
   border-radius: 5px;
   border: 2px solid var(--carolina-blue);
 }
+.agreement__label .agreement__checkbox--fail {
+  border: 2px solid red;
+}
 .agreement__label .agreement__checkbox::after {
   position: absolute;
   content: "";
@@ -205,6 +208,7 @@ a {
   transform: rotate(0deg) scale(0);
   opacity: 1;
 }
+
 .agreement__input:checked ~ .agreement__checkbox {
   background-color: var(--carolina-blue);
   border-radius: 5px;
@@ -466,11 +470,17 @@ header a {
 /* Styling test box */
 
 .test__box {
-  width: 400px;
-  height: 400px;
+  width: 250px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (min-width: 1500px) {
+  .test__box {
+    width: 325px;
+    height: 325px;
+  }
 }
 
 .test__box--border {

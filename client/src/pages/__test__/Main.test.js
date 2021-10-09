@@ -17,6 +17,6 @@ describe("Main", () => {
   test("Render two secions", () => {
     render(<MockedMain />);
     const LinkElement = screen.getAllByRole("link");
-    expect(LinkElement.length).toBe(2);
+    expect(LinkElement.length).toBe(4);
   });
 });

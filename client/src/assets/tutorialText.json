@@ -26,7 +26,7 @@
   {
     "boxVisible": true,
     "boxContent": "+++",
-    "header": "+++ - wskazówka ",
+    "header": "+++ - wskazówka",
     "para": "Zadanie poleka na sekwencji par. Midzy każdą parą, będzie znak poziomych +++, aby była pewność, iż zaraz pokaże się druga litera tej samej sekwencji. "
   },
   {
@@ -63,7 +63,7 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Dźwięk błędu",
-    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk m, gdy zobaczysz drugą literę, ale parą nie było A-X,\n lub gdy nacisnąłeś przycisk z, a parą liter było A-X "
+    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk m, gdy zobaczysz drugą literę, ale parą nie było A-X,\nlub gdy nacisnąłeś przycisk z, a parą liter było A-X "
   },
   {
     "boxVisible": false,
@@ -74,7 +74,7 @@
   {
     "boxVisible": false,
     "boxContent": "",
-    "header": "Koniec teorii, czas na trening.",
+    "header": "Koniec teorii, czas na trening",
     "para": "Czas przejśc do treningu, bardzo ważnym jest abyś zrozumiał zadanie. Umieść palce na przycisku z i m. Zaraz Zaczynamy!"
   },
   {}

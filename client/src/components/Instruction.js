@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import instructionText from "../assets/index";
+import WrongAudio from "../assets/audio/Wrong.wav";
+import NoGoErrorAudio from "../assets/audio/NoGoError.wav";
 
 export default function Instruction({ dispatch, type }) {
   const [phase, setPhase] = useState(0);
@@ -15,8 +17,6 @@ export default function Instruction({ dispatch, type }) {
       setPhase(phase + 1);
     }
   }
-  console.log(type);
-  console.log(instructionText);
   useEffect(() => {
     const delayOfClick = setTimeout(() => {
       document.addEventListener("keydown", handleKey);
@@ -25,11 +25,22 @@ export default function Instruction({ dispatch, type }) {
     if (phase === data.length - 1) {
       dispatch({ type: "displayTest" });
     }
+    if (phase === 10) {
+      const audio = new Audio(WrongAudio);
+
+      audio.play();
+    }
+    if (phase === 11) {
+      const audio = new Audio(NoGoErrorAudio);
+
+      audio.play();
+    }
     return () => {
       document.removeEventListener("keydown", handleKey);
       clearTimeout(delayOfClick);
     };
-  });
+  }, [phase]);
+
   return (
     <div data-testid="tutorial__container" className="tutorial__container">
       <div
@@ -43,7 +54,7 @@ export default function Instruction({ dispatch, type }) {
         </p>
       </div>
       <div className="tutorial__text">
-        <h3 data-testid="tutorial__header" className="tutorial__header">
+        <h3 data-testid="tutorial__header" cl assName="tutorial__header">
           {data[phase].header}
         </h3>
         <p data-testid="tutorial__para" className="tutorial__para">
