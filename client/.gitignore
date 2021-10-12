@@ -3,4 +3,5 @@ build
 .eslintrc.json
 .prettierrc
 .env
+cypress
 
