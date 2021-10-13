@@ -76,7 +76,7 @@ recordRoutes.route("/reactive/low/:nickname").post(function (req, res) {
     };
   console.log("User complited low approach reactive");
 });
-// Get data from low-approach reactive
+// Get data from high-approach reactive
 recordRoutes.route("/reactive/high/:nickname").post(function (req, res) {
   let db_connect = dbo.getDb("AXCPT");
   let myobj = req.body;
