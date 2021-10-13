@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
@@ -15,7 +15,6 @@ export default function Login() {
   const whereIsYourNickname = () => {
     setNotFound(true);
   };
-  console.log(nickname);
   return (
     <Layout>
       <div className="login__container container--blue">

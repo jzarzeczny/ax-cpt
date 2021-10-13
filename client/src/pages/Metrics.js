@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useContext, useEffect } from "react";
+import { useState, useReducer, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import Layout from "../components/Layout";

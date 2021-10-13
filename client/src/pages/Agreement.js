@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
 import axios from "axios";

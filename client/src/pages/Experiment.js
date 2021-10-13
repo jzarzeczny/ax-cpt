@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import Instruction from "../components/Instruction";
 import DisplayTest from "../components/DisplayTest";
 import Clock from "../components/Clock";
@@ -38,7 +38,7 @@ export default function Experiment() {
       dispatch({ type: "displayBreak" });
     }
 
-    if (secondResults.length !== 0) {
+    if (secondResults.length !== 0 && state.phase === "displayTest2") {
       sendResults(nickname, type + "/" + state.sequence + "/", secondResults);
       dispatch({ type: "experimentDone" });
     }

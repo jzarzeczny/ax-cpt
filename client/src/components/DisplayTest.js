@@ -1,4 +1,3 @@
-import React from "react";
 import useDisplayLogic from "../hooks/useDisplayLogic";
 import testData from "../data/index";
 
