@@ -10,6 +10,8 @@ const Instructions = () => {
   const [failed, setFailed] = useState(false);
   const { nickname } = useContext(NicknameContext);
   let history = useHistory();
+  const port = process.env.PORT || 5000;
+
   function handleClick(e) {
     e.preventDefault();
     if (!agreement) {
@@ -21,7 +23,10 @@ const Instructions = () => {
         agreement: true,
       };
       axios
-        .post("http://localhost:5000/update/" + nickname.toLowerCase(), change)
+        .post(
+          "http://localhost:" + port + "/update/" + nickname.toLowerCase(),
+          change
+        )
         .then((res) => console.log(res.data))
         .then(history.push("/tutorial"));
     }
