@@ -6,8 +6,7 @@ import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
 import { formValidation } from "../utils/formValidation";
 import metric from "../images/styling/metric.svg";
-
-const port = process.env.PORT || 5000;
+import { API_HOST } from "../utils/constants";
 
 const formReducer = (state, event) => {
   return {
@@ -24,7 +23,7 @@ const Metrics = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:" + port + "/record")
+      .get(API_HOST + "/record")
       .then((res) =>
         res.data.map((el) => {
           return el.nickname.toLowerCase();

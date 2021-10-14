@@ -4,13 +4,13 @@ import Button from "../components/Button";
 import Layout from "../components/Layout";
 import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
+import { API_HOST } from "../utils/constants";
 
 const Instructions = () => {
   const [agreement, setAgreement] = useState(false);
   const [failed, setFailed] = useState(false);
   const { nickname } = useContext(NicknameContext);
   let history = useHistory();
-  const port = process.env.PORT || 5000;
 
   function handleClick(e) {
     e.preventDefault();
@@ -23,10 +23,7 @@ const Instructions = () => {
         agreement: true,
       };
       axios
-        .post(
-          "http://localhost:" + port + "/update/" + nickname.toLowerCase(),
-          change
-        )
+        .post(API_HOST + "/update/" + nickname.toLowerCase(), change)
         .then((res) => console.log(res.data))
         .then(history.push("/tutorial"));
     }
