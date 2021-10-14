@@ -1,4 +1,4 @@
-import React, { useState, useReducer, useContext, useEffect } from "react";
+import { useState, useReducer, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
@@ -6,6 +6,7 @@ import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
 import { formValidation } from "../utils/formValidation";
 import metric from "../images/styling/metric.svg";
+import { API_HOST } from "../utils/constants";
 
 const formReducer = (state, event) => {
   return {
@@ -22,7 +23,7 @@ const Metrics = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/record")
+      .get(API_HOST + "/record")
       .then((res) =>
         res.data.map((el) => {
           return el.nickname.toLowerCase();
@@ -45,7 +46,7 @@ const Metrics = () => {
         education: formData.education,
         location: formData.location,
       };
-      axios.post("http://localhost:5000/record/add", newperson).then((res) => {
+      axios.post(API_HOST + "/record/add", newperson).then((res) => {
         console.log(res);
       });
       history.push("/agreement");

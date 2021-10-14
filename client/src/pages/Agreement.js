@@ -1,15 +1,17 @@
 import { useHistory } from "react-router-dom";
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import Button from "../components/Button";
 import Layout from "../components/Layout";
 import axios from "axios";
 import { NicknameContext } from "../nicknameContext";
+import { API_HOST } from "../utils/constants";
 
 const Instructions = () => {
   const [agreement, setAgreement] = useState(false);
   const [failed, setFailed] = useState(false);
   const { nickname } = useContext(NicknameContext);
   let history = useHistory();
+
   function handleClick(e) {
     e.preventDefault();
     if (!agreement) {
@@ -21,7 +23,7 @@ const Instructions = () => {
         agreement: true,
       };
       axios
-        .post("http://localhost:5000/update/" + nickname.toLowerCase(), change)
+        .post(API_HOST + "/update/" + nickname.toLowerCase(), change)
         .then((res) => console.log(res.data))
         .then(history.push("/tutorial"));
     }

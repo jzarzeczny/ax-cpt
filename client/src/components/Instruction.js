@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import instructionText from "../assets/index";
 import WrongAudio from "../assets/audio/Wrong.wav";
 import NoGoErrorAudio from "../assets/audio/NoGoError.wav";
@@ -54,7 +54,7 @@ export default function Instruction({ dispatch, type }) {
         </p>
       </div>
       <div className="tutorial__text">
-        <h3 data-testid="tutorial__header" cl assName="tutorial__header">
+        <h3 data-testid="tutorial__header" className="tutorial__header">
           {data[phase].header}
         </h3>
         <p data-testid="tutorial__para" className="tutorial__para">
