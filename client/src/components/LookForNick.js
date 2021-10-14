@@ -1,5 +1,6 @@
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { API_HOST } from "../utils/constants";
 import Button from "./Button";
 
 export default function LookForNick({ setNickname, setNotFound }) {
@@ -23,7 +24,7 @@ export default function LookForNick({ setNickname, setNotFound }) {
     e.preventDefault();
     const inputValue = nicknameInput.current.value;
     axios
-      .get("http://localhost:5000/record/" + inputValue)
+      .get(API_HOST + "/record/" + inputValue)
       .then((response) => {
         setValue(response);
       })
