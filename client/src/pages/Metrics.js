@@ -46,7 +46,7 @@ const Metrics = () => {
         education: formData.education,
         location: formData.location,
       };
-      axios.post("http://localhost:5000/record/add", newperson).then((res) => {
+      axios.post(API_HOST + "/record/add", newperson).then((res) => {
         console.log(res);
       });
       history.push("/agreement");
