@@ -2330,10 +2330,10 @@
     "micromatch" "^3.1.4"
     "normalize-path" "^2.1.1"
 
-"anymatch@^3.0.3", "anymatch@~3.1.1":
-  "integrity" "sha512-mM8522psRCqzV+6LhomX5wgp25YVibjh8Wj23I5RPkPppSVSjyKD2A2mBJmWGa+KN7f2D6LNh9jkBCeyLktzjg=="
-  "resolved" "https://registry.npmjs.org/anymatch/-/anymatch-3.1.1.tgz"
-  "version" "3.1.1"
+"anymatch@^3.0.3", "anymatch@^3.1.2", "anymatch@~3.1.1":
+  "integrity" "sha512-P43ePfOAIupkguHUycrc4qJ9kz8ZiuOUijaETwX7THt0Y/GNK7v0aa8rY816xWjZ7rJdA5XdMcpVFTKMq+RvWg=="
+  "resolved" "https://registry.npmjs.org/anymatch/-/anymatch-3.1.2.tgz"
+  "version" "3.1.2"
   dependencies:
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"

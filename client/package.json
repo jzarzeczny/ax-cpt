@@ -7,6 +7,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "anymatch": "^3.1.2",
     "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -27,7 +28,8 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:cypress/recommended"
     ],
     "rules": {
       "react/prop-types": 0,

@@ -15,7 +15,7 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Zasady",
-    "para": "Podobnie jak wcześniej, zawsze nacikaj przycisk A, gdy pojawi się pierwsza litera.\n\nTwoim celem jest wykrycie pary litera A-X\n\nJeżeli pierwsza litera w próbue to A, a druga litera X, wciśnij przycik m tak szybko jak to możliwe.\n\nNie widzisz pary A-X to powinieneś \n-Nacisnąc przycik z, gdy pojawi się pierwsza litera\n-Nacinąć przycisk z, gdy pojawi się druga litera.\n\nJeżeli drugi bodziec będzie cyfrą, nie naciskaj przyciku i poczekać, aż zniknie samoczynnie."
+    "para": "Podobnie jak wcześniej, zawsze nacikaj przycisk <kbd>Z</kbd>, gdy pojawi się pierwsza litera.\n\nTwoim celem jest wykrycie pary litera A-X\n\nJeżeli pierwsza litera w próbue to A, a druga litera X, wciśnij przycik <kbd>M</kbd> tak szybko jak to możliwe.\n\nNie widzisz pary A-X to powinieneś \n-Nacisnąc przycik <kbd>Z</kbd>, gdy pojawi się pierwsza litera\n-Nacinąć przycisk <kbd>Z</kbd>, gdy pojawi się druga litera.\n\nJeżeli drugi bodziec będzie cyfrą, nie naciskaj przyciku i poczekać, aż zniknie samoczynnie."
   },
   {
     "boxVisible": false,
