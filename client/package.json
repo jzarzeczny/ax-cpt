@@ -28,8 +28,7 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "plugin:react/recommended",
-      "plugin:cypress/recommended"
+      "plugin:react/recommended"
     ],
     "rules": {
       "react/prop-types": 0,
