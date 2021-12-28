@@ -9,7 +9,9 @@ import { API_HOST } from "../utils/constants";
 const Instructions = () => {
   const [agreement, setAgreement] = useState(false);
   const [failed, setFailed] = useState(false);
+
   const { nickname } = useContext(NicknameContext);
+  console.log(nickname);
   let history = useHistory();
 
   function handleClick(e) {

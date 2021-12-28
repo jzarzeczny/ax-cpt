@@ -23,8 +23,11 @@ const clueBrake = "+ + +";
 const probeBrake = "  +\n+  +";
 
 // Times
-const imageDisplayTime = 3000;
-const letterDisplayTime = 1000;
+const imageDisplayTime = 1000;
+const letterDisplayTime = 500;
+const clueProbeBreak = 4000;
+const probeImageBreak = 1000;
+const breakInputTime = 750;
 
 // Support functions
 
@@ -149,9 +152,9 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       displayValues(true, setBorder, data[i].clue, setValue);
 
       //Waiting for response of user
-      const [clueReaction, clueTime] = await waitForResponse(500);
+      const [clueReaction, clueTime] = await waitForResponse(letterDisplayTime);
       // If response happen
-      if (clueTime !== 500) {
+      if (clueTime !== letterDisplayTime) {
         // Get reaction time
         const clueEndReactionTime = Date.now();
         // Play sound when key pressed was not key1
@@ -163,7 +166,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         data[i].clueReactionTime =
           clueEndReactionTime - clueInitialReactionTime + "ms";
         // Make app sleep for rest of time
-        await sleep(500 - clueTime);
+        await sleep(letterDisplayTime - clueTime);
         // Change flag that input was done by user
         clueReactionDone = true;
       }
@@ -172,16 +175,22 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
 
       //Display probe brake
       displayValues(false, setBorder, clueBrake, setValue);
+      // If input was done, go sleep
       if (clueReactionDone) {
-        sleep(4000);
+        sleep(clueProbeBreak);
       } else {
-        const [clueReaction, clueTime] = await waitForResponse(750);
+        // Wait for response
+        const [clueReaction, clueTime] = await waitForResponse(breakInputTime);
+        // Get reaction time
         const clueEndReactionTime = Date.now();
+        // Validate response and play sound if needed
         validateResponse(clueReaction, data[i]);
+        // Save data
         data[i].clueResponse = clueReaction;
         data[i].clueResponseTime =
           clueEndReactionTime - clueInitialReactionTime;
-        await sleep(4000 - clueTime);
+        // Go sleep for rest of time
+        await sleep(clueProbeBreak - clueTime);
       }
 
       // Display probe
@@ -216,15 +225,17 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       const probeInitialReactionTime = Date.now();
 
       //Use function to get the response of user
-      const [probeReaction, probeTime] = await waitForResponse(500);
+      const [probeReaction, probeTime] = await waitForResponse(
+        letterDisplayTime
+      );
 
-      if (probeTime !== 500) {
+      if (probeTime !== letterDisplayTime) {
         const probeEndReactionTime = Date.now();
         validateResponse(probeReaction, data[i]);
         data[i].probeResponse = probeReaction;
         data[i].probeReactionTime =
           probeEndReactionTime - probeInitialReactionTime;
-        await sleep(500 - probeTime);
+        await sleep(letterDisplayTime - probeTime);
         probeReactionDone = true;
       }
 
@@ -239,13 +250,15 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       if (probeReactionDone) {
         await sleep(imageDisplayTime);
       } else {
-        const [probeReaction, probeTime] = await waitForResponse(750);
+        const [probeReaction, probeTime] = await waitForResponse(
+          breakInputTime
+        );
         const probeEndReactionTime = Date.now();
         validateResponse(probeReaction, data[i]);
         data[i].probeResponse = probeReaction;
         data[i].probeReactionTime =
           probeEndReactionTime - probeInitialReactionTime;
-        await sleep(imageDisplayTime - probeTime);
+        await sleep(probeImageBreak - probeTime);
       }
 
       // Recursion with + 1
