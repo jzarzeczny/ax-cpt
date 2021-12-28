@@ -41,21 +41,53 @@ async function playSound(track) {
   audio.play();
 }
 
+function validateResponse(response, data) {
+  // Get the response and validate it
+  if (response === key1 || response === key2 || response === noAnswer) {
+    // Playing sound based on the response.
+    if (data.warriety !== noGo && response === noAnswer) {
+      playSound(NoRespAudio);
+    } else {
+      if (data.warriety === noGo && (response === key1 || response === key2)) {
+        playSound(NoGoErrorAudio);
+      }
+      if (
+        data.warriety === AX &&
+        (response === key1 || response === noAnswer)
+      ) {
+        playSound(WrongAudio);
+      }
+      if (
+        (data.warriety === AY ||
+          data.warriety === BX ||
+          data.warriety === BY) &&
+        (response === key2 || response === noAnswer)
+      ) {
+        playSound(WrongAudio);
+      }
+    }
+  }
+}
+
 // Function that waits for user response
-async function waitForResponse() {
+async function waitForResponse(time) {
   return new Promise((resolve) => {
+    const startTime = Date.now();
     const waitForAnswer = () =>
       setTimeout(() => {
         resolve(noAnswer);
-        clearTimeout(waitForAnswer);
-      }, letterDisplayTime);
+        clearTimeout(waitForAnswer, time);
+      }, time);
     waitForAnswer();
     document.addEventListener("keydown", (event) => {
+      const endTime = Date.now() - startTime;
       if (event.key === key1) {
-        resolve(key1);
+        document.removeEventListener("keydown", null);
+        resolve(key1, endTime);
       }
       if (event.key === key2) {
-        resolve(key2);
+        document.removeEventListener("keydown", null);
+        resolve(key2, endTime);
       }
     });
   });
@@ -109,31 +141,51 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         await sleep(imageDisplayTime);
       }
 
+      // Clue part
+      // Clue variables
+      let clueReactionDone = false;
+      const clueInitialReactionTime = Date.now();
       //Initial display of clue
       displayValues(true, setBorder, data[i].clue, setValue);
 
       //Waiting for response of user
-      const clueSeen = await waitForResponse();
-
-      //Reaction on the reponse
-      if (clueSeen) {
-        // Play sound if no reaction to clue
-        if (clueSeen === noAnswer) {
-          playSound(NoRespAudio);
-        }
-        if (clueSeen === key2) {
+      const [clueReaction, clueTime] = await waitForResponse(500);
+      // If response happen
+      if (clueTime !== 500) {
+        // Get reaction time
+        const clueEndReactionTime = Date.now();
+        // Play sound when key pressed was not key1
+        if (clueReaction === key2) {
           playSound(WrongAudio);
         }
-        // Save the data about the clue
-        data[i].clueResponse = clueSeen;
+        // Save data of response
+        data[i].clueResponse = clueReaction;
+        data[i].clueReactionTime =
+          clueEndReactionTime - clueInitialReactionTime + "ms";
+        // Make app sleep for rest of time
+        await sleep(500 - clueTime);
+        // Change flag that input was done by user
+        clueReactionDone = true;
+      }
 
-        //Display probe brake
-        displayValues(false, setBorder, clueBrake, setValue);
+      // Show clue - probe break
 
-        await sleep(imageDisplayTime);
+      //Display probe brake
+      displayValues(false, setBorder, clueBrake, setValue);
+      if (clueReactionDone) {
+        sleep(4000);
+      } else {
+        const [clueReaction, clueTime] = await waitForResponse(750);
+        const clueEndReactionTime = Date.now();
+        validateResponse(clueReaction, data[i]);
+        data[i].clueResponse = clueReaction;
+        data[i].clueResponseTime =
+          clueEndReactionTime - clueInitialReactionTime;
+        await sleep(4000 - clueTime);
       }
 
       // Display probe
+
       // If the warriety of the experiment is 'reactive', change the place of the box
       if (data[i].reactive) {
         // Box at the top of the screen
@@ -159,62 +211,46 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       displayValues(true, setBorder, data[i].probe, setValue);
 
       // Get the time value for reaction time mearsurment
-      reaction.start = Date.now();
+      // Proble variables
+      let probeReactionDone = false;
+      const probeInitialReactionTime = Date.now();
 
       //Use function to get the response of user
-      const response = await waitForResponse();
+      const [probeReaction, probeTime] = await waitForResponse(500);
 
-      // Get the response and validate it
-      if (response === key1 || response === key2 || response === noAnswer) {
-        // Playing sound based on the response.
-        if (data[i].warriety !== noGo && response === noAnswer) {
-          playSound(NoRespAudio);
-        } else {
-          if (
-            data[i].warriety === noGo &&
-            (response === key1 || response === key2)
-          ) {
-            playSound(NoGoErrorAudio);
-          }
-          if (
-            data[i].warriety === AX &&
-            (response === key1 || response === noAnswer)
-          ) {
-            playSound(WrongAudio);
-          }
-          if (
-            (data[i].warriety === AY ||
-              data[i].warriety === BX ||
-              data[i].warriety === BY) &&
-            (response === key2 || response === noAnswer)
-          ) {
-            playSound(WrongAudio);
-          }
-        }
-
-        // End of the measure of reaction time
-        reaction.end = Date.now();
-
-        // Saving the data about reaction time
-        data[i].reactionTime = reaction.end - reaction.start + "ms";
-
-        // Saving response data
-        data[i].probeResponse = response;
-
-        // Probe brake
-        displayValues(false, setBorder, probeBrake, setValue);
-
-        setColorStyling(false);
-        if (data[i].reactive) {
-          boxLocationStyling(null);
-        }
-
-        // setValue(probeBrake);
-        await sleep(imageDisplayTime);
-
-        // Recursion with + 1
-        controlOfDisplay(i + 1);
+      if (probeTime !== 500) {
+        const probeEndReactionTime = Date.now();
+        validateResponse(probeReaction, data[i]);
+        data[i].probeResponse = probeReaction;
+        data[i].probeReactionTime =
+          probeEndReactionTime - probeInitialReactionTime;
+        await sleep(500 - probeTime);
+        probeReactionDone = true;
       }
+
+      // Probe brake
+      displayValues(false, setBorder, probeBrake, setValue);
+
+      setColorStyling(false);
+      if (data[i].reactive) {
+        boxLocationStyling(null);
+      }
+
+      if (probeReactionDone) {
+        await sleep(imageDisplayTime);
+      } else {
+        const [probeReaction, probeTime] = await waitForResponse(750);
+        const probeEndReactionTime = Date.now();
+        validateResponse(probeReaction, data[i]);
+        data[i].probeResponse = probeReaction;
+        data[i].probeReactionTime =
+          probeEndReactionTime - probeInitialReactionTime;
+        await sleep(imageDisplayTime - probeTime);
+      }
+
+      // Recursion with + 1
+      controlOfDisplay(i + 1);
+
       // Iterated over whole set
     } else {
       // Passing data up

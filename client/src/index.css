@@ -351,6 +351,12 @@ header a {
   margin-bottom: 2px;
 }
 
+.btn--metric {
+  position: absolute;
+  right: 12.5%;
+  bottom: 0;
+}
+
 .btn--true {
   background-color: green;
 }

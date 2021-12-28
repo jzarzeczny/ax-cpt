@@ -1,5 +1,3 @@
-import React from "react";
-
 import Agreement from "./pages/Agreement";
 import Main from "./pages/Main";
 import Metrics from "./pages/Metrics";
