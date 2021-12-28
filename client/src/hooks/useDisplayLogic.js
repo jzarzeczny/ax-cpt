@@ -40,11 +40,14 @@ async function sleep(ms) {
 // Play the sound during the test
 async function playSound(track) {
   const audio = new Audio(track);
-
+  console.log("trying to play sound");
   audio.play();
 }
 
 function validateResponse(response, data) {
+  console.log("Want to valudate");
+  console.log(response);
+  console.log(data.warriety);
   // Get the response and validate it
   if (response === key1 || response === key2 || response === noAnswer) {
     // Playing sound based on the response.
@@ -78,19 +81,19 @@ async function waitForResponse(time) {
     const startTime = Date.now();
     const waitForAnswer = () =>
       setTimeout(() => {
-        resolve(noAnswer);
-        clearTimeout(waitForAnswer, time);
+        resolve([noAnswer, time]);
+        clearTimeout(waitForAnswer);
       }, time);
     waitForAnswer();
     document.addEventListener("keydown", (event) => {
       const endTime = Date.now() - startTime;
       if (event.key === key1) {
         document.removeEventListener("keydown", null);
-        resolve(key1, endTime);
+        resolve([key1, endTime]);
       }
       if (event.key === key2) {
         document.removeEventListener("keydown", null);
-        resolve(key2, endTime);
+        resolve([key2, endTime]);
       }
     });
   });
@@ -134,7 +137,6 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
     setIsLoading(false);
   };
   async function controlOfDisplay(i) {
-    const reaction = {};
     if (i < data.length) {
       // If there is need to display photo
       if (data[i].affectId !== null) {
@@ -153,6 +155,8 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
 
       //Waiting for response of user
       const [clueReaction, clueTime] = await waitForResponse(letterDisplayTime);
+      console.log(clueReaction);
+      console.log(clueTime);
       // If response happen
       if (clueTime !== letterDisplayTime) {
         // Get reaction time
@@ -172,12 +176,13 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       }
 
       // Show clue - probe break
+      console.log(clueReactionDone);
 
       //Display probe brake
       displayValues(false, setBorder, clueBrake, setValue);
       // If input was done, go sleep
       if (clueReactionDone) {
-        sleep(clueProbeBreak);
+        await sleep(clueProbeBreak);
       } else {
         // Wait for response
         const [clueReaction, clueTime] = await waitForResponse(breakInputTime);
