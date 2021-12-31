@@ -24,5 +24,11 @@ export const formValidation = (values, listOfUsers) => {
   if (!values.location) {
     errors.location = "Musisz wybrać miejsce zamieszkania";
   }
+  if (!values.illness) {
+    errors.illness = "Wybierz jedną z opcji";
+  }
+  if (!values.medicine) {
+    errors.medicine = "Wybierz jedną z opcji";
+  }
   return errors;
 };

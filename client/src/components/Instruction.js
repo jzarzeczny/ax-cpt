@@ -57,9 +57,11 @@ export default function Instruction({ dispatch, type }) {
         <h3 data-testid="tutorial__header" className="tutorial__header">
           {data[phase].header}
         </h3>
-        <p data-testid="tutorial__para" className="tutorial__para">
-          {data[phase].para}
-        </p>
+        <p
+          data-testid="tutorial__para"
+          className="tutorial__para"
+          dangerouslySetInnerHTML={{ __html: data[phase].para }}
+        ></p>
         <p
           data-testid="tutorial__alert"
           className={`tutorial__alert ${next && "tutorial__alert--visibile"}`}

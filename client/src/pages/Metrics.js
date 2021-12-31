@@ -45,6 +45,8 @@ const Metrics = () => {
         gender: formData.gender,
         education: formData.education,
         location: formData.location,
+        illness: formData.illness,
+        medicine: formData.medicine,
       };
       axios.post(API_HOST + "/record/add", newperson).then((res) => {
         console.log(res);
@@ -162,9 +164,39 @@ const Metrics = () => {
               <div className="form__error">{errors.location}</div>
             ) : null}
           </div>
+          <div className="form__control">
+            <label htmlFor="illness">
+              Czy cierpisz na choroby neurologiczne?
+            </label>
+            <select id="illness" name="illness" onChange={handleChange}>
+              <option value="">Wybierz</option>
+              <option value="yes">Tak</option>
+              <option value="no">Nie</option>
+            </select>
+            {errors.location ? (
+              <div className="form__error">{errors.illness}</div>
+            ) : null}
+          </div>
+          <div className="form__control">
+            <label htmlFor="medicine">
+              Czy przyjmujesz leki neurologiczne/psychiatryczne?
+            </label>
+            <select id="medicine" name="medicine" onChange={handleChange}>
+              <option value="">Wybierz</option>
+              <option value="yes">Tak</option>
+              <option value="no">Nie</option>
+            </select>
+            {errors.location ? (
+              <div className="form__error">{errors.medicine}</div>
+            ) : null}
+          </div>
           <img src={metric} alt="Metric" className="form__img" />
 
-          <Button styling="btn--standard" name="Zapisz" type="submit" />
+          <Button
+            styling="btn btn--standard btn--metric"
+            name="Zapisz"
+            type="submit"
+          />
         </form>
       </div>
     </Layout>
