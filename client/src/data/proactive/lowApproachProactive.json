@@ -4,44 +4,34 @@
     "clue": "A",
     "probe": "X",
     "warriety": "AX",
-    "response": null,
-    "reactionTime": null,
-    "affectId": "1"
+    "affectId": "6"
   },
   {
     "id": 2,
     "clue": "A",
     "probe": "Y",
     "warriety": "AY",
-    "response": null,
-    "reactionTime": null,
-    "affectId": "2"
+    "affectId": "7"
   },
   {
     "id": 3,
     "clue": "B",
     "probe": "X",
     "warriety": "BX",
-    "response": null,
-    "reactionTime": null,
-    "affectId": "3"
+    "affectId": "8"
   },
   {
     "id": 4,
     "clue": "B",
     "probe": "Y",
     "warriety": "BY",
-    "response": null,
-    "reactionTime": null,
-    "affectId": "4"
+    "affectId": "9"
   },
   {
     "id": 5,
     "clue": "B",
     "probe": "3",
     "warriety": "no-go",
-    "response": null,
-    "reactionTime": null,
-    "affectId": "5"
+    "affectId": "10"
   }
 ]

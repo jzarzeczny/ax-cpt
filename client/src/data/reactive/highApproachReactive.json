@@ -4,7 +4,6 @@
     "clue": "A",
     "probe": "X",
     "warriety": "AX",
-    "reactionTime": null,
     "affectId": "14",
     "reactive": true
   },
@@ -13,7 +12,6 @@
     "clue": "A",
     "probe": "Y",
     "warriety": "AY",
-    "reactionTime": null,
     "affectId": "15",
     "reactive": true
   },
@@ -22,7 +20,6 @@
     "clue": "B",
     "probe": "X",
     "warriety": "BX",
-    "reactionTime": null,
     "affectId": "16",
     "reactive": true
   },
@@ -31,7 +28,6 @@
     "clue": "B",
     "probe": "Y",
     "warriety": "BY",
-    "reactionTime": null,
     "affectId": "17",
     "reactive": true
   },
@@ -40,7 +36,6 @@
     "clue": "B",
     "probe": "3",
     "warriety": "no-go",
-    "reactionTime": null,
     "affectId": "18",
     "reactive": true
   }
