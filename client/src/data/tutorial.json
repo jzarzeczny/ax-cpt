@@ -4,8 +4,6 @@
     "clue": "A",
     "probe": "X",
     "warriety": "AX",
-    "response": null,
-    "reactionTime": null,
     "affectId": null
   },
   {
@@ -13,8 +11,6 @@
     "clue": "A",
     "probe": "Y",
     "warriety": "AY",
-    "response": null,
-    "reactionTime": null,
     "affectId": null
   },
   {
@@ -22,8 +18,6 @@
     "clue": "B",
     "probe": "X",
     "warriety": "BX",
-    "response": null,
-    "reactionTime": null,
     "affectId": null
   }
 ]
