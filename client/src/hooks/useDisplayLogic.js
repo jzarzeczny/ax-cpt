@@ -40,14 +40,10 @@ async function sleep(ms) {
 // Play the sound during the test
 async function playSound(track) {
   const audio = new Audio(track);
-  console.log("trying to play sound");
   audio.play();
 }
 
 function validateResponse(response, data) {
-  console.log("Want to valudate");
-  console.log(response);
-  console.log(data.warriety);
   // Get the response and validate it
   if (response === key1 || response === key2 || response === noAnswer) {
     // Playing sound based on the response.
@@ -141,7 +137,10 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       // If there is need to display photo
       if (data[i].affectId !== null) {
         setValue(
-          <img src={images[data[i].affectId]} alt="images of something"></img>
+          <img
+            src={images[data[i].affectId - 1]}
+            alt="images of something"
+          ></img>
         );
         await sleep(imageDisplayTime);
       }
@@ -155,8 +154,6 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
 
       //Waiting for response of user
       const [clueReaction, clueTime] = await waitForResponse(letterDisplayTime);
-      console.log(clueReaction);
-      console.log(clueTime);
       // If response happen
       if (clueTime !== letterDisplayTime) {
         // Get reaction time
@@ -176,7 +173,6 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
       }
 
       // Show clue - probe break
-      console.log(clueReactionDone);
 
       //Display probe brake
       displayValues(false, setBorder, clueBrake, setValue);

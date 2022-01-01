@@ -5,7 +5,7 @@
     "probe": "X",
     "warriety": "AX",
     "reactionTime": null,
-    "affectId": "6"
+    "affectId": "19"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "probe": "Y",
     "warriety": "AY",
     "reactionTime": null,
-    "affectId": "7"
+    "affectId": "20"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "probe": "X",
     "warriety": "BX",
     "reactionTime": null,
-    "affectId": "8"
+    "affectId": "21"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "probe": "Y",
     "warriety": "BY",
     "reactionTime": null,
-    "affectId": "9"
+    "affectId": "22"
   },
   {
     "id": 5,
@@ -37,6 +37,6 @@
     "probe": "3",
     "warriety": "no-go",
     "reactionTime": null,
-    "affectId": "10"
+    "affectId": "23"
   }
 ]
