@@ -26,7 +26,6 @@ const Instructions = () => {
       };
       axios
         .post(API_HOST + "/update/" + nickname.toLowerCase(), change)
-        .then((res) => console.log(res.data))
         .then(history.push("/tutorial"));
     }
   }

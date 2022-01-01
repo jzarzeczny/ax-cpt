@@ -36,6 +36,8 @@ recordRoutes.route("/record/add").post(function (req, res) {
     gender: req.body.gender,
     education: req.body.education,
     location: req.body.location,
+    illness: req.body.illness,
+    medicine: req.body.medicine,
     agreement: false,
   };
   db_connect.collection("metric").insertOne(myobj, function (err, res) {
