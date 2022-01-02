@@ -164,8 +164,8 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         }
         // Save data of response
         data[i].clueResponse = clueReaction;
-        data[i].clueReactionTime =
-          clueEndReactionTime - clueInitialReactionTime + "ms";
+        data[i].clueResponseTime =
+          clueEndReactionTime - clueInitialReactionTime;
         // Make app sleep for rest of time
         await sleep(letterDisplayTime - clueTime);
         // Change flag that input was done by user
@@ -234,7 +234,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         const probeEndReactionTime = Date.now();
         validateResponse(probeReaction, data[i]);
         data[i].probeResponse = probeReaction;
-        data[i].probeReactionTime =
+        data[i].probeResponseTime =
           probeEndReactionTime - probeInitialReactionTime;
         await sleep(letterDisplayTime - probeTime);
         probeReactionDone = true;
@@ -257,7 +257,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
         const probeEndReactionTime = Date.now();
         validateResponse(probeReaction, data[i]);
         data[i].probeResponse = probeReaction;
-        data[i].probeReactionTime =
+        data[i].probeResponseTime =
           probeEndReactionTime - probeInitialReactionTime;
         await sleep(probeImageBreak - probeTime);
       }
