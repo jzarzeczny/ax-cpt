@@ -15,13 +15,13 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Zasady",
-    "para": "Podobnie jak wcześniej, zawsze nacikaj przycisk <kbd>Z</kbd>, gdy pojawi się pierwsza litera.\n\nTwoim celem jest wykrycie pary litera A-X\n\nJeżeli pierwsza litera w próbue to A, a druga litera X, wciśnij przycik <kbd>M</kbd> tak szybko jak to możliwe.\n\nNie widzisz pary A-X to powinieneś \n-Nacisnąc przycik <kbd>Z</kbd>, gdy pojawi się pierwsza litera\n-Nacinąć przycisk <kbd>Z</kbd>, gdy pojawi się druga litera.\n\nJeżeli drugi bodziec będzie cyfrą, nie naciskaj przyciku i poczekać, aż zniknie samoczynnie."
+    "para": "Podobnie jak wcześniej, zawsze nacikaj przycisk <kbd>Z</kbd>, gdy pojawi się pierwsza litera.\n\nTwoim celem jest wykrycie pary litera A-X\n\nJeżeli pierwsza litera w próbie to A, a druga litera X, wciśnij przycik <kbd>M</kbd> tak szybko jak to możliwe.\n\nNie widzisz pary A-X to powinieneś \n-Nacisnąc przycik <kbd>Z</kbd>, gdy pojawi się pierwsza litera\n-Nacinąć przycisk <kbd>Z</kbd>, gdy pojawi się druga litera.\n\nJeżeli drugi bodziec będzie cyfrą, nie naciskaj przyciku i poczekać, aż zniknie samoczynnie."
   },
   {
     "boxVisible": false,
     "boxContent": "",
     "header": "Wskazówka",
-    "para": "Masz tylko jedną sekundę, aby zareagować na kady bodziec, więc reaguj tak szbyko i dokładnie jak to tylko możliwe.\n\nPamiętaj, że reackja na każdy bodziec NIE zależy od jego lokazacji ani od koloru obramowania. Odpowiedź powinna być oparta o literę lub numer, który widzisz.\n\nJednakże, niektórzy uważają, że lokalizacja i kolor obramowania są pomocne przy udzielaniu odpowiedzi."
+    "para": "Masz tylko jedną sekundę, aby zareagować na kady bodziec, więc reaguj tak szybyko i dokładnie jak to tylko możliwe.\n\nPamiętaj, że reackja na każdy bodziec NIE zależy od jego lokazacji ani od koloru obramowania. Odpowiedź powinna być oparta o literę lub numer, który widzisz.\n\nJednakże, niektórzy uważają, że lokalizacja i kolor obramowania są pomocne przy udzielaniu odpowiedzi."
   },
   {
     "boxVisible": false,
