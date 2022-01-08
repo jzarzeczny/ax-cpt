@@ -9,13 +9,13 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Podczas każdej próby",
-    "para": "Zobaczysz pierwszą literę \n-Naciśnij klawisz <kbd>Z</kbd> kiedy ją zobaczysz \n-Zobaczysz drugą literę \nTwoim zadanie będzie reakcja klawiszami <kbd>Z</kbd>  lub <kbd>M</kbd>  \nPamiętajaby nacisnąć klawisz z za każdym razem gdy zobaczysz pierwszą literę!"
+    "para": "Zobaczysz pierwszą literę \n-Naciśnij klawisz <kbd>Z</kbd> kiedy ją zobaczysz \n-Zobaczysz drugą literę \nTwoim zadanie będzie reakcja klawiszami <kbd>Z</kbd>  lub <kbd>M</kbd>  \nPamiętaj aby nacisnąć klawisz Z za każdym razem gdy zobaczysz pierwszą literę!"
   },
   {
     "boxVisible": true,
     "boxContent": "A",
     "header": "Celem zadania jest wykrycie pary liter A-X",
-    "para": "Jeżeli wykryjesz tą parę liter (pierwsza litera A, druga litera X), twoim zadaniem będzie naciśnięcie klawisza <kbd>M</kbd> tak szybko jak to tylko możliwe. \nPamiętaj aby nacinąć przycik <kbd>Z</kbd>, gdy zobaczysz pierwzą literę \nTeraz na ekranie wyświetla się litera A"
+    "para": "Jeżeli wykryjesz tą parę liter (pierwsza litera A, druga litera X), twoim zadaniem będzie naciśnięcie klawisza <kbd>Z</kbd> po pojawieniu się litery A oraz klawisza <kbd>M</kbd> po pojawieniu się litery X tak szybko jak to tylko możliwe. Pamiętaj aby nacisnąć przycisk <kbd>Z</kbd>, gdy zobaczysz pierwszą literę. Teraz na ekranie wyświetla się litera A"
   },
   {
     "boxVisible": true,
@@ -27,13 +27,13 @@
     "boxVisible": true,
     "boxContent": "+++",
     "header": "+++ - wskazówka",
-    "para": "Zadanie poleka na sekwencji par. Midzy każdą parą, będzie znak poziomych +++, aby była pewność, iż zaraz pokaże się druga litera tej samej sekwencji. "
+    "para": "Między każdą parą, będzie znak poziomych +++, aby była pewność, iż zaraz pokaże się druga litera tej samej sekwencji. "
   },
   {
     "boxVisible": true,
     "boxContent": "B",
     "header": "Inne litery",
-    "para": "Opisany wcześniej dotyczy pary A-X\nJeżeli sekwencja jest różna (np. piersza litera to B, a druga to Y to: \n-Gdy zobaczysz pierwszą literę, powinieneś nacisnąć przycisk <kbd>Z</kbd>\n-Gdy pojawi się druga litera, również naciśnij przycisk <kbd>Z</kbd>."
+    "para": "Opisany wcześniej schemat sposobu udzielania odpowiedzi dotyczy pary A-X\nJeżeli sekwencja liter jest różna od A-X (tzn. pierwsza litera może być różna od A, a druga litera może być różna od X):\n- Gdy zobaczysz pierwszą literę, powinieneś nacisnąć przycisk <kbd>Z</kbd>\n - Gdy pojawi się druga litera, również naciśnij przycisk <kbd>Z</kbd>."
   },
   {
     "boxVisible": true,
@@ -63,7 +63,7 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Dźwięk błędu",
-    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk <kbd>M</kbd>, gdy zobaczysz drugą literę, ale parą nie było A-X,\nlub gdy nacisnąłeś przycisk <kbd>Z</kbd>, a parą liter było A-X "
+    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk <kbd>M<kbd>, gdy zobaczysz drugą literę, ale parą nie było A-X, lub gdy nacisnąłeś przycisk <kbd>Z</kbd>, gdy zobaczysz drugą literę, a parą liter było A-X\nlub gdy nacisnąłeś przycisk <kbd>Z</kbd>, a parą liter było A-X "
   },
   {
     "boxVisible": false,
@@ -75,7 +75,7 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Koniec teorii, czas na trening",
-    "para": "Czas przejśc do treningu, bardzo ważnym jest abyś zrozumiał zadanie. Umieść palce na przycisku <kbd>Z</kbd> i <kbd>M</kbd>. Zaraz Zaczynamy!"
+    "para": "Czas przejść do treningu, bardzo ważnym jest abyś zrozumiał zadanie. Umieść palec wskazujący lewej ręki na klawiszu <kbd>Z</kbd>, a palec wskazujący prawej ręki na klawiszu <kbd>M</kbd>."
   },
   {}
 ]
