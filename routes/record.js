@@ -40,10 +40,15 @@ recordRoutes.route("/record/add").post(function (req, res) {
     medicine: req.body.medicine,
     agreement: false,
   };
-  db_connect.collection("metric").insertOne(myobj, function (err, res) {
-    if (err) throw err;
-    console.log("New user did metric stuff");
-  });
+  db_connect
+    .collection("metric")
+    .insertOne(myobj, function (err, res) {
+      if (err) throw err;
+      console.log("New user did metric stuff");
+    })
+    .then(() => {
+      res.status(200);
+    });
 });
 recordRoutes.route("/update/:nickname").post(function (req, res) {
   let db_connect = dbo.getDb("AXCPT");
@@ -53,10 +58,15 @@ recordRoutes.route("/update/:nickname").post(function (req, res) {
       agreement: req.body.agreement,
     },
   };
-  db_connect.collection("metric").updateOne(query, newValues, function (err) {
-    if (err) throw err;
-    console.log("Agreement done");
-  });
+  db_connect
+    .collection("metric")
+    .updateOne(query, newValues, function (err) {
+      if (err) throw err;
+      console.log("Agreement done");
+    })
+    .then(() => {
+      res.status(200);
+    });
 });
 // Get data from the trening mode!
 recordRoutes.route("/trening/:nickname").post(function (req, res) {
@@ -65,8 +75,9 @@ recordRoutes.route("/trening/:nickname").post(function (req, res) {
   db_connect.collection("trening").insertMany(myobj),
     function (err, res) {
       if (err) throw err;
-    };
-  console.log("User complited trening");
+    }.then(() => {
+      res.status(200);
+    });
 });
 // Get data from low-approach reactive
 recordRoutes.route("/reactive/low/:nickname").post(function (req, res) {
@@ -75,7 +86,9 @@ recordRoutes.route("/reactive/low/:nickname").post(function (req, res) {
   db_connect.collection("reactiveLow").insertMany(myobj),
     function (err, res) {
       if (err) throw err;
-    };
+    }.then(() => {
+      res.status(200);
+    });
   console.log("User complited low approach reactive");
 });
 // Get data from high-approach reactive
@@ -85,7 +98,9 @@ recordRoutes.route("/reactive/high/:nickname").post(function (req, res) {
   db_connect.collection("reactiveHigh").insertMany(myobj),
     function (err, res) {
       if (err) throw err;
-    };
+    }.then(() => {
+      res.status(200);
+    });
   console.log("User complited high approach reactive");
 });
 recordRoutes.route("/proactive/low/:nickname").post(function (req, res) {
@@ -94,7 +109,9 @@ recordRoutes.route("/proactive/low/:nickname").post(function (req, res) {
   db_connect.collection("proactiveLow").insertMany(myobj),
     function (err, res) {
       if (err) throw err;
-    };
+    }.then(() => {
+      res.status(200);
+    });
   console.log("User complited low approach proactive");
 });
 recordRoutes.route("/proactive/high/:nickname").post(function (req, res) {
@@ -103,7 +120,9 @@ recordRoutes.route("/proactive/high/:nickname").post(function (req, res) {
   db_connect.collection("proactiveHigh").insertMany(myobj),
     function (err, res) {
       if (err) throw err;
-    };
+    }.then(() => {
+      res.status(200);
+    });
   console.log("User complited high approach proactive");
 });
 
