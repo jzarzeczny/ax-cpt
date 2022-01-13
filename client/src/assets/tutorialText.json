@@ -63,7 +63,7 @@
     "boxVisible": false,
     "boxContent": "",
     "header": "Dźwięk błędu",
-    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk <kbd>M<kbd>, gdy zobaczysz drugą literę, ale parą nie było A-X, lub gdy nacisnąłeś przycisk <kbd>Z</kbd>, gdy zobaczysz drugą literę, a parą liter było A-X\nlub gdy nacisnąłeś przycisk <kbd>Z</kbd>, a parą liter było A-X "
+    "para": "Aby pomóc ci w wykonan zadania usłyszysz dźwięk brzęczenia za każdym razem gdy odpowiesz w niewłaściwy sposób. \nNp. Naciśniesz przycisk <kbd>M</kbd>, gdy zobaczysz drugą literę, ale parą nie było A-X, lub gdy nacisnąłeś przycisk <kbd>Z</kbd>, gdy zobaczysz drugą literę, a parą liter było A-X\nlub gdy nacisnąłeś przycisk <kbd>Z</kbd>, a parą liter było A-X "
   },
   {
     "boxVisible": false,
