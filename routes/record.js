@@ -50,97 +50,77 @@ recordRoutes.route("/record/add").post(function (req, res) {
       res.status(200);
     });
 });
-recordRoutes
-  .route("/update/:nickname")
-  .post(function (req, res) {
-    let db_connect = dbo.getDb("AXCPT");
-    let query = { nickname: req.params.nickname };
-    let newValues = {
-      $set: {
-        agreement: req.body.agreement,
-      },
-    };
-    db_connect.collection("metric").updateOne(query, newValues, function (err) {
+recordRoutes.route("/update/:nickname").post(function (req, res) {
+  let db_connect = dbo.getDb("AXCPT");
+  let query = { nickname: req.params.nickname };
+  let newValues = {
+    $set: {
+      agreement: req.body.agreement,
+    },
+  };
+  db_connect
+    .collection("metric")
+    .updateOne(query, newValues, function (err) {
       if (err) throw err;
       console.log("Agreement done");
+    })
+    .then(() => {
+      res.status(200);
     });
-  })
-  .then(() => {
-    res.status(200);
-  });
+});
+
 // Get data from the trening mode!
-recordRoutes
-  .route("/trening/:nickname")
-  .post(function (req, res) {
-    let db_connect = dbo.getDb("AXCPT");
-    let myobj = req.body;
-    db_connect.collection("trening").insertMany(myobj),
-      function (err, res) {
-        if (err) throw err;
-      };
-  })
-  .then(() => {
+recordRoutes.route("/trening/:nickname").post(function (req, res) {
+  let db_connect = dbo.getDb("AXCPT");
+  let myobj = req.body;
+  db_connect.collection("trening").insertMany(myobj, function (err, res) {
+    if (err) throw err;
     res.status(200);
   });
+});
+
 // Get data from low-approach reactive
-recordRoutes
-  .route("/reactive/low/:nickname")
-  .post(function (req, res) {
-    let db_connect = dbo.getDb("AXCPT");
-    let myobj = req.body;
-    db_connect.collection("reactiveLow").insertMany(myobj),
-      function (err, res) {
-        if (err) throw err;
-      };
+recordRoutes.route("/reactive/low/:nickname").post(function (req, res) {
+  let db_connect = dbo.getDb("AXCPT");
+  let myobj = req.body;
+  db_connect.collection("reactiveLow").insertMany(myobj, function (err, res) {
+    if (err) throw err;
     console.log("User complited low approach reactive");
-  })
-  .then(() => {
-    res.status(200);
+    res.send(200);
   });
+});
+
 // Get data from high-approach reactive
-recordRoutes
-  .route("/reactive/high/:nickname")
-  .post(function (req, res) {
-    let db_connect = dbo.getDb("AXCPT");
-    let myobj = req.body;
-    db_connect.collection("reactiveHigh").insertMany(myobj),
-      function (err, res) {
-        if (err) throw err;
-      };
+recordRoutes.route("/reactive/high/:nickname").post(function (req, res) {
+  let db_connect = dbo.getDb("AXCPT");
+  let myobj = req.body;
+  db_connect.collection("reactiveHigh").insertMany(myobj, function (err, res) {
+    if (err) throw err;
     console.log("User complited high approach reactive");
-  })
-  .then(() => {
     res.status(200);
   });
-recordRoutes
-  .route("/proactive/low/:nickname")
-  .post(function (req, res) {
-    let db_connect = dbo.getDb("AXCPT");
-    let myobj = req.body;
-    db_connect.collection("proactiveLow").insertMany(myobj),
-      function (err, res) {
-        if (err) throw err;
-      };
+});
+
+recordRoutes.route("/proactive/low/:nickname").post(function (req, res) {
+  let db_connect = dbo.getDb("AXCPT");
+  let myobj = req.body;
+  db_connect.collection("proactiveLow").insertMany(myobj, function (err, res) {
+    if (err) throw err;
     console.log("User complited low approach proactive");
-  })
-  .then(() => {
     res.status(200);
   });
-recordRoutes
-  .route("/proactive/high/:nickname")
-  .post(function (req, res) {
-    // Something went wrong here!
-    // TypeError: (intermediate value).then is not a function (112)
-    let db_connect = dbo.getDb("AXCPT");
-    let myobj = req.body;
-    db_connect.collection("proactiveHigh").insertMany(myobj),
-      function (err, res) {
-        if (err) throw err;
-      };
+});
+
+recordRoutes.route("/proactive/high/:nickname").post(function (req, res) {
+  // Something went wrong here!
+  // TypeError: (intermediate value).then is not a function (112)
+  let db_connect = dbo.getDb("AXCPT");
+  let myobj = req.body;
+  db_connect.collection("proactiveHigh").insertMany(myobj, function (err, res) {
+    if (err) throw err;
     console.log("User complited high approach proactive");
-  })
-  .then(() => {
     res.status(200);
   });
+});
 
 module.exports = recordRoutes;
