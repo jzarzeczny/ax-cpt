@@ -43,7 +43,7 @@ recordRoutes.route("/record/add").post(function (req, res) {
     medicine: req.body.medicine,
     agreement: false,
   };
-  db_connect.collection("metric").insertOne(myobj, function (err, res) {
+  db_connect.collection("metric").insertOne(myobj, function (err) {
     if (err) {
       res.send("Error with POST");
     } else {
