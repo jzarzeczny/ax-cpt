@@ -40,17 +40,13 @@ recordRoutes.route("/record/add").post(function (req, res) {
     medicine: req.body.medicine,
     agreement: false,
   };
-  db_connect
-    .collection("metric")
-    .insertOne(myobj, function (err, res) {
-      if (err) throw err;
-      console.log("New user did metric stuff");
-    })
-    .then(() => {
-      res.status(200);
-    });
+  db_connect.collection("metric").insertOne(myobj, function (err, res) {
+    if (err) throw err;
+    console.log("New user did metric stuff");
+    res.status(200).send();
+  });
 });
-recordRoutes.route("/update/:nickname").post(function (req, res) {
+recordRoutes.route("/update/:nickname").post(async function (req, res) {
   let db_connect = dbo.getDb("AXCPT");
   let query = { nickname: req.params.nickname };
   let newValues = {
@@ -58,14 +54,12 @@ recordRoutes.route("/update/:nickname").post(function (req, res) {
       agreement: req.body.agreement,
     },
   };
-  db_connect
+  await db_connect
     .collection("metric")
     .updateOne(query, newValues, function (err) {
       if (err) throw err;
       console.log("Agreement done");
-    })
-    .then(() => {
-      res.status(200);
+      res.status(200).send();
     });
 });
 
@@ -75,7 +69,7 @@ recordRoutes.route("/trening/:nickname").post(function (req, res) {
   let myobj = req.body;
   db_connect.collection("trening").insertMany(myobj, function (err, res) {
     if (err) throw err;
-    res.status(200);
+    res.status(200).send();
   });
 });
 
