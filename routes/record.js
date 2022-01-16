@@ -28,10 +28,10 @@ recordRoutes
 
 recordRoutes
   .route("/proactive/low/:nickname")
-  .post(proactiveController.lowProactie);
+  .post(proactiveController.lowProactive);
 
 recordRoutes
   .route("/proactive/high/:nickname")
-  .post(proactiveController.highProactie);
+  .post(proactiveController.highProactive);
 
 module.exports = recordRoutes;
