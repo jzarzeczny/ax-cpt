@@ -1,3 +1,5 @@
+const dbo = require("../db/conn");
+
 // POST metric data
 exports.metricCreate = function (req, res) {
   let db_connect = dbo.getDb("AXCPT");

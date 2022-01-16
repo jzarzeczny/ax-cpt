@@ -1,3 +1,5 @@
+const dbo = require("../db/conn");
+
 // Trening data related to nickname
 
 exports.treningData = function (req, res) {

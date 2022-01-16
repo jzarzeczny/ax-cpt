@@ -1,6 +1,5 @@
 const express = require("express");
 const recordRoutes = express.Router();
-const dbo = require("../db/conn");
 const getDataController = require("../controllers/getDataController");
 const metricController = require("../controllers/metricController");
 const treningController = require("../controllers/treningController");

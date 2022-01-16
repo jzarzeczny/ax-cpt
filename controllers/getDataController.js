@@ -1,3 +1,5 @@
+const dbo = require("../db/conn");
+
 // Get list of all users
 exports.getUsers = function (req, res) {
   let db_connect = dbo.getDb("AXCPT");
