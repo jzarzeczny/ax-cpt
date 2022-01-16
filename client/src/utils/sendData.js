@@ -5,7 +5,7 @@ const sendResults = (nickname, path, data) => {
   data.forEach((e) => (e.nickname = nickname));
   axios
     .post(API_HOST + "/" + path + nickname, data)
-    .then((res) => console.log(res))
+    .then((res) => res.json())
     .catch((err) => console.log(err));
 };
 
