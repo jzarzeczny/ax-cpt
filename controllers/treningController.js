@@ -10,7 +10,7 @@ exports.treningData = function (req, res) {
       res.send("Error with POST");
     } else {
       console.log("Trening done");
-      res.status(200).send();
+      res.status(200).send({ message: "Trening done" });
     }
   });
 };

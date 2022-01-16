@@ -23,7 +23,7 @@ const Metrics = () => {
 
   useEffect(() => {
     axios
-      .get(API_HOST + "/record")
+      .get(API_HOST + "/record/")
       .then((res) =>
         res.data.map((el) => {
           return el.nickname.toLowerCase();
@@ -48,7 +48,7 @@ const Metrics = () => {
         illness: formData.illness,
         medicine: formData.medicine,
       };
-      axios.post(API_HOST + "/record/add", newperson).then((res) => {
+      axios.post(API_HOST + "/record/add/", newperson).then((res) => {
         console.log(res);
       });
       history.push("/agreement");
