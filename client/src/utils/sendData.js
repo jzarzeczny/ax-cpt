@@ -6,6 +6,7 @@ const sendResults = (nickname, path, data) => {
   axios
     .post(API_HOST + "/" + path + nickname, data)
     .then((res) => res.json())
+    .then((data) => data)
     .catch((err) => console.log(err));
 };
 
