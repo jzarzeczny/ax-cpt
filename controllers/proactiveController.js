@@ -1,5 +1,7 @@
+const dbo = require("../db/conn");
+
 // POST low proactive
-exports.lowProactie = function (req, res) {
+exports.lowProactive = function (req, res) {
   let db_connect = dbo.getDb("AXCPT");
   let myobj = req.body;
   db_connect.collection("proactiveLow").insertMany(myobj, function (err) {

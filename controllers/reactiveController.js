@@ -1,3 +1,5 @@
+const dbo = require("../db/conn");
+
 // POST reactive done low
 
 exports.lowReactive = function (req, res) {
