@@ -10,7 +10,7 @@ exports.lowReactive = function (req, res) {
       res.send("Error with POST");
     } else {
       console.log("User complited low approach reactive");
-      res.status(200).send();
+      res.status(200).send({ message: "User complited low approach" });
     }
   });
 };
@@ -24,7 +24,7 @@ exports.highReactive = function (req, res) {
       res.send("Error with POST");
     } else {
       console.log("User complited high approach reactive");
-      res.status(200).send();
+      res.status(200).send({ message: "User complited high approach" });
     }
   });
 };

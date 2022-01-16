@@ -19,7 +19,7 @@ exports.metricCreate = function (req, res) {
       res.send("Error with POST");
     } else {
       console.log("New user did metric stuff");
-      res.status(200).send();
+      res.status(200).send({ message: "New user did metric stuff" });
     }
   });
 };
@@ -38,7 +38,7 @@ exports.metricAgreement = function (req, res) {
       res.send("Error with POST");
     } else {
       console.log("Agreement done");
-      res.status(200).send();
+      res.status(200).send({ message: "Agreement done" });
     }
   });
 };
