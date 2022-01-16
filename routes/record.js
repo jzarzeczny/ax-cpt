@@ -99,7 +99,7 @@ recordRoutes.route("/reactive/low/:nickname").post(function (req, res) {
 });
 
 // Get data from high-approach reactive
-recordRoutes.route("/reactive/high/:nickname").post(function (req, res) {
+recordRoutes.route("").post(function (req, res) {
   let db_connect = dbo.getDb("AXCPT");
   let myobj = req.body;
   db_connect.collection("reactiveHigh").insertMany(myobj, function (err) {
