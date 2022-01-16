@@ -24,7 +24,7 @@ export default function LookForNick({ setNickname, setNotFound }) {
     e.preventDefault();
     const inputValue = nicknameInput.current.value;
     axios
-      .get(API_HOST + "/record/" + inputValue)
+      .get(API_HOST + "/record/" + inputValue + "/")
       .then((response) => {
         setValue(response);
       })
