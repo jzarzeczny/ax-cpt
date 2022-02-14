@@ -13,7 +13,7 @@ const takeCareOfData = (result) => {
 export default function TestValidation({ data, dispatch }) {
   const [correct, setCorrect] = useState(null);
   const newData = data;
-  const NUMBER_OF_CORRECT = 1;
+  const NUMBER_OF_CORRECT = 5;
 
   useEffect(() => {
     const results = dataValidation(newData);
