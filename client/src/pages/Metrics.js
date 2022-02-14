@@ -48,9 +48,7 @@ const Metrics = () => {
         illness: formData.illness,
         medicine: formData.medicine,
       };
-      axios.post(API_HOST + "/record/add/", newperson).then((res) => {
-        console.log(res);
-      });
+      axios.post(API_HOST + "/record/add/", newperson);
       history.push("/agreement");
     }
   };

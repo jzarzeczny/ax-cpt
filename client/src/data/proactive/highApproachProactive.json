@@ -1,250 +1,10 @@
 [
   {
-    "id": 1,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 2,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 3,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 4,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 5,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h11",
-    "reactive": false
-  },
-  {
-    "id": 6,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h9",
-    "reactive": false
-  },
-  {
-    "id": 7,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 8,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 9,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h12",
-    "reactive": false
-  },
-  {
-    "id": 10,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 11,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 12,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
     "id": 13,
     "clue": "A",
     "probe": "X",
     "variant": "AX",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 14,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h12",
-    "reactive": false
-  },
-  {
-    "id": 15,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h12",
-    "reactive": false
-  },
-  {
-    "id": 16,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h9",
-    "reactive": false
-  },
-  {
-    "id": 17,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h12",
-    "reactive": false
-  },
-  {
-    "id": 18,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h10",
-    "reactive": false
-  },
-  {
-    "id": 19,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 20,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h13",
-    "reactive": false
-  },
-  {
-    "id": 21,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h9",
-    "reactive": false
-  },
-  {
-    "id": 22,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h9",
-    "reactive": false
-  },
-  {
-    "id": 23,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h13",
-    "reactive": false
-  },
-  {
-    "id": 24,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h10",
-    "reactive": false
-  },
-  {
-    "id": 25,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 26,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h10",
-    "reactive": false
-  },
-  {
-    "id": 27,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h11",
-    "reactive": false
-  },
-  {
-    "id": 28,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 29,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 30,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h9",
-    "reactive": false
-  },
-  {
-    "id": 31,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h2",
+    "affectID": "17",
     "reactive": false
   },
   {
@@ -252,719 +12,15 @@
     "clue": "A",
     "probe": "X",
     "variant": "AX",
-    "affectID": "h13",
-    "reactive": false
-  },
-  {
-    "id": 33,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 34,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 35,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 36,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 37,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 38,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h13",
-    "reactive": false
-  },
-  {
-    "id": 39,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h11",
-    "reactive": false
-  },
-  {
-    "id": 40,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 41,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 42,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 43,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 44,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 45,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 46,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 47,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 48,
-    "clue": "A",
-    "probe": "X",
-    "variant": "AX",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 49,
-    "clue": "A",
-    "probe": "T",
-    "variant": "AY",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 50,
-    "clue": "A",
-    "probe": "U",
-    "variant": "AY",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 51,
-    "clue": "A",
-    "probe": "C",
-    "variant": "AY",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 52,
-    "clue": "A",
-    "probe": "H",
-    "variant": "AY",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 53,
-    "clue": "A",
-    "probe": "R",
-    "variant": "AY",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 54,
-    "clue": "A",
-    "probe": "S",
-    "variant": "AY",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 55,
-    "clue": "A",
-    "probe": "T",
-    "variant": "AY",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 56,
-    "clue": "A",
-    "probe": "Q",
-    "variant": "AY",
-    "affectID": "h12",
-    "reactive": false
-  },
-  {
-    "id": 57,
-    "clue": "A",
-    "probe": "W",
-    "variant": "AY",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 58,
-    "clue": "A",
-    "probe": "D",
-    "variant": "AY",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 59,
-    "clue": "A",
-    "probe": "G",
-    "variant": "AY",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 60,
-    "clue": "A",
-    "probe": "U",
-    "variant": "AY",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 61,
-    "clue": "C",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 62,
-    "clue": "H",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 63,
-    "clue": "T",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 64,
-    "clue": "S",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 65,
-    "clue": "H",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 66,
-    "clue": "G",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 67,
-    "clue": "I",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 68,
-    "clue": "C",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 69,
-    "clue": "N",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 70,
-    "clue": "G",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 71,
-    "clue": "S",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h10",
-    "reactive": false
-  },
-  {
-    "id": 72,
-    "clue": "I",
-    "probe": "X",
-    "variant": "BX",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 73,
-    "clue": "D",
-    "probe": "B",
-    "variant": "BY",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 74,
-    "clue": "R",
-    "probe": "N",
-    "variant": "BY",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 75,
-    "clue": "N",
-    "probe": "T",
-    "variant": "BY",
-    "affectID": "h11",
-    "reactive": false
-  },
-  {
-    "id": 76,
-    "clue": "P",
-    "probe": "D",
-    "variant": "BY",
-    "affectID": "h9",
-    "reactive": false
-  },
-  {
-    "id": 77,
-    "clue": "L",
-    "probe": "S",
-    "variant": "BY",
-    "affectID": "h9",
-    "reactive": false
-  },
-  {
-    "id": 78,
-    "clue": "B",
-    "probe": "N",
-    "variant": "BY",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 79,
-    "clue": "S",
-    "probe": "S",
-    "variant": "BY",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 80,
-    "clue": "J",
-    "probe": "N",
-    "variant": "BY",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 81,
-    "clue": "V",
-    "probe": "I",
-    "variant": "BY",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 82,
-    "clue": "W",
-    "probe": "U",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 83,
-    "clue": "T",
-    "probe": "B",
-    "variant": "BY",
-    "affectID": "h12",
-    "reactive": false
-  },
-  {
-    "id": 84,
-    "clue": "Z",
-    "probe": "T",
-    "variant": "BY",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 85,
-    "clue": "D",
-    "probe": "U",
-    "variant": "BY",
-    "affectID": "h12",
-    "reactive": false
-  },
-  {
-    "id": 86,
-    "clue": "T",
-    "probe": "T",
-    "variant": "BY",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 87,
-    "clue": "B",
-    "probe": "R",
-    "variant": "BY",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 88,
-    "clue": "G",
-    "probe": "C",
-    "variant": "BY",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 89,
-    "clue": "Z",
-    "probe": "P",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 90,
-    "clue": "H",
-    "probe": "J",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 91,
-    "clue": "H",
-    "probe": "W",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 92,
-    "clue": "Q",
-    "probe": "H",
-    "variant": "BY",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 93,
-    "clue": "N",
-    "probe": "J",
-    "variant": "BY",
-    "affectID": "h13",
-    "reactive": false
-  },
-  {
-    "id": 94,
-    "clue": "R",
-    "probe": "B",
-    "variant": "BY",
-    "affectID": "h13",
-    "reactive": false
-  },
-  {
-    "id": 95,
-    "clue": "M",
-    "probe": "J",
-    "variant": "BY",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 96,
-    "clue": "D",
-    "probe": "Z",
-    "variant": "BY",
-    "affectID": "h10",
-    "reactive": false
-  },
-  {
-    "id": 97,
-    "clue": "L",
-    "probe": "S",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 98,
-    "clue": "B",
-    "probe": "D",
-    "variant": "BY",
-    "affectID": "h10",
-    "reactive": false
-  },
-  {
-    "id": 99,
-    "clue": "R",
-    "probe": "N",
-    "variant": "BY",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 100,
-    "clue": "Z",
-    "probe": "S",
-    "variant": "BY",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 101,
-    "clue": "P",
-    "probe": "C",
-    "variant": "BY",
-    "affectID": "h10",
+    "affectID": "22",
     "reactive": false
   },
   {
     "id": 102,
-    "clue": "G",
-    "probe": "P",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 103,
-    "clue": "I",
-    "probe": "G",
-    "variant": "BY",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 104,
-    "clue": "I",
-    "probe": "J",
-    "variant": "BY",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 105,
-    "clue": "D",
-    "probe": "B",
-    "variant": "BY",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 106,
-    "clue": "I",
-    "probe": "N",
-    "variant": "BY",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 107,
-    "clue": "U",
-    "probe": "M",
-    "variant": "BY",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 108,
-    "clue": "D",
-    "probe": "T",
-    "variant": "BY",
-    "affectID": "h12",
-    "reactive": false
-  },
-  {
-    "id": 109,
     "clue": "S",
-    "probe": "J",
+    "probe": "S",
     "variant": "BY",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 110,
-    "clue": "P",
-    "probe": "Z",
-    "variant": "BY",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 111,
-    "clue": "V",
-    "probe": "P",
-    "variant": "BY",
-    "affectID": "h7",
-    "reactive": false
-  },
-  {
-    "id": 112,
-    "clue": "S",
-    "probe": "L",
-    "variant": "BY",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 113,
-    "clue": "V",
-    "probe": "H",
-    "variant": "BY",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 114,
-    "clue": "J",
-    "probe": "U",
-    "variant": "BY",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 115,
-    "clue": "P",
-    "probe": "P",
-    "variant": "BY",
-    "affectID": "h2",
-    "reactive": false
-  },
-  {
-    "id": 116,
-    "clue": "Z",
-    "probe": "J",
-    "variant": "BY",
-    "affectID": "h4",
-    "reactive": false
-  },
-  {
-    "id": 117,
-    "clue": "M",
-    "probe": "M",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 118,
-    "clue": "D",
-    "probe": "H",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 119,
-    "clue": "I",
-    "probe": "D",
-    "variant": "BY",
-    "affectID": "h13",
-    "reactive": false
-  },
-  {
-    "id": 120,
-    "clue": "C",
-    "probe": "D",
-    "variant": "BY",
-    "affectID": "h6",
-    "reactive": false
-  },
-  {
-    "id": 121,
-    "clue": "A",
-    "probe": 4,
-    "variant": "A0",
-    "affectID": "h9",
+    "affectID": "15",
     "reactive": false
   },
   {
@@ -972,143 +28,439 @@
     "clue": "A",
     "probe": 2,
     "variant": "A0",
-    "affectID": "h3",
+    "affectID": "24",
     "reactive": false
   },
   {
-    "id": 123,
-    "clue": "A",
-    "probe": 2,
-    "variant": "A0",
-    "affectID": "h3",
+    "id": 75,
+    "clue": "G",
+    "probe": "R",
+    "variant": "BY",
+    "affectID": "17",
     "reactive": false
   },
   {
-    "id": 124,
-    "clue": "A",
-    "probe": 2,
-    "variant": "A0",
-    "affectID": "h13",
+    "id": 111,
+    "clue": "W",
+    "probe": "V",
+    "variant": "BY",
+    "affectID": "16",
     "reactive": false
   },
   {
-    "id": 125,
+    "id": 2,
     "clue": "A",
-    "probe": 1,
-    "variant": "A0",
-    "affectID": "h7",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "22",
     "reactive": false
   },
   {
-    "id": 126,
-    "clue": "A",
-    "probe": 5,
-    "variant": "A0",
-    "affectID": "h2",
+    "id": 107,
+    "clue": "H",
+    "probe": "G",
+    "variant": "BY",
+    "affectID": "26",
     "reactive": false
   },
   {
-    "id": 127,
-    "clue": "A",
-    "probe": 4,
-    "variant": "A0",
-    "affectID": "h2",
+    "id": 96,
+    "clue": "P",
+    "probe": "M",
+    "variant": "BY",
+    "affectID": "18",
     "reactive": false
   },
   {
-    "id": 128,
+    "id": 46,
     "clue": "A",
-    "probe": 2,
-    "variant": "A0",
-    "affectID": "h9",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "23",
     "reactive": false
   },
   {
     "id": 129,
     "clue": "A",
+    "probe": 1,
+    "variant": "A0",
+    "affectID": "24",
+    "reactive": false
+  },
+  {
+    "id": 28,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 109,
+    "clue": "B",
+    "probe": "D",
+    "variant": "BY",
+    "affectID": "15",
+    "reactive": false
+  },
+  {
+    "id": 42,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 6,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 82,
+    "clue": "S",
+    "probe": "P",
+    "variant": "BY",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 56,
+    "clue": "A",
+    "probe": "H",
+    "variant": "AY",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 25,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 125,
+    "clue": "A",
+    "probe": 7,
+    "variant": "A0",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 69,
+    "clue": "N",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 112,
+    "clue": "W",
+    "probe": "Z",
+    "variant": "BY",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 21,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 108,
+    "clue": "J",
+    "probe": "U",
+    "variant": "BY",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 103,
+    "clue": "C",
+    "probe": "V",
+    "variant": "BY",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 143,
+    "clue": "G",
+    "probe": 6,
+    "variant": "B0",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 85,
+    "clue": "Q",
+    "probe": "G",
+    "variant": "BY",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 116,
+    "clue": "R",
+    "probe": "J",
+    "variant": "BY",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 19,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 5,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 86,
+    "clue": "C",
+    "probe": "I",
+    "variant": "BY",
+    "affectID": "22",
+    "reactive": false
+  },
+  {
+    "id": 27,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 106,
+    "clue": "P",
+    "probe": "I",
+    "variant": "BY",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 9,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 43,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 110,
+    "clue": "U",
+    "probe": "V",
+    "variant": "BY",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 123,
+    "clue": "A",
     "probe": 6,
     "variant": "A0",
-    "affectID": "h3",
+    "affectID": "16",
+    "reactive": false
+  },
+  {
+    "id": 117,
+    "clue": "T",
+    "probe": "Q",
+    "variant": "BY",
+    "affectID": "26",
+    "reactive": false
+  },
+  {
+    "id": 68,
+    "clue": "B",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 100,
+    "clue": "I",
+    "probe": "B",
+    "variant": "BY",
+    "affectID": "24",
+    "reactive": false
+  },
+  {
+    "id": 77,
+    "clue": "Z",
+    "probe": "T",
+    "variant": "BY",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 133,
+    "clue": "Z",
+    "probe": 7,
+    "variant": "B0",
+    "affectID": "16",
+    "reactive": false
+  },
+  {
+    "id": 99,
+    "clue": "I",
+    "probe": "T",
+    "variant": "BY",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 55,
+    "clue": "A",
+    "probe": "Z",
+    "variant": "AY",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 39,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 1,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 48,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 144,
+    "clue": "I",
+    "probe": 5,
+    "variant": "B0",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 10,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 92,
+    "clue": "W",
+    "probe": "P",
+    "variant": "BY",
+    "affectID": "17",
     "reactive": false
   },
   {
     "id": 130,
     "clue": "A",
-    "probe": 6,
+    "probe": 4,
     "variant": "A0",
-    "affectID": "h9",
+    "affectID": "15",
+    "reactive": false
+  },
+  {
+    "id": 135,
+    "clue": "W",
+    "probe": 9,
+    "variant": "B0",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 62,
+    "clue": "Z",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "16",
+    "reactive": false
+  },
+  {
+    "id": 53,
+    "clue": "A",
+    "probe": "G",
+    "variant": "AY",
+    "affectID": "22",
+    "reactive": false
+  },
+  {
+    "id": 115,
+    "clue": "N",
+    "probe": "P",
+    "variant": "BY",
+    "affectID": "14",
     "reactive": false
   },
   {
     "id": 131,
     "clue": "A",
-    "probe": 7,
-    "variant": "A0",
-    "affectID": "h3",
-    "reactive": false
-  },
-  {
-    "id": 132,
-    "clue": "A",
-    "probe": 8,
-    "variant": "A0",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 133,
-    "clue": "M",
-    "probe": 3,
-    "variant": "B0",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 134,
-    "clue": "N",
-    "probe": 1,
-    "variant": "B0",
-    "affectID": "h11",
-    "reactive": false
-  },
-  {
-    "id": 135,
-    "clue": "L",
-    "probe": 1,
-    "variant": "B0",
-    "affectID": "h1",
-    "reactive": false
-  },
-  {
-    "id": 136,
-    "clue": "C",
-    "probe": 6,
-    "variant": "B0",
-    "affectID": "h5",
-    "reactive": false
-  },
-  {
-    "id": 137,
-    "clue": "P",
-    "probe": 4,
-    "variant": "B0",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 138,
-    "clue": "N",
-    "probe": 8,
-    "variant": "B0",
-    "affectID": "h8",
-    "reactive": false
-  },
-  {
-    "id": 139,
-    "clue": "W",
     "probe": 9,
-    "variant": "B0",
-    "affectID": "h10",
+    "variant": "A0",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 36,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "26",
+    "reactive": false
+  },
+  {
+    "id": 118,
+    "clue": "Z",
+    "probe": "W",
+    "variant": "BY",
+    "affectID": "15",
+    "reactive": false
+  },
+  {
+    "id": 47,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "24",
     "reactive": false
   },
   {
@@ -1116,39 +468,687 @@
     "clue": "D",
     "probe": 1,
     "variant": "B0",
-    "affectID": "h3",
+    "affectID": "26",
     "reactive": false
   },
   {
-    "id": 141,
+    "id": 45,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "16",
+    "reactive": false
+  },
+  {
+    "id": 80,
+    "clue": "P",
+    "probe": "U",
+    "variant": "BY",
+    "affectID": "15",
+    "reactive": false
+  },
+  {
+    "id": 83,
+    "clue": "W",
+    "probe": "S",
+    "variant": "BY",
+    "affectID": "24",
+    "reactive": false
+  },
+  {
+    "id": 138,
     "clue": "C",
-    "probe": 4,
+    "probe": 7,
     "variant": "B0",
-    "affectID": "h13",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 26,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 65,
+    "clue": "L",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 33,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 14,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 128,
+    "clue": "A",
+    "probe": 8,
+    "variant": "A0",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 50,
+    "clue": "A",
+    "probe": "Z",
+    "variant": "AY",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 136,
+    "clue": "Z",
+    "probe": 2,
+    "variant": "B0",
+    "affectID": "22",
+    "reactive": false
+  },
+  {
+    "id": 93,
+    "clue": "J",
+    "probe": "R",
+    "variant": "BY",
+    "affectID": "26",
+    "reactive": false
+  },
+  {
+    "id": 76,
+    "clue": "Q",
+    "probe": "V",
+    "variant": "BY",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 3,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 121,
+    "clue": "A",
+    "probe": 4,
+    "variant": "A0",
+    "affectID": "24",
     "reactive": false
   },
   {
     "id": 142,
-    "clue": "T",
+    "clue": "D",
+    "probe": 3,
+    "variant": "B0",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 98,
+    "clue": "R",
+    "probe": "Z",
+    "variant": "BY",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 119,
+    "clue": "V",
+    "probe": "I",
+    "variant": "BY",
+    "affectID": "16",
+    "reactive": false
+  },
+  {
+    "id": 52,
+    "clue": "A",
+    "probe": "J",
+    "variant": "AY",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 87,
+    "clue": "D",
+    "probe": "Q",
+    "variant": "BY",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 81,
+    "clue": "V",
+    "probe": "I",
+    "variant": "BY",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 29,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 139,
+    "clue": "H",
+    "probe": 5,
+    "variant": "B0",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 127,
+    "clue": "A",
     "probe": 6,
-    "variant": "B0",
-    "affectID": "h12",
+    "variant": "A0",
+    "affectID": "22",
     "reactive": false
   },
   {
-    "id": 143,
+    "id": 12,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 73,
+    "clue": "N",
+    "probe": "T",
+    "variant": "BY",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 11,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 44,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "16",
+    "reactive": false
+  },
+  {
+    "id": 71,
+    "clue": "J",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 91,
+    "clue": "U",
+    "probe": "Q",
+    "variant": "BY",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 16,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 4,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 60,
+    "clue": "A",
+    "probe": "U",
+    "variant": "AY",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 89,
+    "clue": "N",
+    "probe": "L",
+    "variant": "BY",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 79,
+    "clue": "U",
+    "probe": "R",
+    "variant": "BY",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 101,
     "clue": "M",
-    "probe": 1,
-    "variant": "B0",
-    "affectID": "h8",
+    "probe": "J",
+    "variant": "BY",
+    "affectID": "26",
     "reactive": false
   },
   {
-    "id": 144,
-    "clue": "W",
+    "id": 59,
+    "clue": "A",
+    "probe": "S",
+    "variant": "AY",
+    "affectID": "24",
+    "reactive": false
+  },
+  {
+    "id": 114,
+    "clue": "J",
+    "probe": "Q",
+    "variant": "BY",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 94,
+    "clue": "H",
+    "probe": "J",
+    "variant": "BY",
+    "affectID": "24",
+    "reactive": false
+  },
+  {
+    "id": 67,
+    "clue": "L",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 54,
+    "clue": "A",
+    "probe": "M",
+    "variant": "AY",
+    "affectID": "15",
+    "reactive": false
+  },
+  {
+    "id": 84,
+    "clue": "L",
+    "probe": "C",
+    "variant": "BY",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 24,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 95,
+    "clue": "T",
+    "probe": "T",
+    "variant": "BY",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 74,
+    "clue": "D",
+    "probe": "I",
+    "variant": "BY",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 23,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 37,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 78,
+    "clue": "G",
+    "probe": "R",
+    "variant": "BY",
+    "affectID": "16",
+    "reactive": false
+  },
+  {
+    "id": 34,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 64,
+    "clue": "P",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "15",
+    "reactive": false
+  },
+  {
+    "id": 35,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "24",
+    "reactive": false
+  },
+  {
+    "id": 141,
+    "clue": "S",
     "probe": 4,
     "variant": "B0",
-    "affectID": "h11",
+    "affectID": "24",
+    "reactive": false
+  },
+  {
+    "id": 7,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 17,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 97,
+    "clue": "W",
+    "probe": "D",
+    "variant": "BY",
+    "affectID": "24",
+    "reactive": false
+  },
+  {
+    "id": 88,
+    "clue": "G",
+    "probe": "M",
+    "variant": "BY",
+    "affectID": "26",
+    "reactive": false
+  },
+  {
+    "id": 18,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 104,
+    "clue": "L",
+    "probe": "I",
+    "variant": "BY",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 63,
+    "clue": "U",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "15",
+    "reactive": false
+  },
+  {
+    "id": 120,
+    "clue": "J",
+    "probe": "D",
+    "variant": "BY",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 57,
+    "clue": "A",
+    "probe": "Q",
+    "variant": "AY",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 137,
+    "clue": "C",
+    "probe": 1,
+    "variant": "B0",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 113,
+    "clue": "P",
+    "probe": "V",
+    "variant": "BY",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 20,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 72,
+    "clue": "D",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 22,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "23",
+    "reactive": false
+  },
+  {
+    "id": 90,
+    "clue": "R",
+    "probe": "Z",
+    "variant": "BY",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 15,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "18",
+    "reactive": false
+  },
+  {
+    "id": 8,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 58,
+    "clue": "A",
+    "probe": "W",
+    "variant": "AY",
+    "affectID": "16",
+    "reactive": false
+  },
+  {
+    "id": 49,
+    "clue": "A",
+    "probe": "J",
+    "variant": "AY",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 132,
+    "clue": "A",
+    "probe": 7,
+    "variant": "A0",
+    "affectID": "15",
+    "reactive": false
+  },
+  {
+    "id": 124,
+    "clue": "A",
+    "probe": 7,
+    "variant": "A0",
+    "affectID": "26",
+    "reactive": false
+  },
+  {
+    "id": 51,
+    "clue": "A",
+    "probe": "G",
+    "variant": "AY",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 105,
+    "clue": "R",
+    "probe": "P",
+    "variant": "BY",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 70,
+    "clue": "V",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "25",
+    "reactive": false
+  },
+  {
+    "id": 66,
+    "clue": "M",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 40,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "20",
+    "reactive": false
+  },
+  {
+    "id": 38,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 31,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "17",
+    "reactive": false
+  },
+  {
+    "id": 126,
+    "clue": "A",
+    "probe": 3,
+    "variant": "A0",
+    "affectID": "14",
+    "reactive": false
+  },
+  {
+    "id": 30,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 41,
+    "clue": "A",
+    "probe": "X",
+    "variant": "AX",
+    "affectID": "19",
+    "reactive": false
+  },
+  {
+    "id": 134,
+    "clue": "D",
+    "probe": 4,
+    "variant": "B0",
+    "affectID": "21",
+    "reactive": false
+  },
+  {
+    "id": 61,
+    "clue": "V",
+    "probe": "X",
+    "variant": "BX",
+    "affectID": "22",
     "reactive": false
   }
 ]
