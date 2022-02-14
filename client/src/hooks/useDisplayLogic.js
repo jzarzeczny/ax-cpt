@@ -136,9 +136,10 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
     if (i < data.length) {
       // If there is need to display photo
       if (data[i].affectId !== null) {
+        const numberValueOfAffectId = parseInt(data[i].affectId) - 1;
         setValue(
           <img
-            src={images[data[i].affectId - 1]}
+            src={images[numberValueOfAffectId]}
             alt="images of something"
           ></img>
         );
