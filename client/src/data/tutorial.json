@@ -9,15 +9,64 @@
   {
     "id": 2,
     "clue": "A",
-    "probe": "Y",
+    "probe": "G",
     "warriety": "AY",
     "affectId": null
   },
   {
     "id": 3,
-    "clue": "B",
+    "clue": "M",
     "probe": "X",
     "warriety": "BX",
+    "affectId": null
+  },
+  {
+    "id": 4,
+    "clue": "H",
+    "probe": "G",
+    "warriety": "BY",
+    "affectId": null
+  },
+  {
+    "id": 5,
+    "clue": "L",
+    "probe": "X",
+    "warriety": "BX",
+    "affectId": null
+  },
+  {
+    "id": 6,
+    "clue": "A",
+    "probe": "4",
+    "warriety": "no-go",
+    "affectId": null
+  },
+  {
+    "id": 7,
+    "clue": "B",
+    "probe": "5",
+    "warriety": "no-go",
+    "affectId": null
+  },
+  {
+    "id": 8,
+    "clue": "A",
+    "probe": "G",
+    "warriety": "AY",
+    "affectId": null
+  },
+  {
+    "id": 9,
+    "clue": "B",
+    "probe": "G",
+    "warriety": "BY",
+    "affectId": null
+  },
+  {
+    "id": 10,
+    "clue": "A",
+    "probe": "X",
+    "warriety": "AX",
     "affectId": null
   }
 ]
