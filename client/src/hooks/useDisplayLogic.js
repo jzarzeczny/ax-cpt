@@ -136,7 +136,7 @@ const useDisplayLogic = (data, getData, boxLocationStyling) => {
     if (i < data.length) {
       // If there is need to display photo
       if (data[i].affectId !== null) {
-        const numberValueOfAffectId = parseInt(data[i].affectId) - 1;
+        const numberValueOfAffectId = parseInt(data[i].affectID) - 1;
         setValue(
           <img
             src={images[numberValueOfAffectId]}
